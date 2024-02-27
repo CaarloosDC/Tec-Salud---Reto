@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MLConceptApp: App {
+    @StateObject private var predictionStatus = PredictionStatus()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(predictionStatus)
         }
     }
 }

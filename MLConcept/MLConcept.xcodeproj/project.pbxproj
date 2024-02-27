@@ -11,8 +11,20 @@
 		3C1508A22B8D0BA000D5D496 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1508A12B8D0BA000D5D496 /* ContentView.swift */; };
 		3C1508A42B8D0BA200D5D496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1508A32B8D0BA200D5D496 /* Assets.xcassets */; };
 		3C1508A72B8D0BA200D5D496 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1508A62B8D0BA200D5D496 /* Preview Assets.xcassets */; };
-		3C1508AE2B8D0C9E00D5D496 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1508AD2B8D0C9E00D5D496 /* CameraController.swift */; };
-		3C1508B02B8D0DA300D5D496 /* BodyPartClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C1508AF2B8D0DA300D5D496 /* BodyPartClassifier 1.mlmodel */; };
+		FBC842222B8E62B900A0E240 /* Foundation in Resources */ = {isa = PBXBuildFile; fileRef = FBC842212B8E62B900A0E240 /* Foundation */; };
+		FBC842262B8E637B00A0E240 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = FBC842252B8E637B00A0E240 /* Model */; };
+		FBC8422E2B8E662100A0E240 /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FBC8422D2B8E662100A0E240 /* BodyPartClassifier 2.mlmodel */; };
+		FBC842302B8E666400A0E240 /* CameraScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC8422F2B8E666400A0E240 /* CameraScanView.swift */; };
+		FBC842322B8E66CD00A0E240 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = FBC842312B8E66CD00A0E240 /* Data */; };
+		FBC842342B8E676400A0E240 /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC842332B8E676400A0E240 /* Classification.swift */; };
+		FBC842362B8E678100A0E240 /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC842352B8E678100A0E240 /* ClassifierViewModel.swift */; };
+		FBC842382B8E678E00A0E240 /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC842372B8E678E00A0E240 /* PredictionStatus.swift */; };
+		FBC8423B2B8E67A100A0E240 /* LiveCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC842392B8E67A100A0E240 /* LiveCameraController.swift */; };
+		FBC8423C2B8E67A100A0E240 /* LiveCameraRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC8423A2B8E67A100A0E240 /* LiveCameraRepresentable.swift */; };
+		FBC8423E2B8E67D400A0E240 /* ShowSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC8423D2B8E67D400A0E240 /* ShowSignView.swift */; };
+		FBC842412B8E6ACC00A0E240 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC8423F2B8E6ACC00A0E240 /* Constants.swift */; };
+		FBC842422B8E6ACC00A0E240 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC842402B8E6ACC00A0E240 /* Helpers.swift */; };
+		FBC842462B8E703500A0E240 /* mydata.geojson in Resources */ = {isa = PBXBuildFile; fileRef = FBC842452B8E703500A0E240 /* mydata.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +33,20 @@
 		3C1508A12B8D0BA000D5D496 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C1508A32B8D0BA200D5D496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C1508A62B8D0BA200D5D496 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3C1508AD2B8D0C9E00D5D496 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		3C1508AF2B8D0DA300D5D496 /* BodyPartClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BodyPartClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		FBC842212B8E62B900A0E240 /* Foundation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Foundation; path = ../../../../../Downloads/ScanML/ScanML/Foundation; sourceTree = "<group>"; };
+		FBC842252B8E637B00A0E240 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Model; path = ../../../../../Downloads/ScanML/ScanML/Model; sourceTree = "<group>"; };
+		FBC8422D2B8E662100A0E240 /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "BodyPartClassifier 2.mlmodel"; path = "MLConcept/BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
+		FBC8422F2B8E666400A0E240 /* CameraScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraScanView.swift; path = ../../../../../Downloads/ScanML/ScanML/CameraScanView.swift; sourceTree = "<group>"; };
+		FBC842312B8E66CD00A0E240 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = ../../../../../Downloads/ScanML/ScanML/Data; sourceTree = "<group>"; };
+		FBC842332B8E676400A0E240 /* Classification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classification.swift; path = ../../../../../Downloads/ScanML/ScanML/Data/Classification.swift; sourceTree = "<group>"; };
+		FBC842352B8E678100A0E240 /* ClassifierViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassifierViewModel.swift; path = ../../../../../Downloads/ScanML/ScanML/Foundation/ModelViews/ClassifierViewModel.swift; sourceTree = "<group>"; };
+		FBC842372B8E678E00A0E240 /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredictionStatus.swift; path = ../../../../../Downloads/ScanML/ScanML/Model/PredictionStatus.swift; sourceTree = "<group>"; };
+		FBC842392B8E67A100A0E240 /* LiveCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveCameraController.swift; path = ../../../../../Downloads/ScanML/ScanML/Foundation/CameraViewControllers/LiveCameraController.swift; sourceTree = "<group>"; };
+		FBC8423A2B8E67A100A0E240 /* LiveCameraRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveCameraRepresentable.swift; path = ../../../../../Downloads/ScanML/ScanML/Foundation/CameraViewControllers/LiveCameraRepresentable.swift; sourceTree = "<group>"; };
+		FBC8423D2B8E67D400A0E240 /* ShowSignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowSignView.swift; path = ../../../../../Downloads/ScanML/ScanML/ShowSignView.swift; sourceTree = "<group>"; };
+		FBC8423F2B8E6ACC00A0E240 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../../Downloads/ScanML/ScanML/Foundation/Helpers/Constants.swift; sourceTree = "<group>"; };
+		FBC842402B8E6ACC00A0E240 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = ../../../../../Downloads/ScanML/ScanML/Foundation/Helpers/Helpers.swift; sourceTree = "<group>"; };
+		FBC842452B8E703500A0E240 /* mydata.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mydata.geojson; path = ../../../../../Downloads/ScanML/ScanML/Foundation/ModelViews/mydata.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +63,7 @@
 		3C1508932B8D0BA000D5D496 = {
 			isa = PBXGroup;
 			children = (
+				FBC8422D2B8E662100A0E240 /* BodyPartClassifier 2.mlmodel */,
 				3C15089E2B8D0BA000D5D496 /* MLConcept */,
 				3C15089D2B8D0BA000D5D496 /* Products */,
 			);
@@ -55,11 +80,21 @@
 		3C15089E2B8D0BA000D5D496 /* MLConcept */ = {
 			isa = PBXGroup;
 			children = (
-				3C1508B12B8D100300D5D496 /* Foundation */,
+				FBC842312B8E66CD00A0E240 /* Data */,
+				FBC842252B8E637B00A0E240 /* Model */,
+				FBC842212B8E62B900A0E240 /* Foundation */,
 				3C15089F2B8D0BA000D5D496 /* MLConceptApp.swift */,
-				3C1508AD2B8D0C9E00D5D496 /* CameraController.swift */,
+				FBC8423F2B8E6ACC00A0E240 /* Constants.swift */,
+				FBC842452B8E703500A0E240 /* mydata.geojson */,
+				FBC842402B8E6ACC00A0E240 /* Helpers.swift */,
+				FBC842372B8E678E00A0E240 /* PredictionStatus.swift */,
+				FBC842392B8E67A100A0E240 /* LiveCameraController.swift */,
+				FBC8423D2B8E67D400A0E240 /* ShowSignView.swift */,
+				FBC8423A2B8E67A100A0E240 /* LiveCameraRepresentable.swift */,
+				FBC842352B8E678100A0E240 /* ClassifierViewModel.swift */,
+				FBC8422F2B8E666400A0E240 /* CameraScanView.swift */,
+				FBC842332B8E676400A0E240 /* Classification.swift */,
 				3C1508A12B8D0BA000D5D496 /* ContentView.swift */,
-				3C1508AF2B8D0DA300D5D496 /* BodyPartClassifier 1.mlmodel */,
 				3C1508A32B8D0BA200D5D496 /* Assets.xcassets */,
 				3C1508A52B8D0BA200D5D496 /* Preview Content */,
 			);
@@ -72,13 +107,6 @@
 				3C1508A62B8D0BA200D5D496 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		3C1508B12B8D100300D5D496 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1508A72B8D0BA200D5D496 /* Preview Assets.xcassets in Resources */,
+				FBC842462B8E703500A0E240 /* mydata.geojson in Resources */,
 				3C1508A42B8D0BA200D5D496 /* Assets.xcassets in Resources */,
+				FBC842322B8E66CD00A0E240 /* Data in Resources */,
+				FBC842262B8E637B00A0E240 /* Model in Resources */,
+				FBC842222B8E62B900A0E240 /* Foundation in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,10 +183,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1508AE2B8D0C9E00D5D496 /* CameraController.swift in Sources */,
+				FBC8423C2B8E67A100A0E240 /* LiveCameraRepresentable.swift in Sources */,
+				FBC842412B8E6ACC00A0E240 /* Constants.swift in Sources */,
+				FBC842302B8E666400A0E240 /* CameraScanView.swift in Sources */,
+				FBC842362B8E678100A0E240 /* ClassifierViewModel.swift in Sources */,
+				FBC8423B2B8E67A100A0E240 /* LiveCameraController.swift in Sources */,
 				3C1508A22B8D0BA000D5D496 /* ContentView.swift in Sources */,
+				FBC8422E2B8E662100A0E240 /* BodyPartClassifier 2.mlmodel in Sources */,
+				FBC842422B8E6ACC00A0E240 /* Helpers.swift in Sources */,
+				FBC8423E2B8E67D400A0E240 /* ShowSignView.swift in Sources */,
 				3C1508A02B8D0BA000D5D496 /* MLConceptApp.swift in Sources */,
-				3C1508B02B8D0DA300D5D496 /* BodyPartClassifier 1.mlmodel in Sources */,
+				FBC842342B8E676400A0E240 /* Classification.swift in Sources */,
+				FBC842382B8E678E00A0E240 /* PredictionStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,9 +328,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLConcept/Preview Content\"";
-				DEVELOPMENT_TEAM = PSZW65H9Q6;
+				DEVELOPMENT_TEAM = PL63SN7J27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera used for image categorization";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.MLConcept;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.MLTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,9 +358,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLConcept/Preview Content\"";
-				DEVELOPMENT_TEAM = PSZW65H9Q6;
+				DEVELOPMENT_TEAM = PL63SN7J27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera used for image categorization";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -330,7 +372,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.MLConcept;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.MLTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
