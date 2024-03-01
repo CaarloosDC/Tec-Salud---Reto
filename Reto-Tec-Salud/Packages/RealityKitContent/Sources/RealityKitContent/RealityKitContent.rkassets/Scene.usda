@@ -12,41 +12,6 @@ def Xform "Root"
         bindMaterialAs = "weakerThanDescendants"
     )
 
-    def Sphere "Sphere" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.05
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0, 0, 0.0004)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-        def RealityKitComponent "Collider"
-        {
-            uint group = 1
-            uniform token info:id = "RealityKit.Collider"
-            uint mask = 4294967295
-            token type = "Default"
-
-            def RealityKitStruct "Shape"
-            {
-                float3 extent = (0.2, 0.2, 0.2)
-                float radius = 0.05
-                token shapeType = "Sphere"
-            }
-        }
-
-        def RealityKitComponent "InputTarget"
-        {
-            uniform token info:id = "RealityKit.InputTarget"
-        }
-    }
-
     def "GridMaterial" (
         active = true
         prepend references = @Materials/GridMaterial.usda@
@@ -54,6 +19,191 @@ def Xform "Root"
     {
         float3 xformOp:scale = (1, 1, 1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def Material "Material"
+    {
+        prepend token outputs:mtlx:surface.connect = </Root/Material/PreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (299.25, 99.5)
+        float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+        def Shader "PreviewSurface"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            float inputs:roughness = 1
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (74.25, 99.5)
+            float2 ui:nodegraph:node:size = (148.5, 199)
+            int ui:nodegraph:node:stackingOrder = 2
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:metallic", "inputs:roughness"]
+        }
+    }
+
+    def Material "Material_1"
+    {
+        prepend token outputs:mtlx:surface.connect = </Root/Material_1/PreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (299.25, 99.5)
+        float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+        def Shader "PreviewSurface"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (74.25, 99.5)
+            float2 ui:nodegraph:node:size = (148.5, 199)
+            int ui:nodegraph:node:stackingOrder = 2
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+        }
+    }
+
+    def "Skull" (
+        active = true
+        prepend references = @Skull.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Skeleton_1"
+    {
+        def "Thoracic_skeleton_g"
+        {
+            def "Costal_cartilages_g"
+            {
+                def "Costal_cartilage_of_seventh_rib_l"
+                {
+                    def "Costal_cartilage_of_seventh_rib"
+                    {
+                    }
+                }
+            }
+
+            def "Bones_of_thorax_g"
+            {
+                def "Ribs_g"
+                {
+                    def "True_ribs_g"
+                    {
+                        def "Second_rib_l"
+                        {
+                            def "Second_rib"
+                            {
+                            }
+                        }
+
+                        def "Seventh_rib_l"
+                        {
+                            def "Seventh_rib"
+                            {
+                            }
+                        }
+
+                        def "First_rib_l"
+                        {
+                            def "First_rib"
+                            {
+                            }
+                        }
+
+                        def "Sixth_rib_l"
+                        {
+                            def "Sixth_rib"
+                            {
+                            }
+                        }
+
+                        def "Fifth_rib_l"
+                        {
+                            def "Fifth_rib"
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        def "Cranium_g"
+        {
+            def "Bones_of_cranium_g"
+            {
+                def "Occipital_bone"
+                {
+                    def "Occipital_bone"
+                    {
+                    }
+                }
+            }
+        }
+
+        def "Vertebral_column_g"
+        {
+            def "Cervical_vertebrae_g"
+            {
+                def "Axis__C2_"
+                {
+                    def "Axis__C2_"
+                    {
+                    }
+                }
+
+                def "Vertebra_C5"
+                {
+                    def "Vertebra_C5"
+                    {
+                    }
+                }
+
+                def "Vertebra_C3"
+                {
+                    def "Vertebra_C3"
+                    {
+                    }
+                }
+
+                def "Vertebra_C4"
+                {
+                    def "Vertebra_C4"
+                    {
+                    }
+                }
+
+                def "Vertebra_C7"
+                {
+                    def "Vertebra_C7"
+                    {
+                    }
+                }
+
+                def "Vertebra_C6"
+                {
+                    def "Vertebra_C6"
+                    {
+                    }
+                }
+            }
+
+            def "Thoracic_vertebrae_g"
+            {
+                def "Vertebra_T1"
+                {
+                    def "Vertebra_T1"
+                    {
+                    }
+                }
+
+                def "Vertebra_T2"
+                {
+                    def "Vertebra_T2"
+                    {
+                    }
+                }
+            }
+        }
     }
 }
 
