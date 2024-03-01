@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "team-of-surgeons-performing-surgery-2023-11-27-05-10-29-utc.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
