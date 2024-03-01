@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "team-of-surgeons-is-fighting-for-life-the-doctor-2024-01-02-23-14-53-utc.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
