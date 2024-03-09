@@ -11,6 +11,7 @@ struct MenuView: View {
     var body: some View {
         VStack{
             Text("¿Qué deseas hacer el día de hoy?").font(.extraLargeTitle)
+                .padding(.bottom, 20) // Added padding, cuz why not
             HStack{
                 NavigationLink {
                     ProcedimentStudyView()
