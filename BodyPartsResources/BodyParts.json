@@ -1,0 +1,95 @@
+[
+    {
+      "id": "BPT-001",
+      "technicalName": "Ear",
+      "imageName": "ear_image.png",
+      "renderName": "Ear Render",
+      "labelName": "Ear",
+      "doableProcedures": [
+        {
+          "id": 1,
+          "surgeryName": "Eardrum Reconstruction",
+          "surgeryMedicName": "Tympanoplasty",
+          "procedureDescription": "Surgical operation for the reconstruction of the eardrum (tympanic membrane) and/or the small bones of the middle ear.",
+          "mockupSteps": "Step 1: Incision behind the ear; Step 2: Damaged tissue removal; Step 3: Graft placement; Step 4: Incision closed"
+        },
+        {
+          "id": 2,
+          "surgeryName": "Ear Pinning",
+          "surgeryMedicName": "Otoplasty",
+          "procedureDescription": "Surgical reshaping of the pinna, or the outer ear, to improve its appearance or to correct defects.",
+          "mockupSteps": "Step 1: Incision made; Step 2: Cartilage reshaped; Step 3: Excess skin removed; Step 4: Incision closed"
+        }
+      ]
+    },
+    {
+      "id": "BPT-002",
+      "technicalName": "Arm",
+      "imageName": "arm_image.png",
+      "renderName": "Arm Render",
+      "labelName": "Arm",
+      "doableProcedures": [
+        {
+          "id": 3,
+          "surgeryName": "Bone Fixation",
+          "surgeryMedicName": "Fracture Repair",
+          "procedureDescription": "Surgical procedure to fix broken bones of the arm using metal rods, screws, or plates to hold the bone fragments together.",
+          "mockupSteps": "Step 1: Incision over the fracture site; Step 2: Bones realigned; Step 3: Metal hardware attached; Step 4: Incision closed"
+        },
+        {
+          "id": 4,
+          "surgeryName": "Tendon Reconstruction",
+          "surgeryMedicName": "Tendon Repair",
+          "procedureDescription": "Surgical procedure to repair torn or damaged tendons in the arm.",
+          "mockupSteps": "Step 1: Incision made in the arm; Step 2: Tendon ends reattached; Step 3: Incision closed"
+        }
+      ]
+    },
+    {
+      "id": "BPT-003",
+      "technicalName": "Knee",
+      "imageName": "knee_image.png",
+      "renderName": "Knee Render",
+      "labelName": "Knee",
+      "doableProcedures": [
+        {
+          "id": 5,
+          "surgeryName": "Knee Replacement",
+          "surgeryMedicName": "Arthroplasty",
+          "procedureDescription": "Replacement of a knee joint with a prosthetic joint.",
+          "mockupSteps": "Step 1: Incision made in the knee; Step 2: Damaged joint surfaces removed; Step 3: Prosthetic joint inserted; Step 4: Incision closed"
+        },
+        {
+          "id": 6,
+          "surgeryName": "ACL Reconstruction",
+          "surgeryMedicName": "Anterior Cruciate Ligament Reconstruction",
+          "procedureDescription": "Surgical procedure to reconstruct the ligament in the center of your knee with a new ligament.",
+          "mockupSteps": "Step 1: Incision made in the knee; Step 2: Damaged ACL removed; Step 3: Graft ligament placed; Step 4: Incision closed"
+        }
+      ]
+    },
+    {
+      "id": "BPT-004",
+      "technicalName": "Eye",
+      "imageName": "eye_image.png",
+      "renderName": "Eye Render",
+      "labelName": "Eye",
+      "doableProcedures": [
+        {
+          "id": 7,
+          "surgeryName": "Cataract Removal",
+          "surgeryMedicName": "Cataract Surgery",
+          "procedureDescription": "Surgical removal of the lens of the eye that has developed an opacification.",
+          "mockupSteps": "Step 1: Small incision made in the eye; Step 2: Clouded lens removed; Step 3: Artificial lens inserted"
+        },
+        {
+          "id": 8,
+          "surgeryName": "Vision Correction",
+          "surgeryMedicName": "LASIK",
+          "procedureDescription": "Laser surgery to correct refractive vision issues.",
+          "mockupSteps": "Step 1: Corneal flap created; Step 2: Corneal reshaping with laser; Step 3: Flap repositioned"
+        }
+      ]
+    }
+  ]
+  
