@@ -21,6 +21,8 @@
 		3C526F4B2B9CC43E00C53762 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F4A2B9CC43E00C53762 /* TecMedMultipeer.swift */; };
 		3CCA12C02BA2D15600B1D538 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12BF2BA2D15600B1D538 /* CameraView.swift */; };
 		3CCA12C32BA2D2F600B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */; };
+		3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */; };
+		3CCA12C92BA2E32500B1D538 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		3CCA12BF2BA2D15600B1D538 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
 		3CCA12C52BA2D55200B1D538 /* bodyparts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
+		3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedBodyPartView.swift; sourceTree = "<group>"; };
+		3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
+		3CCA12CA2BA2E8CF00B1D538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 		3C526F1D2B9CBD2B00C53762 /* TecMedTransmiter */ = {
 			isa = PBXGroup;
 			children = (
+				3CCA12CA2BA2E8CF00B1D538 /* Info.plist */,
 				3C526F332B9CBDF900C53762 /* ML Model */,
 				3CCA12C42BA2D4C200B1D538 /* Data Models */,
 				3C526F2C2B9CBD5900C53762 /* Foundation */,
@@ -150,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				3CCA12BF2BA2D15600B1D538 /* CameraView.swift */,
+				3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */,
+				3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +244,8 @@
 				3C526F3E2B9CBF6500C53762 /* LiveCameraController.swift in Sources */,
 				3C526F392B9CBEC600C53762 /* Constants.swift in Sources */,
 				3C526F3B2B9CBEE800C53762 /* Helpers.swift in Sources */,
+				3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */,
+				3CCA12C92BA2E32500B1D538 /* DetectedDeviceView.swift in Sources */,
 				3C526F372B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel in Sources */,
 				3C526F432B9CBFD300C53762 /* ClassifierViewModel.swift in Sources */,
 				3C526F352B9CBE1200C53762 /* PredictionStatus.swift in Sources */,
@@ -381,6 +391,8 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed to enable multipeer connectivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,6 +422,8 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed to enable multipeer connectivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

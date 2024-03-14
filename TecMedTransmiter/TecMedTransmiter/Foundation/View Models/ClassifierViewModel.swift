@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @Observable final class ClassifierViewModel {
-    var classifierData: [Pokemon] = []
+    var classifierData: [BodyPart] = []
     var dataWhenAboutTapped:Int = 0
     
     init() {
@@ -17,22 +17,22 @@ import SwiftUI
     }
     func loadJSON() {
         print("loading...")
-        if let url = Bundle.main.url(forResource: "pokemonData", withExtension: "json") {
+        if let url = Bundle.main.url(forResource: "bodyparts", withExtension: "json") {
             do {
                 let jsonData = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                classifierData = try decoder.decode([Pokemon].self, from: jsonData)
+                classifierData = try decoder.decode([BodyPart].self, from: jsonData)
             } catch {
                 print(error)
             }
         } else {
-            print("could not find any data")
+            print("Couldn´t find any data")
         }
     }
     
-    func getPredictionData(label: String) -> Pokemon {
+    func getPredictionData(label: String) -> BodyPart {
         // Inline if, if the first condition is true, it will return the first value, if not, it will return a default value
-        return classifierData.filter { $0.name == label }.first ?? Pokemon(id: 11, name: "MissingNo.", imageName: "missing", type: "Unknown", description: "Unknown Pokemon")
+        return classifierData.filter { $0.medicalName == label }.first ?? BodyPart(id: "Unknown", medicalName: "Unknown", imageName: "arm", renderName: "Unknown", doableProcedures: [])
     }
 }
 
