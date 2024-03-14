@@ -32,7 +32,7 @@ import SwiftUI
     
     func getPredictionData(label: String) -> BodyPart {
         // Inline if, if the first condition is true, it will return the first value, if not, it will return a default value
-        return classifierData.filter { $0.medicalName == label }.first ?? BodyPart(id: "Unknown", medicalName: "Unknown", imageName: "arm", renderName: "Unknown", doableProcedures: [])
+        return classifierData.filter { $0.medicalName == label }.first ?? BodyPart(id: .Arm, medicalName: "Unknown", imageName: "arm", renderName: "Unknown", doableProcedures: [])
     }
 }
 

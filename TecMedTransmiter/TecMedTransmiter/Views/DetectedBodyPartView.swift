@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetectedBodyPartView: View {
     var bodyPart: BodyPart
+    @Environment(TecMedMultiPeer.self) private var recieverSession
+    
     var body: some View {
         VStack {
             Text("Detected Body Part")
@@ -22,7 +24,7 @@ struct DetectedBodyPartView: View {
                     Text("Common Name: ")
                         .font(.headline)
                         .foregroundStyle(.red)
-                    + Text(bodyPart.id)
+                    + Text(bodyPart.id.rawValue)
                         .font(.footnote)
                     
                     Text("Medical Term ")
@@ -42,6 +44,9 @@ struct DetectedBodyPartView: View {
             }
             .padding()
         }
+        .onAppear{
+            recieverSession.send(label: bodyPart.id)
+        }
         .padding()
         .background(Color("light-dark"))
         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -50,5 +55,6 @@ struct DetectedBodyPartView: View {
 }
 
 #Preview {
-    DetectedBodyPartView(bodyPart: BodyPart(id: "Arm", medicalName: "Brachium", imageName: "arm", renderName: "arm", doableProcedures: []))
+    DetectedBodyPartView(bodyPart: BodyPart(id: .Arm, medicalName: "Brachium", imageName: "arm", renderName: "arm", doableProcedures: []))
 }
+

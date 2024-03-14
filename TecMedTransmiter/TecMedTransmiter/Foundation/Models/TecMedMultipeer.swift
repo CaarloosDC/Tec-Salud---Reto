@@ -117,7 +117,3 @@ extension TecMedMultiPeer: MCSessionDelegate {
     }
 }
 
-/// An enumeration representing named colors.
-enum MLModelLabel: String, CaseIterable {
-    case Arm, Ear
-}
