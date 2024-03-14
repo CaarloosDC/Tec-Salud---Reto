@@ -1,7 +1,7 @@
 [
   {
-    "id": "BPT-001",
-    "medicalName": "Ear",
+    "id": "Ear",
+    "medicalName": "Auricle/Pinna",
     "imageName": "ear_image.png",
     "renderName": "Ear Render",
     "doableProcedures": [
@@ -62,8 +62,8 @@
     ]
   },
   {
-    "id": "BPT-002",
-    "medicalName": "Arm",
+    "id": "Arm",
+    "medicalName": "Brachium",
     "imageName": "arm_image.png",
     "renderName": "Arm Render",
     "doableProcedures": [
@@ -119,8 +119,8 @@
     ]
   },
   {
-    "id": "BPT-003",
-    "medicalName": "Knee",
+    "id": "Knee",
+    "medicalName": "Tibiofemoral joint",
     "imageName": "knee_image.png",
     "renderName": "Knee Render",
     "doableProcedures": [
@@ -181,8 +181,8 @@
     ]
   },
   {
-    "id": "BPT-004",
-    "medicalName": "Eye",
+    "id": "Eye",
+    "medicalName": "Ocular",
     "imageName": "eye_image.png",
     "renderName": "Eye Render",
     "doableProcedures": [

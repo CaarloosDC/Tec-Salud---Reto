@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TecMedTransmiterApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(PredictionStatus())
         }
     }
 }

@@ -23,7 +23,7 @@ struct CameraView: View {
                     predictionStatus.setLivePrediction(with: $0, label: $1, confidence: $2)
                 }
                 
-                PokedexView(labelData: classifierViewModel.getPredictionData(label: predictionLabel))
+                DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
                     .offset(y:startingOffset)
                     .offset(y:currentOffset)
                     .offset(y:endOffset)
