@@ -124,7 +124,6 @@ final class LiveCameraViewController: UIViewController {
             connection.videoOrientation = .portrait
         }
 
-        let scaleFactor = 0.5
         previewLayer?.frame = liveVideoFeedDisplayLayer.bounds // Defines camera window size and position
         
         guard let previewLayer = previewLayer else { return }
