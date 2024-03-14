@@ -1,9 +1,9 @@
 [
   {
-    "id": "BPT-001",
-    "medicalName": "Ear",
-    "imageName": "ear_image.png",
-    "renderName": "Ear Render",
+    "id": "Ear",
+    "medicalName": "Auricle/Pinna",
+    "imageName": "arm",
+    "renderName": "Skeleton",
     "doableProcedures": [
       {
         "id": 1,
@@ -13,22 +13,22 @@
           {
             "id": 1,
             "description": "Incision behind the ear",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Damaged tissue removal",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Graft placement",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       },
@@ -40,32 +40,32 @@
           {
             "id": 1,
             "description": "Incision made",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Cartilage reshaped",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Excess skin removed",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       }
     ]
   },
   {
-    "id": "BPT-002",
-    "medicalName": "Arm",
-    "imageName": "arm_image.png",
-    "renderName": "Arm Render",
+    "id": "Arm",
+    "medicalName": "Brachium",
+    "imageName": "arm",
+    "renderName": "Skeleton",
     "doableProcedures": [
       {
         "id": 3,
@@ -75,22 +75,22 @@
           {
             "id": 1,
             "description": "Incision over the fracture site",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Bones realigned",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Metal hardware attached",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       },
@@ -102,27 +102,27 @@
           {
             "id": 1,
             "description": "Incision made in the arm",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Tendon ends reattached",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       }
     ]
   },
   {
-    "id": "BPT-003",
-    "medicalName": "Knee",
-    "imageName": "knee_image.png",
-    "renderName": "Knee Render",
+    "id": "Knee",
+    "medicalName": "Tibiofemoral joint",
+    "imageName": "arm",
+    "renderName": "Skeleton",
     "doableProcedures": [
       {
         "id": 5,
@@ -132,22 +132,22 @@
           {
             "id": 1,
             "description": "Incision made in the knee",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Damaged joint surfaces removed",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Prosthetic joint inserted",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       },
@@ -159,32 +159,32 @@
           {
             "id": 1,
             "description": "Incision made in the knee",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Damaged ACL removed",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Graft ligament placed",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       }
     ]
   },
   {
-    "id": "BPT-004",
-    "medicalName": "Eye",
-    "imageName": "eye_image.png",
-    "renderName": "Eye Render",
+    "id": "Eye",
+    "medicalName": "Ocular",
+    "imageName": "arm",
+    "renderName": "Skeleton",
     "doableProcedures": [
       {
         "id": 7,
@@ -194,17 +194,17 @@
           {
             "id": 1,
             "description": "Small incision made in the eye",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Clouded lens removed",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Artificial lens inserted",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       },
@@ -216,17 +216,17 @@
           {
             "id": 1,
             "description": "Corneal flap created",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Corneal reshaping with laser",
-            "imageName": ""
+            "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Flap repositioned",
-            "imageName": ""
+            "imageName": "arm"
           }
         ]
       }

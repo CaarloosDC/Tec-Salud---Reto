@@ -9,6 +9,7 @@ import Foundation
 import MultipeerConnectivity
 import os
 
+/// A class that handles the Multipeer Connectivity functionality for TecMedTransmiter.
 @Observable
 class TecMedMultiPeer: NSObject {
     private let serviceType = "TecMed-ML-Comm"
@@ -19,15 +20,17 @@ class TecMedMultiPeer: NSObject {
     private let log = Logger()
     
     var connectedPeers: [MCPeerID] = []
-    var currentColor: Namedcolor? = nil
+    var currentLabel: MLModelLabel? = nil
     
-    func send(color: Namedcolor) {
-        log.info("sendColor: \(String(describing: color)) to \(self.session.connectedPeers.count) peers")
-        self.currentColor = color
+    /// Sends the specified color to all connected peers.
+    /// - Parameter color: The color to send.
+    func send(label: MLModelLabel) {
+        log.info("sendColor: \(String(describing: label)) to \(self.session.connectedPeers.count) peers")
+        self.currentLabel = label
 
         if !session.connectedPeers.isEmpty {
             do {
-                try session.send(color.rawValue.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+                try session.send(label.rawValue.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
             } catch {
                 log.error("Error for sending: \(String(describing: error))")
             }
@@ -91,10 +94,10 @@ extension TecMedMultiPeer: MCSessionDelegate {
 
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        if let string = String(data: data, encoding: .utf8), let color = Namedcolor(rawValue: string) {
-            log.info("didReceive color \(string)")
+        if let string = String(data: data, encoding: .utf8), let label = MLModelLabel(rawValue: string) {
+            log.info("didReceive ML Model Label \(string)")
             DispatchQueue.main.async {
-                self.currentColor = color
+                self.currentLabel = label
             }
         } else {
             log.info("didReceive invalid value \(data.count) bytes")
@@ -114,6 +117,3 @@ extension TecMedMultiPeer: MCSessionDelegate {
     }
 }
 
-enum Namedcolor: String, CaseIterable {
-    case red, green, yellow
-}
