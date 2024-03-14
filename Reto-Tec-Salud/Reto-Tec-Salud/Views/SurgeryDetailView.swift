@@ -11,10 +11,14 @@ import RealityKitContent
 
 struct SurgeryDetailView: View {
     @State var bodyParts = BodyPartViewModel()
+    @State var selectedBodyPart: BodyPart?
     
         var body: some View {
             NavigationSplitView{
-                List(bodyParts.bodyParts, selection: )
+                List(bodyParts.bodyParts) { bodyPart in
+                
+
+                }
             } detail: {
                 <#code#>
             }
