@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */; };
+		3CCA12CF2BA2ED5E00B1D538 /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */; };
+		3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */; };
+		3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */; };
 		D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D7BBD00D2B91568800F3F1C8 /* RealityKitContent */; };
 		D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */; };
 		D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD0112B91568800F3F1C8 /* ContentView.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
+		3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TecMedMultipeer.swift; path = ../../../TecMedTransmiter/TecMedTransmiter/Foundation/Models/TecMedMultipeer.swift; sourceTree = "<group>"; };
+		3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartViewModel.swift; sourceTree = "<group>"; };
 		D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reto-Tec-Salud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BBD00C2B91568800F3F1C8 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reto_Tec_SaludApp.swift; sourceTree = "<group>"; };
@@ -48,6 +56,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CCA12CB2BA2ED2F00B1D538 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3CCA12D32BA2EF1700B1D538 /* View Models */,
+				3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */,
+				3CCA12D02BA2ED6800B1D538 /* Data Models */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3CCA12D02BA2ED6800B1D538 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */,
+				3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		3CCA12D32BA2EF1700B1D538 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		D7BBCFFF2B91568800F3F1C8 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +103,8 @@
 		D7BBD00A2B91568800F3F1C8 /* Reto-Tec-Salud */ = {
 			isa = PBXGroup;
 			children = (
-				D7CA2B3D2B91BAF0003CB892 /* View */,
+				3CCA12CB2BA2ED2F00B1D538 /* Foundation */,
+				D7CA2B3D2B91BAF0003CB892 /* Views */,
 				D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */,
 				D7BBD0132B91568A00F3F1C8 /* Assets.xcassets */,
 				D7BBD0182B91568A00F3F1C8 /* Info.plist */,
@@ -93,7 +129,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D7CA2B3D2B91BAF0003CB892 /* View */ = {
+		D7CA2B3D2B91BAF0003CB892 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D7BBD0112B91568800F3F1C8 /* ContentView.swift */,
@@ -104,7 +140,7 @@
 				D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */,
 				D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +206,7 @@
 			files = (
 				D7BBD0172B91568A00F3F1C8 /* Preview Assets.xcassets in Resources */,
 				D7BBD0142B91568A00F3F1C8 /* Assets.xcassets in Resources */,
+				3CCA12CF2BA2ED5E00B1D538 /* bodyparts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +224,9 @@
 				D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */,
 				D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
+				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,
+				3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */,
+				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

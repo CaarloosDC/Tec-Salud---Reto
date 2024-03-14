@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
+    @Environment(TecMedMultiPeer.self) private var recieverSession
     @State private var classifierViewModel = ClassifierViewModel() // Also migrated
     
     // State Vars

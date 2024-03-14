@@ -14,6 +14,8 @@ struct TecMedTransmiterApp: App {
         WindowGroup {
             ContentView()
                 .environment(PredictionStatus())
+                .environment(TecMedMultiPeer())
+            
         }
     }
 }

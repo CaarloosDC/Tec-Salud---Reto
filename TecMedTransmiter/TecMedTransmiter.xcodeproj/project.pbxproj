@@ -81,9 +81,9 @@
 				3C526F332B9CBDF900C53762 /* ML Model */,
 				3CCA12C42BA2D4C200B1D538 /* Data Models */,
 				3C526F2C2B9CBD5900C53762 /* Foundation */,
-				3C526F1E2B9CBD2B00C53762 /* TecMedTransmiterApp.swift */,
 				3CCA12C12BA2D1AF00B1D538 /* Views */,
 				3C526F202B9CBD2B00C53762 /* ContentView.swift */,
+				3C526F1E2B9CBD2B00C53762 /* TecMedTransmiterApp.swift */,
 				3C526F222B9CBD2E00C53762 /* Assets.xcassets */,
 				3C526F242B9CBD2E00C53762 /* Preview Content */,
 			);
