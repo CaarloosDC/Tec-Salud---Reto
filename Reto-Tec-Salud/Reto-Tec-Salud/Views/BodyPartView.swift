@@ -55,6 +55,6 @@ struct BodyPartView: View {
 
 struct BodyPartView_Previews: PreviewProvider {
     static var previews: some View {
-        BodyPartView(bodyPart: .constant(BodyPart(id: .Arm, medicalName: "Brachium", imageName: "arm", renderName: "Skeleton", doableProcedures: [])))
+        BodyPartView(bodyPart:.constant(BodyPart(id: .Arm, medicalName: "Brachium", imageName: "arm", renderName: "Skeleton", doableProcedures: [])))
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C43793E2BA409A900C01C1C /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* RowView.swift */; };
 		3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */; };
 		3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */; };
 		3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C43793D2BA409A900C01C1C /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartView.swift; sourceTree = "<group>"; };
 		3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryStepByStepView.swift; sourceTree = "<group>"; };
 		3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */,
 				D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */,
 				3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */,
+				3C43793D2BA409A900C01C1C /* RowView.swift */,
 				3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */,
 			);
 			path = Views;
@@ -232,6 +235,7 @@
 				D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,
+				3C43793E2BA409A900C01C1C /* RowView.swift in Sources */,
 				3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */,
 				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */,
