@@ -13,6 +13,7 @@ struct ProcedimentStudyView: View {
             Text("Elige el tipo de procedimiento").font(.extraLargeTitle)
             HStack{
                 NavigationLink {
+                    MultiPeerView()
                 } label: {
                     OpcionCardView(ImageName: "surgery2", TextString: "Procedimiento real").padding()
                 }

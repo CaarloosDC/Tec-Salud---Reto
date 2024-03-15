@@ -15,6 +15,7 @@
 		3CADB8A12BA45799002F1710 /* SelectedProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A02BA45799002F1710 /* SelectedProcedure.swift */; };
 		3CADB8A62BA46772002F1710 /* MultiPeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A52BA46772002F1710 /* MultiPeerView.swift */; };
 		3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */; };
+		3CADB8E52BA475EE002F1710 /* SkeletonModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8E42BA475EE002F1710 /* SkeletonModelView.swift */; };
 		3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */; };
 		3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */; };
 		3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */; };
@@ -43,6 +44,7 @@
 		3CADB8A02BA45799002F1710 /* SelectedProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProcedure.swift; sourceTree = "<group>"; };
 		3CADB8A52BA46772002F1710 /* MultiPeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerView.swift; sourceTree = "<group>"; };
 		3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
+		3CADB8E42BA475EE002F1710 /* SkeletonModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonModelView.swift; sourceTree = "<group>"; };
 		3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartView.swift; sourceTree = "<group>"; };
 		3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryStepByStepView.swift; sourceTree = "<group>"; };
 		3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		3C43793F2BA419AB00C01C1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3CADB8E42BA475EE002F1710 /* SkeletonModelView.swift */,
 				3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */,
 			);
 			path = Components;
@@ -316,6 +319,7 @@
 				3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */,
 				3CADB89B2BA44F52002F1710 /* SecondWindow.swift in Sources */,
 				D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */,
+				3CADB8E52BA475EE002F1710 /* SkeletonModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
