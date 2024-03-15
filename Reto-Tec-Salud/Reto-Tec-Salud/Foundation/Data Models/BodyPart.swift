@@ -7,9 +7,9 @@
 
 import Foundation
 
-
 struct BodyPart: Identifiable, Codable, Hashable {
-    let id, medicalName, imageName, renderName: String
+    let id: MLModelLabel
+    let medicalName, imageName, renderName: String
     let doableProcedures: [Procedure]
 }
 
@@ -23,3 +23,8 @@ struct Step: Identifiable, Codable, Hashable {
     let id: Int
     let description, imageName: String
 }
+
+enum MLModelLabel: String, Codable, CaseIterable, Hashable {
+    case Arm, Ear, Eye, Knee
+}
+

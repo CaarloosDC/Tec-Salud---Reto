@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct Reto_Tec_SaludApp: App {
-
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
