@@ -10,6 +10,10 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    //Second window
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+
     var body: some View {
         // Fixed component structure
         NavigationStack{
