@@ -12,8 +12,11 @@ struct SurgeryStepByStepView: View {
     @State private var selectedStep: Step? = nil
     
     var body: some View {
-        NavigationSplitView {
-            List(Procedure, selection: $selectedStep) { step in
+        SplitView(mainContent: mainContent, detailContent: StepDetailView(), selectedItem: $selectedStep)
+        }
+        
+        var mainContent: some View {
+            List(surgicalProcedure.steps, selection: $selectedStep) { step in
                 Button(action: {
                     selectedStep = step
                 }) {
@@ -24,33 +27,13 @@ struct SurgeryStepByStepView: View {
                             .padding()
                         Spacer()
                     }
-                    .background(selectedStep == step ? Color.blue : Color.gray) // Change background color based on selection
+                    .background(selectedStep == step ? Color.blue : Color.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .frame(maxWidth: 260)
                 }
-                .buttonStyle(PlainButtonStyle()) // Remove default button style
-            }
-            .onChange(of: selectedStep) { oldValue, newValue in
-                if let selectedBodyPart = newValue {
-                    print("Selected body part: \(selectedStep.id)")
-                }
-            }
-            .navigationTitle("Selecciona un Objeto")
-            .navigationBarTitleDisplayMode(.automatic)
-            // Ensure the title is always visible
-            
-        } detail: {
-            if selectedStep != nil {
-                Image(selectedStep?.imageName)
-            }
-            else {
-                VStack {
-                    PlaceHolderView(header: "Cirugia Virtual", fillerText: "Selecciona una parte del cuerpo para comenzar")
-                    Spacer()
-                }
+                .buttonStyle(PlainButtonStyle())
             }
         }
-    }
 }
 
 #Preview {
