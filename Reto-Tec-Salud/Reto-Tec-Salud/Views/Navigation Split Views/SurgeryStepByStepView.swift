@@ -12,7 +12,7 @@ struct SurgeryStepByStepView: View {
     @State private var selectedStep: Step? = nil
     
     var body: some View {
-        SplitView(mainContent: mainContent, detailContent: StepDetailView(stepNo: selectedStep ?? Step(id: 1, description: "not found", imageName: "garbage")), placeHolder: PlaceHolderView(header: surgicalProcedure.surgeryTechnicalName, fillerText: "Selecciona un paso  para comenzar"), selectedItem: $selectedStep)
+        SplitView(mainContent: mainContent, detailContent: StepDetailView(stepNo: selectedStep ?? Step(id: 1, description: "not found", shortDescription: "Short description", imageName: "garbage")), placeHolder: PlaceHolderView(header: surgicalProcedure.surgeryTechnicalName, fillerText: "Selecciona un paso  para comenzar"), selectedItem: $selectedStep)
         }
         
         var mainContent: some View {
@@ -42,8 +42,8 @@ struct SurgeryStepByStepView: View {
         surgeryTechnicalName: "Dummy Surgery",
         description: "This is a dummy procedure for testing purposes.",
         steps: [
-            Step(id: 1, description: "Step 1", imageName: "arm"),
-            Step(id: 2, description: "Step 2", imageName: "ear")
+            Step(id: 1, description: "Step 1", shortDescription: "short description", imageName: "arm"),
+            Step(id: 2, description: "Step 2", shortDescription: "Short description", imageName: "ear")
         ]
     )
     )
