@@ -14,7 +14,7 @@ struct SurgeryDetailView: View {
     @State private var selectedBodyPart: BodyPart? = nil
     
     var body: some View {
-        SplitView(mainContent: mainContent, detailContent: BodyPartView(bodyPart: $selectedBodyPart), selectedItem: $selectedBodyPart)
+        SplitView(mainContent: mainContent, detailContent: BodyPartView(bodyPart: $selectedBodyPart), placeHolder: PlaceHolderView(header: "Cirugia Virtual", fillerText: "Selecciona una parte del cuerpo para comenzar"), selectedItem: $selectedBodyPart)
     }
     
     var mainContent: some View {
