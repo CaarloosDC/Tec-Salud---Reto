@@ -11,15 +11,23 @@ import RealityKitContent
 
 struct SurgeryDetailView: View {
     @State var bodyParts = BodyPartViewModel()
-    @State var selectedBodyPart: BodyPart?
+    @State private var selectedBodyPart: BodyPart? = nil
     
     var body: some View {
-        NavigationView {
-            List(selection: $selectedBodyPart) {
-                ForEach(bodyParts.bodyParts) { bodyPart in
-                    Text(bodyPart.id.rawValue)
+        NavigationSplitView {
+            List(bodyParts.bodyParts, selection: $selectedBodyPart) { bodyPart in
+                Button(bodyPart.id.rawValue) {
+                    selectedBodyPart = bodyPart
                 }
             }
+            .onChange(of: selectedBodyPart) {oldValue, newValue in
+                if let selectedBodyPart = newValue {
+                    print("selected body part: \(selectedBodyPart.id)")
+                }
+            }
+            .navigationTitle("¿Que Deseas Explorar?")
+            
+        } detail: {
             BodyPartView(bodyPart: $selectedBodyPart)
         }
     }
