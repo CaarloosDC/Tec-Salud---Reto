@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct BodyPartView: View {
+    // Second window functions
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     @Binding var bodyPart: BodyPart?
     @State  var selectedProcedure: Procedure? = nil
-
+    @Environment(ProcedureViewModel.self) private var selected
+    
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
@@ -27,6 +32,7 @@ struct BodyPartView: View {
                 List(bodyPart?.doableProcedures ?? []) { procedure in
                     Button(action: {
                         selectedProcedure = procedure
+                        selected.sentProcedure = procedure
                     }) {
                         HStack {
                             Text(procedure.surgeryTechnicalName)
@@ -54,19 +60,24 @@ struct BodyPartView: View {
                     Color.clear.frame(maxHeight: 450)
                 }
                 
-                if let procedure = selectedProcedure {
-                    NavigationLink(destination: SurgeryStepByStepView(surgicalProcedure: procedure)) {
+                if selectedProcedure != nil {
+                    Button(action: {
+                        selected.sentProcedure = selectedProcedure
+                        openWindow(id: "SecondWindow")
+                    }) {
                         HStack(alignment: .center) {
-                            Text("Go to \(procedure.surgeryTechnicalName)")
-                                .foregroundStyle(.white)
+                            Text("Go to \(selectedProcedure?.surgeryTechnicalName ?? "Unknown Procedure")")
+                                .foregroundColor(.white)
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
                                 .padding()
                         }
-                        .background(.blue)
+                        .background(Color.blue)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .frame(maxWidth: 300)
                     }
+                    .environment(\.selectedProcedure, selectedProcedure)
+
                     Spacer()
                 } else {
                     Spacer()

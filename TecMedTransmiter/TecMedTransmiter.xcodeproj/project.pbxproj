@@ -18,7 +18,7 @@
 		3C526F3E2B9CBF6500C53762 /* LiveCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F3D2B9CBF6500C53762 /* LiveCameraController.swift */; };
 		3C526F402B9CBF9400C53762 /* LiveCameraRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F3F2B9CBF9400C53762 /* LiveCameraRepresentable.swift */; };
 		3C526F432B9CBFD300C53762 /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F422B9CBFD300C53762 /* ClassifierViewModel.swift */; };
-		3C526F4B2B9CC43E00C53762 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F4A2B9CC43E00C53762 /* TecMedMultipeer.swift */; };
+		3CADB8A92BA467D2002F1710 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */; };
 		3CCA12C02BA2D15600B1D538 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12BF2BA2D15600B1D538 /* CameraView.swift */; };
 		3CCA12C32BA2D2F600B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */; };
 		3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */; };
@@ -38,7 +38,7 @@
 		3C526F3D2B9CBF6500C53762 /* LiveCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraController.swift; sourceTree = "<group>"; };
 		3C526F3F2B9CBF9400C53762 /* LiveCameraRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraRepresentable.swift; sourceTree = "<group>"; };
 		3C526F422B9CBFD300C53762 /* ClassifierViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewModel.swift; sourceTree = "<group>"; };
-		3C526F4A2B9CC43E00C53762 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedMultipeer.swift; sourceTree = "<group>"; };
+		3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TecMedMultipeer.swift; path = "../../../../Reto-Tec-Salud/Reto-Tec-Salud/Foundation/Models/TecMedMultipeer.swift"; sourceTree = "<group>"; };
 		3CCA12BF2BA2D15600B1D538 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
 		3CCA12C52BA2D55200B1D538 /* bodyparts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		3C526F4C2B9CC48300C53762 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C526F4A2B9CC43E00C53762 /* TecMedMultipeer.swift */,
+				3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +243,7 @@
 			files = (
 				3C526F3E2B9CBF6500C53762 /* LiveCameraController.swift in Sources */,
 				3C526F392B9CBEC600C53762 /* Constants.swift in Sources */,
+				3CADB8A92BA467D2002F1710 /* TecMedMultipeer.swift in Sources */,
 				3C526F3B2B9CBEE800C53762 /* Helpers.swift in Sources */,
 				3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */,
 				3CCA12C92BA2E32500B1D538 /* DetectedDeviceView.swift in Sources */,
@@ -251,7 +252,6 @@
 				3C526F352B9CBE1200C53762 /* PredictionStatus.swift in Sources */,
 				3C526F402B9CBF9400C53762 /* LiveCameraRepresentable.swift in Sources */,
 				3CCA12C02BA2D15600B1D538 /* CameraView.swift in Sources */,
-				3C526F4B2B9CC43E00C53762 /* TecMedMultipeer.swift in Sources */,
 				3C526F212B9CBD2B00C53762 /* ContentView.swift in Sources */,
 				3CCA12C32BA2D2F600B1D538 /* BodyPart.swift in Sources */,
 				3C526F1F2B9CBD2B00C53762 /* TecMedTransmiterApp.swift in Sources */,
