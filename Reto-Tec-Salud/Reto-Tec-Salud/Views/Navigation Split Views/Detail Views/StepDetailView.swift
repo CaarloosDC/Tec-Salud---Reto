@@ -11,16 +11,37 @@ struct StepDetailView: View {
     var stepNo: Step
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Paso No. \(stepNo.id)")
-                .font(.title)
-            Text("Descripción del paso no. \(stepNo.id)")
-                .font(.footnote)
+        ScrollView {
+            VStack(alignment: .leading) {
+                VStack(alignment:.leading) {
+                    Text("Paso No. \(stepNo.id)")
+                        .font(.title)
+                    Text(stepNo.description)
+                        .font(.footnote)
+                }
+                .padding()
+                
+                HStack {
+                    Image(stepNo.imageName)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    Spacer()
+                }
+                .frame(maxHeight: 200)
+                .padding()
+                
+                Text(stepNo.description)
+                    .multilineTextAlignment(.leading)
+                    .padding()
+            }
+            .padding()
         }
+        
         
     }
 }
 
 #Preview {
-    StepDetailView(stepNo: Step(id: 1, description: "Do something", imageName: "garbage"))
+    StepDetailView(stepNo: Step(id: 1, description: "Do something", shortDescription: "Same instruction, just shorter", imageName: "garbage"))
 }

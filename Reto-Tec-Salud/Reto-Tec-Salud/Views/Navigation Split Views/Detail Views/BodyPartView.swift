@@ -76,7 +76,6 @@ struct BodyPartView: View {
         .onChange(of: bodyPart) { oldValue, newValue in
             selectedProcedure = nil
         }
-        
     }
 }
 
@@ -87,8 +86,8 @@ struct BodyPartView_Previews: PreviewProvider {
             surgeryTechnicalName: "Dummy Surgery",
             description: "This is a dummy procedure for testing purposes.",
             steps: [
-                Step(id: 1, description: "Step 1", imageName: "arm"),
-                Step(id: 2, description: "Step 2", imageName: "ear")
+                Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm"),
+                Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear")
             ]
         )])))
     }
