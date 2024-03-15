@@ -22,6 +22,12 @@ struct Reto_Tec_SaludApp: App {
                 .environment(selectedProcedure)
                 .environment(TecMedMultiPeer())
         }
+        // Immersive space for the skeleton model
+        ImmersiveSpace(id: "skeletonImmersiveView") {
+            SkeletonModelView()
+        }
+        .immersionStyle(selection: .constant(.full), in: .full)
+        .immersiveContentBrightness(.bright)
     }
 }
 
