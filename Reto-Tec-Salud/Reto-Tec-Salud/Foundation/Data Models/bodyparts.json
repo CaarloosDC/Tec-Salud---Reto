@@ -2,7 +2,7 @@
   {
     "id": "Ear",
     "medicalName": "Auricle/Pinna",
-    "imageName": "arm",
+    "imageName": "ear",
     "renderName": "Skeleton",
     "doableProcedures": [
       {
@@ -13,22 +13,22 @@
           {
             "id": 1,
             "description": "Incision behind the ear",
-            "imageName": "arm"
+            "imageName": "bisturi"
           },
           {
             "id": 2,
             "description": "Damaged tissue removal",
-            "imageName": "arm"
+            "imageName": "garbage"
           },
           {
             "id": 3,
             "description": "Graft placement",
-            "imageName": "arm"
+            "imageName": "graft-placement"
           },
           {
             "id": 4,
             "description": "Incision closed",
-            "imageName": "arm"
+            "imageName": "tweezers"
           }
         ]
       },
@@ -121,7 +121,7 @@
   {
     "id": "Knee",
     "medicalName": "Tibiofemoral joint",
-    "imageName": "arm",
+    "imageName": "knee",
     "renderName": "Skeleton",
     "doableProcedures": [
       {
@@ -183,7 +183,7 @@
   {
     "id": "Eye",
     "medicalName": "Ocular",
-    "imageName": "arm",
+    "imageName": "eye",
     "renderName": "Skeleton",
     "doableProcedures": [
       {
