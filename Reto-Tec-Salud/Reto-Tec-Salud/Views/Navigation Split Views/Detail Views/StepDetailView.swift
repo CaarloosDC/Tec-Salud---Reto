@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct StepDetailView: View {
+    var stepNo: Step
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Paso No. \(stepNo.id)")
+                .font(.title)
+            Text("Descripción del paso no. \(stepNo.id)")
+                .font(.footnote)
+        }
+        
     }
 }
 
 #Preview {
-    StepDetailView()
+    StepDetailView(stepNo: Step(id: 1, description: "Do something", imageName: "garbage"))
 }

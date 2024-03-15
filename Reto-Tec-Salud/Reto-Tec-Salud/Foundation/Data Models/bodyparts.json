@@ -8,26 +8,30 @@
       {
         "id": 1,
         "surgeryTechnicalName": "Tympanoplasty",
-        "description": "Surgical operation for the reconstruction of the eardrum (tympanic membrane) and/or the small bones of the middle ear.",
+        "description": "Tympanoplasty is a surgical operation for the reconstruction of the eardrum (tympanic membrane) and/or the small bones of the middle ear. It is performed to repair perforations or other damage to the eardrum, or to correct hearing loss caused by defects in the middle ear.",
         "steps": [
           {
             "id": 1,
             "description": "Incision behind the ear",
+            "shortDescription": "Make an incision behind the ear to access the middle ear.",
             "imageName": "bisturi"
           },
           {
             "id": 2,
             "description": "Damaged tissue removal",
+            "shortDescription": "Remove damaged tissue from the middle ear.",
             "imageName": "garbage"
           },
           {
             "id": 3,
             "description": "Graft placement",
+            "shortDescription": "Place a graft to repair the eardrum or bones of the middle ear.",
             "imageName": "graft-placement"
           },
           {
             "id": 4,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made behind the ear.",
             "imageName": "tweezers"
           }
         ]
@@ -35,26 +39,30 @@
       {
         "id": 2,
         "surgeryTechnicalName": "Otoplasty",
-        "description": "Surgical reshaping of the pinna, or the outer ear, to improve its appearance or to correct defects.",
+        "description": "Otoplasty is a surgical procedure aimed at reshaping the pinna, or the outer ear. It is commonly performed to correct prominent ears or other ear deformities, improving the appearance and symmetry of the ears.",
         "steps": [
           {
             "id": 1,
             "description": "Incision made",
+            "shortDescription": "Make an incision to access the ear cartilage.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Cartilage reshaped",
+            "shortDescription": "Reshape the ear cartilage to the desired form.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Excess skin removed",
+            "shortDescription": "Remove any excess skin from the ear.",
             "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made during the procedure.",
             "imageName": "arm"
           }
         ]
@@ -70,26 +78,30 @@
       {
         "id": 3,
         "surgeryTechnicalName": "Fracture Repair",
-        "description": "Surgical procedure to fix broken bones of the arm using metal rods, screws, or plates to hold the bone fragments together.",
+        "description": "Fracture repair is a surgical procedure used to fix broken bones of the arm. It involves the use of metal rods, screws, or plates to hold the bone fragments together, allowing proper healing and restoration of function.",
         "steps": [
           {
             "id": 1,
             "description": "Incision over the fracture site",
+            "shortDescription": "Make an incision over the fracture to access the broken bone.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Bones realigned",
+            "shortDescription": "Realign the broken bones into their correct positions.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Metal hardware attached",
+            "shortDescription": "Attach metal hardware such as rods, screws, or plates to stabilize the fracture.",
             "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made during the procedure.",
             "imageName": "arm"
           }
         ]
@@ -97,21 +109,24 @@
       {
         "id": 4,
         "surgeryTechnicalName": "Tendon Repair",
-        "description": "Surgical procedure to repair torn or damaged tendons in the arm.",
+        "description": "Tendon repair is a surgical procedure used to repair torn or damaged tendons in the arm. It is commonly performed to restore function and stability to the affected joint.",
         "steps": [
           {
             "id": 1,
             "description": "Incision made in the arm",
+            "shortDescription": "Make an incision to access the torn tendon.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Tendon ends reattached",
+            "shortDescription": "Reattach the torn ends of the tendon using sutures or other fixation techniques.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made during the procedure.",
             "imageName": "arm"
           }
         ]
@@ -127,26 +142,30 @@
       {
         "id": 5,
         "surgeryTechnicalName": "Arthroplasty",
-        "description": "Replacement of a knee joint with a prosthetic joint.",
+        "description": "Arthroplasty is a surgical procedure involving the replacement of a knee joint with a prosthetic joint. It is commonly performed to relieve pain and restore function in patients with severe arthritis or joint damage.",
         "steps": [
           {
             "id": 1,
             "description": "Incision made in the knee",
+            "shortDescription": "Make an incision to access the knee joint.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Damaged joint surfaces removed",
+            "shortDescription": "Remove damaged surfaces of the knee joint.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Prosthetic joint inserted",
+            "shortDescription": "Insert the prosthetic knee joint.",
             "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made during the procedure.",
             "imageName": "arm"
           }
         ]
@@ -154,26 +173,30 @@
       {
         "id": 6,
         "surgeryTechnicalName": "Anterior Cruciate Ligament Reconstruction",
-        "description": "Surgical procedure to reconstruct the ligament in the center of your knee with a new ligament.",
+        "description": "Anterior cruciate ligament (ACL) reconstruction is a surgical procedure aimed at reconstructing the ligament in the center of your knee with a new ligament. It is commonly performed to restore stability and function to the knee joint following ACL injury or rupture.",
         "steps": [
           {
             "id": 1,
             "description": "Incision made in the knee",
+            "shortDescription": "Make an incision to access the knee joint.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Damaged ACL removed",
+            "shortDescription": "Remove the damaged anterior cruciate ligament.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Graft ligament placed",
+            "shortDescription": "Place a graft to reconstruct the anterior cruciate ligament.",
             "imageName": "arm"
           },
           {
             "id": 4,
             "description": "Incision closed",
+            "shortDescription": "Close the incision made during the procedure.",
             "imageName": "arm"
           }
         ]
@@ -189,21 +212,24 @@
       {
         "id": 7,
         "surgeryTechnicalName": "Cataract Surgery",
-        "description": "Surgical removal of the lens of the eye that has developed an opacification.",
+        "description": "Cataract surgery is a surgical procedure involving the removal of the lens of the eye that has developed an opacification, known as a cataract. It is commonly performed to restore vision in patients with cataracts, improving visual acuity and quality of life.",
         "steps": [
           {
             "id": 1,
             "description": "Small incision made in the eye",
+            "shortDescription": "Make a small incision to access the eye.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Clouded lens removed",
+            "shortDescription": "Remove the clouded lens affected by the cataract.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Artificial lens inserted",
+            "shortDescription": "Insert an artificial lens to replace the removed cataract.",
             "imageName": "arm"
           }
         ]
@@ -211,21 +237,24 @@
       {
         "id": 8,
         "surgeryTechnicalName": "LASIK",
-        "description": "Laser surgery to correct refractive vision issues.",
+        "description": "LASIK (Laser-Assisted In Situ Keratomileusis) is a laser eye surgery used to correct refractive vision issues, such as nearsightedness, farsightedness, and astigmatism. It involves reshaping the cornea to improve the focusing power of the eye, reducing or eliminating the need for glasses or contact lenses.",
         "steps": [
           {
             "id": 1,
             "description": "Corneal flap created",
+            "shortDescription": "Create a flap in the cornea to access the underlying tissue.",
             "imageName": "arm"
           },
           {
             "id": 2,
             "description": "Corneal reshaping with laser",
+            "shortDescription": "Reshape the cornea using a laser to correct refractive errors.",
             "imageName": "arm"
           },
           {
             "id": 3,
             "description": "Flap repositioned",
+            "shortDescription": "Reposition the corneal flap back into place.",
             "imageName": "arm"
           }
         ]

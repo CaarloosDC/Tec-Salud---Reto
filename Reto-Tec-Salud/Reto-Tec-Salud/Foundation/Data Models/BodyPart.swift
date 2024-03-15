@@ -21,7 +21,7 @@ struct Procedure: Identifiable, Codable, Hashable {
 
 struct Step: Identifiable, Codable, Hashable {
     let id: Int
-    let description, imageName: String
+    let description, shortDescription, imageName: String
 }
 
 enum MLModelLabel: String, Codable, CaseIterable, Hashable {
