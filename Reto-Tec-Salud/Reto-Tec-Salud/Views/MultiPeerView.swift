@@ -13,16 +13,7 @@ struct MultiPeerView: View {
     var body: some View {
         
         ZStack {
-            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
-            VStack {
-                // Gotta check animations
-                if !recieverSession.connectedPeers.isEmpty {
-                    DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
-                        .transition(.move(edge: .bottom))
-                }
-                
-                Spacer()
-            }
+            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)[0]))
         }
 
     }
