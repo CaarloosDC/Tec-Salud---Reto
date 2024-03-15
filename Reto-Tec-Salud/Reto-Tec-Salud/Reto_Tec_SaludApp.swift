@@ -13,5 +13,11 @@ struct Reto_Tec_SaludApp: App {
         WindowGroup {
             ContentView()
         }
+        // Immersive space for the skeleton model
+        ImmersiveSpace(id: "skeletonImmersiveView") {
+            SkeletonModelView()
+        }
+        .immersionStyle(selection: .constant(.full), in: .full)
+        .immersiveContentBrightness(.bright)
     }
 }
