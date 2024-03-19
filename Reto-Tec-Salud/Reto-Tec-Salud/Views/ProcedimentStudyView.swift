@@ -9,21 +9,23 @@ import SwiftUI
 
 struct ProcedimentStudyView: View {
     var body: some View {
-        VStack{
-            Text("Elige el tipo de procedimiento").font(.extraLargeTitle)
-            HStack{
-                NavigationLink {
-                    MultiPeerView()
-                } label: {
-                    OpcionCardView(ImageName: "surgery2", TextString: "Procedimiento real").padding()
+        NavigationStack {
+            VStack{
+                Text("Elige el tipo de procedimiento").font(.extraLargeTitle)
+                HStack{
+                    NavigationLink {
+                        MultiPeerView()
+                    } label: {
+                        OpcionCardView(ImageName: "surgery2", TextString: "Procedimiento real").padding()
+                    }
+                    NavigationLink {
+                        SurgeryDetailView()
+                    } label: {
+                        OpcionCardView(ImageName: "hologram", TextString: "Procedimiento virtual").padding()
+                    }
                 }
-                NavigationLink {
-                    SurgeryDetailView()
-                } label: {
-                    OpcionCardView(ImageName: "hologram", TextString: "Procedimiento virtual").padding()
-                }
-            }
-        }.scaleEffect(0.95)
+            }.scaleEffect(0.95)
+        }
     }
 }
 

@@ -35,9 +35,9 @@ struct ContentView: View {
                         
                         // Take me to the menu
                         NavigationLink {
-                            MenuView()
+                            NavigationView()            .navigationBarBackButtonHidden(true)
                         } label: {
-                            Text("Ir al menú principal")
+                            Text("Iniciar")
                             Image(systemName: "circle.grid.3x3.circle")
                         }
                         .padding(.top, 30)
