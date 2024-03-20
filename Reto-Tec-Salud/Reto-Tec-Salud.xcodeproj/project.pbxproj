@@ -70,6 +70,7 @@
 		D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 		D73694412BA954A5007A38EE /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		D73694432BA954C3007A38EE /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		D7A8AE1C2BAABE1400CE3F26 /* generative-ai-swift-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "generative-ai-swift-main"; path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main"; sourceTree = "<group>"; };
 		D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reto-Tec-Salud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BBD00C2B91568800F3F1C8 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reto_Tec_SaludApp.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		D7BBD00B2B91568800F3F1C8 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D7A8AE1C2BAABE1400CE3F26 /* generative-ai-swift-main */,
 				D7BBD00C2B91568800F3F1C8 /* RealityKitContent */,
 			);
 			path = Packages;
