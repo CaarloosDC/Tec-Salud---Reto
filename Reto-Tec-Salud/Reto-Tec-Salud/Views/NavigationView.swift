@@ -15,10 +15,10 @@ struct NavigationView: View {
                 Text("Procediment")
             }
             AnatomyStudyView().tabItem {
-                Image(systemName: "accessibility")
+                Image(systemName: "figure")
                 Text("Anatomy")
             }
-            ChatView().tabItem {
+            MultiturnChatView().tabItem {
                 Image(systemName: "ellipsis.message.fill")
                 Text("Medic Chat")
             }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,14 @@
 		3CCA12CF2BA2ED5E00B1D538 /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */; };
 		3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */; };
 		3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */; };
+		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
+		D71986AE2BAA71EB00C5FF2C /* Config in Resources */ = {isa = PBXBuildFile; fileRef = D71986A62BAA71EB00C5FF2C /* Config */; };
+		D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */; };
+		D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */; };
+		D71986B12BAA71EB00C5FF2C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A92BAA71EB00C5FF2C /* APIKey.swift */; };
+		D71986B22BAA71EB00C5FF2C /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */; };
+		D71986B42BAA71EB00C5FF2C /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */; };
+		D71986B72BAA73B800C5FF2C /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */; };
 		D73694422BA954A5007A38EE /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694412BA954A5007A38EE /* NavigationView.swift */; };
 		D73694442BA954C3007A38EE /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694432BA954C3007A38EE /* ChatView.swift */; };
 		D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D7BBD00D2B91568800F3F1C8 /* RealityKitContent */; };
@@ -53,6 +61,13 @@
 		3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
 		3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecMedMultipeer.swift; sourceTree = "<group>"; };
 		3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartViewModel.swift; sourceTree = "<group>"; };
+		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		D71986A62BAA71EB00C5FF2C /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
+		D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
+		D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiturnChatView.swift; sourceTree = "<group>"; };
+		D71986A92BAA71EB00C5FF2C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 		D73694412BA954A5007A38EE /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		D73694432BA954C3007A38EE /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reto-Tec-Salud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */,
+				D71986B72BAA73B800C5FF2C /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +183,20 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		D71986A42BAA71B500C5FF2C /* MedicBot */ = {
+			isa = PBXGroup;
+			children = (
+				D71986A92BAA71EB00C5FF2C /* APIKey.swift */,
+				D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */,
+				D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */,
+				D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */,
+				D71986A52BAA71EB00C5FF2C /* ChatService.swift */,
+				D71986A62BAA71EB00C5FF2C /* Config */,
+				D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */,
+			);
+			path = MedicBot;
+			sourceTree = "<group>";
+		};
 		D7BBCFFF2B91568800F3F1C8 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +217,7 @@
 		D7BBD00A2B91568800F3F1C8 /* Reto-Tec-Salud */ = {
 			isa = PBXGroup;
 			children = (
+				D71986A42BAA71B500C5FF2C /* MedicBot */,
 				3CCA12CB2BA2ED2F00B1D538 /* Foundation */,
 				D7CA2B3D2B91BAF0003CB892 /* Views */,
 				D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */,
@@ -248,6 +279,7 @@
 			name = "Reto-Tec-Salud";
 			packageProductDependencies = (
 				D7BBD00D2B91568800F3F1C8 /* RealityKitContent */,
+				D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */,
 			);
 			productName = "Reto-Tec-Salud";
 			productReference = D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */;
@@ -277,6 +309,9 @@
 				Base,
 			);
 			mainGroup = D7BBCFFF2B91568800F3F1C8;
+			packageReferences = (
+				D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */,
+			);
 			productRefGroup = D7BBD0092B91568800F3F1C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,6 +326,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71986AE2BAA71EB00C5FF2C /* Config in Resources */,
+				D71986B42BAA71EB00C5FF2C /* GenerativeAI-Info.plist in Resources */,
 				D7BBD0172B91568A00F3F1C8 /* Preview Assets.xcassets in Resources */,
 				D7BBD0142B91568A00F3F1C8 /* Assets.xcassets in Resources */,
 				3CCA12CF2BA2ED5E00B1D538 /* bodyparts.json in Resources */,
@@ -312,6 +349,7 @@
 				D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */,
 				D7CA2B432B91C24A003CB892 /* ProcedimentStudyView.swift in Sources */,
 				D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */,
+				D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */,
 				3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */,
 				3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */,
 				D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */,
@@ -325,9 +363,13 @@
 				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */,
 				3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */,
+				D71986B22BAA71EB00C5FF2C /* ChatBubble.swift in Sources */,
+				D71986B12BAA71EB00C5FF2C /* APIKey.swift in Sources */,
 				3CADB89B2BA44F52002F1710 /* SecondWindow.swift in Sources */,
 				D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */,
 				3CADB8E92BA47AC4002F1710 /* SkeletonModelView.swift in Sources */,
+				D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */,
+				D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +572,18 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GoogleGenerativeAI;
+		};
 		D7BBD00D2B91568800F3F1C8 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
