@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */; };
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
 		3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379432BA42ED400C01C1C /* StepDetailView.swift */; };
@@ -29,7 +30,6 @@
 		D71986B12BAA71EB00C5FF2C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A92BAA71EB00C5FF2C /* APIKey.swift */; };
 		D71986B22BAA71EB00C5FF2C /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */; };
 		D71986B42BAA71EB00C5FF2C /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */; };
-		D71986B72BAA73B800C5FF2C /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */; };
 		D73694422BA954A5007A38EE /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694412BA954A5007A38EE /* NavigationView.swift */; };
 		D73694442BA954C3007A38EE /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694432BA954C3007A38EE /* ChatView.swift */; };
 		D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D7BBD00D2B91568800F3F1C8 /* RealityKitContent */; };
@@ -91,7 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */,
-				D71986B72BAA73B800C5FF2C /* GoogleGenerativeAI in Frameworks */,
+				3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +279,7 @@
 			name = "Reto-Tec-Salud";
 			packageProductDependencies = (
 				D7BBD00D2B91568800F3F1C8 /* RealityKitContent */,
-				D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */,
+				3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */,
 			);
 			productName = "Reto-Tec-Salud";
 			productReference = D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */;
@@ -310,7 +310,7 @@
 			);
 			mainGroup = D7BBCFFF2B91568800F3F1C8;
 			packageReferences = (
-				D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */,
+				3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = D7BBD0092B91568800F3F1C8 /* Products */;
 			projectDirPath = "";
@@ -572,16 +572,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main";
+/* Begin XCRemoteSwiftPackageReference section */
+		3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.8;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D71986B62BAA73B800C5FF2C /* GoogleGenerativeAI */ = {
+		3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
 			productName = GoogleGenerativeAI;
 		};
 		D7BBD00D2B91568800F3F1C8 /* RealityKitContent */ = {
