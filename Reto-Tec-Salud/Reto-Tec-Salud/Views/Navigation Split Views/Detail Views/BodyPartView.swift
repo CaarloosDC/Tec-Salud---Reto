@@ -43,7 +43,7 @@ struct BodyPartView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .frame(maxWidth: 200)
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .buttonStyle(.plain)
                 }
                 .listStyle(InsetListStyle())
             }
@@ -74,7 +74,7 @@ struct BodyPartView: View {
                         }
                         .background(Color.blue)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .frame(maxWidth: 300)
+                        .buttonStyle(.plain)
                     }
                     .environment(\.selectedProcedure, selectedProcedure)
 
