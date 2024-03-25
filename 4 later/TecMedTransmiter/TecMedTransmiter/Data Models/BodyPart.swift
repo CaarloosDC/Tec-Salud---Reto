@@ -25,7 +25,7 @@ struct Step: Identifiable, Codable {
     let description, imageName: String
 }
 
-/// An enumeration representing named colors.
+/// An enumeration representing named body parts.
 enum MLModelLabel: String, Codable, CaseIterable {
     case Arm, Ear, Eye, Knee
 }

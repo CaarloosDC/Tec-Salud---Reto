@@ -12,6 +12,17 @@
 		3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */; };
 		3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */; };
 		3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */; };
+		3CF0E3092BB109AD001B0CC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3072BB109AD001B0CC1 /* Constants.swift */; };
+		3CF0E30A2BB109AD001B0CC1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3082BB109AD001B0CC1 /* Helpers.swift */; };
+		3CF0E30D2BB109E9001B0CC1 /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E30C2BB109E9001B0CC1 /* PredictionStatus.swift */; };
+		3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */; };
+		3CF0E3132BB10C4F001B0CC1 /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3122BB10C4F001B0CC1 /* ClassifierViewModel.swift */; };
+		3CF0E3172BB124DC001B0CC1 /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E3152BB124DC001B0CC1 /* bodyparts.json */; };
+		3CF0E3182BB124DC001B0CC1 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3162BB124DC001B0CC1 /* BodyPart.swift */; };
+		3CF0E31A2BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */; };
+		3CF0E31F2BB12610001B0CC1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E31C2BB12610001B0CC1 /* CameraView.swift */; };
+		3CF0E3202BB12610001B0CC1 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E31D2BB12610001B0CC1 /* DetectedDeviceView.swift */; };
+		3CF0E3212BB12610001B0CC1 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E31E2BB12610001B0CC1 /* DetectedBodyPartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +32,17 @@
 		3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		3CF0E3072BB109AD001B0CC1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3CF0E3082BB109AD001B0CC1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		3CF0E30C2BB109E9001B0CC1 /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionStatus.swift; sourceTree = "<group>"; };
+		3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerRepresentable.swift; sourceTree = "<group>"; };
+		3CF0E3122BB10C4F001B0CC1 /* ClassifierViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierViewModel.swift; sourceTree = "<group>"; };
+		3CF0E3152BB124DC001B0CC1 /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
+		3CF0E3162BB124DC001B0CC1 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "BodyPartClassifier 2.mlmodel"; path = "../../../../MLConcept/MLConcept/BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
+		3CF0E31C2BB12610001B0CC1 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Views/CameraView.swift"; sourceTree = "<group>"; };
+		3CF0E31D2BB12610001B0CC1 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectedDeviceView.swift; path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Views/DetectedDeviceView.swift"; sourceTree = "<group>"; };
+		3CF0E31E2BB12610001B0CC1 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetectedBodyPartView.swift; path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Views/DetectedBodyPartView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +75,10 @@
 		3CF0E2F42BB0BC85001B0CC1 /* TecMedTransmiter */ = {
 			isa = PBXGroup;
 			children = (
+				3CF0E3052BB1097C001B0CC1 /* Foundation */,
+				3CF0E31B2BB125ED001B0CC1 /* Views */,
 				3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */,
 				3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */,
-				3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */,
 				3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */,
 				3CF0E2FB2BB0BC88001B0CC1 /* Preview Content */,
 			);
@@ -68,6 +91,76 @@
 				3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3CF0E3052BB1097C001B0CC1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3142BB124DC001B0CC1 /* Data Models */,
+				3CF0E3112BB10C4F001B0CC1 /* View Models */,
+				3CF0E3062BB109AD001B0CC1 /* Helpers */,
+				3CF0E30B2BB109E9001B0CC1 /* ML Model */,
+				3CF0E30E2BB10A05001B0CC1 /* Camera Controllers */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3CF0E3062BB109AD001B0CC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3072BB109AD001B0CC1 /* Constants.swift */,
+				3CF0E3082BB109AD001B0CC1 /* Helpers.swift */,
+			);
+			name = Helpers;
+			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Foundation/Helpers";
+			sourceTree = "<group>";
+		};
+		3CF0E30B2BB109E9001B0CC1 /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */,
+				3CF0E30C2BB109E9001B0CC1 /* PredictionStatus.swift */,
+			);
+			name = "ML Model";
+			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/ML Model";
+			sourceTree = "<group>";
+		};
+		3CF0E30E2BB10A05001B0CC1 /* Camera Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */,
+				3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */,
+			);
+			path = "Camera Controllers";
+			sourceTree = "<group>";
+		};
+		3CF0E3112BB10C4F001B0CC1 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3122BB10C4F001B0CC1 /* ClassifierViewModel.swift */,
+			);
+			name = "View Models";
+			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Foundation/View Models";
+			sourceTree = "<group>";
+		};
+		3CF0E3142BB124DC001B0CC1 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E3152BB124DC001B0CC1 /* bodyparts.json */,
+				3CF0E3162BB124DC001B0CC1 /* BodyPart.swift */,
+			);
+			name = "Data Models";
+			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Data Models";
+			sourceTree = "<group>";
+		};
+		3CF0E31B2BB125ED001B0CC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CF0E31C2BB12610001B0CC1 /* CameraView.swift */,
+				3CF0E31E2BB12610001B0CC1 /* DetectedBodyPartView.swift */,
+				3CF0E31D2BB12610001B0CC1 /* DetectedDeviceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +223,7 @@
 			files = (
 				3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */,
 				3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */,
+				3CF0E3172BB124DC001B0CC1 /* bodyparts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +234,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF0E3202BB12610001B0CC1 /* DetectedDeviceView.swift in Sources */,
+				3CF0E30D2BB109E9001B0CC1 /* PredictionStatus.swift in Sources */,
 				3CF0E2F82BB0BC85001B0CC1 /* ContentView.swift in Sources */,
+				3CF0E3212BB12610001B0CC1 /* DetectedBodyPartView.swift in Sources */,
 				3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */,
+				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
 				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
+				3CF0E3132BB10C4F001B0CC1 /* ClassifierViewModel.swift in Sources */,
+				3CF0E30A2BB109AD001B0CC1 /* Helpers.swift in Sources */,
+				3CF0E31F2BB12610001B0CC1 /* CameraView.swift in Sources */,
+				3CF0E3182BB124DC001B0CC1 /* BodyPart.swift in Sources */,
+				3CF0E31A2BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel in Sources */,
+				3CF0E3092BB109AD001B0CC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

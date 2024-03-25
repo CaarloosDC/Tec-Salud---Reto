@@ -9,20 +9,16 @@ import SwiftUI
 
 struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
-    @Environment(TecMedMultiPeer.self) private var recieverSession
+//    @Environment(TecMedMultiPeer.self) private var recieverSession
     @State private var classifierViewModel = ClassifierViewModel() // Also migrated
-    
-    // State Vars
-    @State private var startingOffset: CGFloat = UIScreen.main.bounds.height * 0.95
-    @State private var currentOffset:CGFloat = 0
-    @State private var endOffset:CGFloat = 0
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
             ZStack{
-                LiveCameraRepresentable() {
+                CameraViewControllerRepresentable() {
                     predictionStatus.setLivePrediction(with: $0, label: $1, confidence: $2)
                 }
+                .ignoresSafeArea()
                 
                 DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
             }

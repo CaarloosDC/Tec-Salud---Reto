@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+//    @Environment(TecMedMultiPeer.self) private var recieverSession
+    @State var isConnected = false
+    
     var body: some View {
-        CameraViewControllerRepresentable()
-            .ignoresSafeArea()
+        ZStack(alignment: .center) {
+            CameraView()
+            
+//            VStack {
+//                if !recieverSession.connectedPeers.isEmpty {
+//                    DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
+//                        .transition(.move(edge: .bottom))
+//                }
+//                
+//                Spacer()
+//            }
+        }
     }
 }
 

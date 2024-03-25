@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DetectedBodyPartView: View {
-    var bodyPart: BodyPart
-    @Environment(TecMedMultiPeer.self) private var recieverSession
+    private(set) var bodyPart: BodyPart
+//    @Environment(TecMedMultiPeer.self) private var recieverSession
     
     var body: some View {
         VStack {
@@ -44,9 +44,9 @@ struct DetectedBodyPartView: View {
             }
             .padding()
         }
-        .onAppear{
-            recieverSession.send(label: bodyPart.id)
-        }
+//        .onAppear{
+//            recieverSession.send(label: bodyPart.id)
+//        }
         .padding()
         .background(Color("light-dark"))
         .clipShape(RoundedRectangle(cornerRadius: 20))
