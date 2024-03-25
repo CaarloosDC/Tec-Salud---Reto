@@ -13,7 +13,7 @@ struct MultiPeerView: View {
     var body: some View {
         
         ZStack {
-            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)[0]))
+            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
         }
 
     }

@@ -27,6 +27,7 @@ struct SurgeryDetailView: View {
                         .font(.title3)
                         .minimumScaleFactor(0.5)
                         .padding()
+                    
                     Spacer()
                 }
                 .background(selectedBodyPart == bodyPart ? Color.blue : Color.gray)
@@ -35,6 +36,7 @@ struct SurgeryDetailView: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
+        .listStyle(.plain)
     }
 }
 
