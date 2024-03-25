@@ -2,7 +2,7 @@
   {
     "id": "Ear",
     "medicalName": "Auricle/Pinna",
-    "imageName": "arm",
+    "imageName": "ear",
     "renderName": "Skeleton",
     "doableProcedures": [
       {
@@ -121,7 +121,7 @@
   {
     "id": "Knee",
     "medicalName": "Tibiofemoral joint",
-    "imageName": "arm",
+    "imageName": "knee",
     "renderName": "Skeleton",
     "doableProcedures": [
       {
@@ -183,7 +183,7 @@
   {
     "id": "Eye",
     "medicalName": "Ocular",
-    "imageName": "arm",
+    "imageName": "eye",
     "renderName": "Skeleton",
     "doableProcedures": [
       {

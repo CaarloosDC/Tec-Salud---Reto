@@ -27,7 +27,7 @@ struct DetectedBodyPartView: View {
                     + Text(bodyPart.id.rawValue)
                         .font(.footnote)
                     
-                    Text("Medical Term ")
+                    Text("Medical Term: ")
                         .font(.headline)
                         .foregroundStyle(.red)
                     + Text(bodyPart.medicalName)
@@ -55,6 +55,6 @@ struct DetectedBodyPartView: View {
 }
 
 #Preview {
-    DetectedBodyPartView(bodyPart: BodyPart(id: .Arm, medicalName: "Brachium", imageName: "arm", renderName: "arm", doableProcedures: []))
+    DetectedBodyPartView(bodyPart: BodyPart(id: .Arm, medicalName: "It's me", imageName: "arm"))
 }
 

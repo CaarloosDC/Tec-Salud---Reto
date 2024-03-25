@@ -8,9 +8,13 @@
 import Foundation
 import SwiftUI
 
-@Observable final class ClassifierViewModel {
+@Observable 
+final class ClassifierViewModel {
     var classifierData: [BodyPart] = [] // Published for SwiftUI updates
     var dataWhenAboutTapped: Int = 0
+    private(set) var consecutivePredictions = 0
+    private(set) var previousPrediction = ""
+    private(set) var currentObject = ""
 
     init() {
         loadJSON()
@@ -31,9 +35,25 @@ import SwiftUI
             print("Error loading JSON data: \(error.localizedDescription)")
         }
     }
+    
+    func getBodyPart(label: String) -> BodyPart {
+        return classifierData.filter { $0.id.rawValue == label }.first ?? BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm")
+    }
 
     func getPredictionData(label: String) -> BodyPart {
+        if label == previousPrediction {
+            consecutivePredictions += 1
+        } else {
+            consecutivePredictions = 0
+            previousPrediction = label
+        }
+        
+        if consecutivePredictions >= 35 {
+            currentObject = label
+            return classifierData.filter { $0.id.rawValue == label }.first ?? BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm")
+        } else {
+            return getBodyPart(label: currentObject)
+        }
         // Inline if, if the first condition is true, it will return the first value, if not, it will return a default value
-        return classifierData.filter { $0.medicalName == label }.first ?? BodyPart(id: .Arm, medicalName: "Unknown", imageName: "arm", renderName: "Unknown", doableProcedures: [])
     }
 }

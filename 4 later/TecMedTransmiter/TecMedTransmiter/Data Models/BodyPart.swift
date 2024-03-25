@@ -7,25 +7,19 @@
 
 import Foundation
 
-
-struct BodyPart: Identifiable, Codable {
-    let id: MLModelLabel
-    let medicalName, imageName, renderName: String
-    let doableProcedures: [Procedure]
+struct BodyPart: Identifiable, Decodable, Equatable {
+    var id: MLModelLabel
+    var medicalName: String
+    var imageName: String
+    
+    // Implement the == operator to compare two BodyPart instances for equality
+    static func == (lhs: BodyPart, rhs: BodyPart) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.medicalName == rhs.medicalName &&
+               lhs.imageName == rhs.imageName
+    }
 }
 
-struct Procedure: Identifiable, Codable {
-    let id: Int
-    let surgeryTechnicalName, description: String
-    let steps: [Step]
-}
-
-struct Step: Identifiable, Codable {
-    let id: Int
-    let description, imageName: String
-}
-
-/// An enumeration representing named body parts.
-enum MLModelLabel: String, Codable, CaseIterable {
+enum MLModelLabel: String, Decodable, CaseIterable, Hashable, Equatable {
     case Arm, Ear, Eye, Knee
 }
