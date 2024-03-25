@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
-//    @Environment(TecMedMultiPeer.self) private var recieverSession
+    
+    @State var multipeerSession = TecMedMultiPeer()
     @State private var classifierViewModel = ClassifierViewModel() // Also migrated
     
     var body: some View {
@@ -24,6 +25,10 @@ struct CameraView: View {
             }
             .onAppear {
                 classifierViewModel.loadJSON()
+            }
+            .onChange(of: classifierViewModel.currentObject) { oldValue, newValue in
+                var newBodyPart = classifierViewModel.getBodyPart(label: newValue)
+                multipeerSession.send(label: newBodyPart.id)
             }
     }
 }

@@ -7,34 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C57A1AD2BB17E48006747FE /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C57A1AB2BB17E48006747FE /* bodyparts.json */; };
+		3C57A1AE2BB17E48006747FE /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1AC2BB17E48006747FE /* BodyPart.swift */; };
+		3C57A1B12BB17E4F006747FE /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B02BB17E4F006747FE /* ClassifierViewModel.swift */; };
+		3C57A1B42BB17E90006747FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B22BB17E90006747FE /* Constants.swift */; };
+		3C57A1B52BB17E90006747FE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B32BB17E90006747FE /* Helpers.swift */; };
+		3C57A1B82BB17EAC006747FE /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */; };
+		3C57A1BA2BB17ED2006747FE /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B92BB17ED2006747FE /* BodyPartClassifier 2.mlmodel */; };
+		3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */; };
 		3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */; };
 		3CB70EF92BB15F4C00DA9A99 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */; };
 		3CB70EFA2BB15F4C00DA9A99 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */; };
-		3CB70EFC2BB15F8500DA9A99 /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EFB2BB15F8500DA9A99 /* PredictionStatus.swift */; };
-		3CB70EFF2BB1603300DA9A99 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EFD2BB1603200DA9A99 /* Helpers.swift */; };
-		3CB70F002BB1603300DA9A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EFE2BB1603200DA9A99 /* Constants.swift */; };
-		3CB70F032BB1605F00DA9A99 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70F012BB1605F00DA9A99 /* BodyPart.swift */; };
-		3CB70F042BB1605F00DA9A99 /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CB70F022BB1605F00DA9A99 /* bodyparts.json */; };
-		3CB70F062BB1608A00DA9A99 /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70F052BB1608A00DA9A99 /* ClassifierViewModel.swift */; };
 		3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */; };
 		3CF0E2F82BB0BC85001B0CC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */; };
 		3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */; };
 		3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */; };
 		3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */; };
 		3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */; };
-		3CF0E31A2BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C57A1AB2BB17E48006747FE /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
+		3C57A1AC2BB17E48006747FE /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		3C57A1B02BB17E4F006747FE /* ClassifierViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifierViewModel.swift; sourceTree = "<group>"; };
+		3C57A1B22BB17E90006747FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3C57A1B32BB17E90006747FE /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionStatus.swift; sourceTree = "<group>"; };
+		3C57A1B92BB17ED2006747FE /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
+		3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedMultiPeer.swift; sourceTree = "<group>"; };
+		3C57A1BE2BB18D3E006747FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
 		3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBodyPartView.swift; sourceTree = "<group>"; };
-		3CB70EFB2BB15F8500DA9A99 /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredictionStatus.swift; path = "TecMedTransmiter/Foundation/ML Model/PredictionStatus.swift"; sourceTree = SOURCE_ROOT; };
-		3CB70EFD2BB1603200DA9A99 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = TecMedTransmiter/Foundation/Helpers/Helpers.swift; sourceTree = SOURCE_ROOT; };
-		3CB70EFE2BB1603200DA9A99 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TecMedTransmiter/Foundation/Helpers/Constants.swift; sourceTree = SOURCE_ROOT; };
-		3CB70F012BB1605F00DA9A99 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodyPart.swift; path = "TecMedTransmiter/Foundation/Data Models/BodyPart.swift"; sourceTree = SOURCE_ROOT; };
-		3CB70F022BB1605F00DA9A99 /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bodyparts.json; path = "TecMedTransmiter/Foundation/Data Models/bodyparts.json"; sourceTree = SOURCE_ROOT; };
-		3CB70F052BB1608A00DA9A99 /* ClassifierViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassifierViewModel.swift; path = "TecMedTransmiter/Foundation/View Models/ClassifierViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		3CF0E2F22BB0BC85001B0CC1 /* TecMedTransmiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TecMedTransmiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedTransmiterApp.swift; sourceTree = "<group>"; };
 		3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,7 +46,6 @@
 		3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerRepresentable.swift; sourceTree = "<group>"; };
-		3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "BodyPartClassifier 2.mlmodel"; path = "../../../../MLConcept/MLConcept/BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C57A1A92BB17E3E006747FE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A1B22BB17E90006747FE /* Constants.swift */,
+				3C57A1B32BB17E90006747FE /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3C57A1AA2BB17E48006747FE /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A1AB2BB17E48006747FE /* bodyparts.json */,
+				3C57A1AC2BB17E48006747FE /* BodyPart.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		3C57A1AF2BB17E4F006747FE /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A1B02BB17E4F006747FE /* ClassifierViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		3C57A1B62BB17EAC006747FE /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */,
+				3C57A1B92BB17ED2006747FE /* BodyPartClassifier 2.mlmodel */,
+			);
+			path = "ML Model";
+			sourceTree = "<group>";
+		};
+		3C57A1BB2BB17EEA006747FE /* Multipeer Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */,
+			);
+			path = "Multipeer Connectivity";
+			sourceTree = "<group>";
+		};
 		3CF0E2E92BB0BC85001B0CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +121,7 @@
 		3CF0E2F42BB0BC85001B0CC1 /* TecMedTransmiter */ = {
 			isa = PBXGroup;
 			children = (
+				3C57A1BE2BB18D3E006747FE /* Info.plist */,
 				3CF0E3052BB1097C001B0CC1 /* Foundation */,
 				3CF0E31B2BB125ED001B0CC1 /* Views */,
 				3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */,
@@ -96,33 +143,14 @@
 		3CF0E3052BB1097C001B0CC1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				3CF0E3142BB124DC001B0CC1 /* Data Models */,
-				3CF0E3112BB10C4F001B0CC1 /* View Models */,
-				3CF0E3062BB109AD001B0CC1 /* Helpers */,
-				3CF0E30B2BB109E9001B0CC1 /* ML Model */,
+				3C57A1BB2BB17EEA006747FE /* Multipeer Connectivity */,
+				3C57A1B62BB17EAC006747FE /* ML Model */,
+				3C57A1AF2BB17E4F006747FE /* View Models */,
+				3C57A1AA2BB17E48006747FE /* Data Models */,
+				3C57A1A92BB17E3E006747FE /* Helpers */,
 				3CF0E30E2BB10A05001B0CC1 /* Camera Controllers */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		3CF0E3062BB109AD001B0CC1 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3CB70EFE2BB1603200DA9A99 /* Constants.swift */,
-				3CB70EFD2BB1603200DA9A99 /* Helpers.swift */,
-			);
-			name = Helpers;
-			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Foundation/Helpers";
-			sourceTree = "<group>";
-		};
-		3CF0E30B2BB109E9001B0CC1 /* ML Model */ = {
-			isa = PBXGroup;
-			children = (
-				3CF0E3192BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel */,
-				3CB70EFB2BB15F8500DA9A99 /* PredictionStatus.swift */,
-			);
-			name = "ML Model";
-			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/ML Model";
 			sourceTree = "<group>";
 		};
 		3CF0E30E2BB10A05001B0CC1 /* Camera Controllers */ = {
@@ -132,25 +160,6 @@
 				3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */,
 			);
 			path = "Camera Controllers";
-			sourceTree = "<group>";
-		};
-		3CF0E3112BB10C4F001B0CC1 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CB70F052BB1608A00DA9A99 /* ClassifierViewModel.swift */,
-			);
-			name = "View Models";
-			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Foundation/View Models";
-			sourceTree = "<group>";
-		};
-		3CF0E3142BB124DC001B0CC1 /* Data Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CB70F012BB1605F00DA9A99 /* BodyPart.swift */,
-				3CB70F022BB1605F00DA9A99 /* bodyparts.json */,
-			);
-			name = "Data Models";
-			path = "../../../4 later/TecMedTransmiter/TecMedTransmiter/Data Models";
 			sourceTree = "<group>";
 		};
 		3CF0E31B2BB125ED001B0CC1 /* Views */ = {
@@ -223,7 +232,7 @@
 			files = (
 				3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */,
 				3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */,
-				3CB70F042BB1605F00DA9A99 /* bodyparts.json in Resources */,
+				3C57A1AD2BB17E48006747FE /* bodyparts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,15 +247,16 @@
 				3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */,
 				3CB70EFA2BB15F4C00DA9A99 /* DetectedBodyPartView.swift in Sources */,
 				3CB70EF92BB15F4C00DA9A99 /* CameraView.swift in Sources */,
+				3C57A1B52BB17E90006747FE /* Helpers.swift in Sources */,
+				3C57A1B12BB17E4F006747FE /* ClassifierViewModel.swift in Sources */,
+				3C57A1B82BB17EAC006747FE /* PredictionStatus.swift in Sources */,
+				3C57A1B42BB17E90006747FE /* Constants.swift in Sources */,
 				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
-				3CB70EFC2BB15F8500DA9A99 /* PredictionStatus.swift in Sources */,
-				3CB70F062BB1608A00DA9A99 /* ClassifierViewModel.swift in Sources */,
 				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
-				3CB70F002BB1603300DA9A99 /* Constants.swift in Sources */,
-				3CB70EFF2BB1603300DA9A99 /* Helpers.swift in Sources */,
-				3CF0E31A2BB12507001B0CC1 /* BodyPartClassifier 2.mlmodel in Sources */,
+				3C57A1AE2BB17E48006747FE /* BodyPart.swift in Sources */,
 				3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */,
-				3CB70F032BB1605F00DA9A99 /* BodyPart.swift in Sources */,
+				3C57A1BA2BB17ED2006747FE /* BodyPartClassifier 2.mlmodel in Sources */,
+				3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +393,9 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is needed for image categoriazation with Core ML";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Local network access is needed to detect nearby visionPro Headset";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -412,7 +424,9 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is needed for image categoriazation with Core ML";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Local network access is needed to detect nearby visionPro Headset";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -167,7 +167,9 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let uiImage = UIImage(cgImage: cgImage!)
         let uiImageResized = uiImage.scaleAndCropImage(uiImage, toSize: CGSize(width: Constants.imgDim, height: Constants.imgDim))
         let newCiImage = CIImage(image: uiImageResized)
-        print("New frame captured and processing started")
+        
+        /// Debuging statement for Camera controler image capture
+        //print("New frame captured and processing started")
         
         let request = VNCoreMLRequest(model: model){ request, error in
             if let error = error {
@@ -182,8 +184,9 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                     (basicValue: Double($0.confidence), displayValue: String(format: "%.0f%%", $0.confidence * 100))
                 )
             }
-    
-            print("Model inference completed: \(observations)")
+            
+            /// Debugging statement for ML Model inference
+//            print("Model inference completed: \(observations)")
             let topResult = observations.first
             let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
             
