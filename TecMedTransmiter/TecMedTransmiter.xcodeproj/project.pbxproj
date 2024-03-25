@@ -7,48 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C526F1F2B9CBD2B00C53762 /* TecMedTransmiterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F1E2B9CBD2B00C53762 /* TecMedTransmiterApp.swift */; };
-		3C526F212B9CBD2B00C53762 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F202B9CBD2B00C53762 /* ContentView.swift */; };
-		3C526F232B9CBD2E00C53762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C526F222B9CBD2E00C53762 /* Assets.xcassets */; };
-		3C526F262B9CBD2E00C53762 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C526F252B9CBD2E00C53762 /* Preview Assets.xcassets */; };
-		3C526F352B9CBE1200C53762 /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F342B9CBE1200C53762 /* PredictionStatus.swift */; };
-		3C526F372B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F362B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel */; };
-		3C526F392B9CBEC600C53762 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F382B9CBEC600C53762 /* Constants.swift */; };
-		3C526F3B2B9CBEE800C53762 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F3A2B9CBEE800C53762 /* Helpers.swift */; };
-		3C526F3E2B9CBF6500C53762 /* LiveCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F3D2B9CBF6500C53762 /* LiveCameraController.swift */; };
-		3C526F402B9CBF9400C53762 /* LiveCameraRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F3F2B9CBF9400C53762 /* LiveCameraRepresentable.swift */; };
-		3C526F432B9CBFD300C53762 /* ClassifierViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C526F422B9CBFD300C53762 /* ClassifierViewModel.swift */; };
-		3CADB8A92BA467D2002F1710 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */; };
-		3CCA12C02BA2D15600B1D538 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12BF2BA2D15600B1D538 /* CameraView.swift */; };
-		3CCA12C32BA2D2F600B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */; };
-		3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */; };
-		3CCA12C92BA2E32500B1D538 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */; };
+		3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */; };
+		3CF0E2F82BB0BC85001B0CC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */; };
+		3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */; };
+		3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */; };
+		3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C526F1B2B9CBD2B00C53762 /* TecMedTransmiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TecMedTransmiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C526F1E2B9CBD2B00C53762 /* TecMedTransmiterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedTransmiterApp.swift; sourceTree = "<group>"; };
-		3C526F202B9CBD2B00C53762 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3C526F222B9CBD2E00C53762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C526F252B9CBD2E00C53762 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3C526F342B9CBE1200C53762 /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionStatus.swift; sourceTree = "<group>"; };
-		3C526F362B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "BodyPartClassifier 2.mlmodel"; path = "../../../MLConcept/MLConcept/BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
-		3C526F382B9CBEC600C53762 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3C526F3A2B9CBEE800C53762 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		3C526F3D2B9CBF6500C53762 /* LiveCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraController.swift; sourceTree = "<group>"; };
-		3C526F3F2B9CBF9400C53762 /* LiveCameraRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraRepresentable.swift; sourceTree = "<group>"; };
-		3C526F422B9CBFD300C53762 /* ClassifierViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewModel.swift; sourceTree = "<group>"; };
-		3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TecMedMultipeer.swift; path = "../../../../Reto-Tec-Salud/Reto-Tec-Salud/Foundation/Models/TecMedMultipeer.swift"; sourceTree = "<group>"; };
-		3CCA12BF2BA2D15600B1D538 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
-		3CCA12C52BA2D55200B1D538 /* bodyparts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
-		3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedBodyPartView.swift; sourceTree = "<group>"; };
-		3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
-		3CCA12CA2BA2E8CF00B1D538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3CF0E2F22BB0BC85001B0CC1 /* TecMedTransmiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TecMedTransmiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedTransmiterApp.swift; sourceTree = "<group>"; };
+		3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C526F182B9CBD2B00C53762 /* Frameworks */ = {
+		3CF0E2EF2BB0BC85001B0CC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,129 +34,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C526F122B9CBD2B00C53762 = {
+		3CF0E2E92BB0BC85001B0CC1 = {
 			isa = PBXGroup;
 			children = (
-				3C526F1D2B9CBD2B00C53762 /* TecMedTransmiter */,
-				3C526F1C2B9CBD2B00C53762 /* Products */,
+				3CF0E2F42BB0BC85001B0CC1 /* TecMedTransmiter */,
+				3CF0E2F32BB0BC85001B0CC1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3C526F1C2B9CBD2B00C53762 /* Products */ = {
+		3CF0E2F32BB0BC85001B0CC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C526F1B2B9CBD2B00C53762 /* TecMedTransmiter.app */,
+				3CF0E2F22BB0BC85001B0CC1 /* TecMedTransmiter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3C526F1D2B9CBD2B00C53762 /* TecMedTransmiter */ = {
+		3CF0E2F42BB0BC85001B0CC1 /* TecMedTransmiter */ = {
 			isa = PBXGroup;
 			children = (
-				3CCA12CA2BA2E8CF00B1D538 /* Info.plist */,
-				3C526F332B9CBDF900C53762 /* ML Model */,
-				3CCA12C42BA2D4C200B1D538 /* Data Models */,
-				3C526F2C2B9CBD5900C53762 /* Foundation */,
-				3CCA12C12BA2D1AF00B1D538 /* Views */,
-				3C526F202B9CBD2B00C53762 /* ContentView.swift */,
-				3C526F1E2B9CBD2B00C53762 /* TecMedTransmiterApp.swift */,
-				3C526F222B9CBD2E00C53762 /* Assets.xcassets */,
-				3C526F242B9CBD2E00C53762 /* Preview Content */,
+				3CF0E2F52BB0BC85001B0CC1 /* TecMedTransmiterApp.swift */,
+				3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */,
+				3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */,
+				3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */,
+				3CF0E2FB2BB0BC88001B0CC1 /* Preview Content */,
 			);
 			path = TecMedTransmiter;
 			sourceTree = "<group>";
 		};
-		3C526F242B9CBD2E00C53762 /* Preview Content */ = {
+		3CF0E2FB2BB0BC88001B0CC1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				3C526F252B9CBD2E00C53762 /* Preview Assets.xcassets */,
+				3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		3C526F2C2B9CBD5900C53762 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				3C526F3C2B9CBEFF00C53762 /* Helpers */,
-				3C526F412B9CBFAC00C53762 /* Camera Controllers */,
-				3C526F442B9CBFE700C53762 /* View Models */,
-				3C526F4C2B9CC48300C53762 /* Models */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		3C526F332B9CBDF900C53762 /* ML Model */ = {
-			isa = PBXGroup;
-			children = (
-				3C526F362B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel */,
-				3C526F342B9CBE1200C53762 /* PredictionStatus.swift */,
-			);
-			path = "ML Model";
-			sourceTree = "<group>";
-		};
-		3C526F3C2B9CBEFF00C53762 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3C526F382B9CBEC600C53762 /* Constants.swift */,
-				3C526F3A2B9CBEE800C53762 /* Helpers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		3C526F412B9CBFAC00C53762 /* Camera Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3C526F3D2B9CBF6500C53762 /* LiveCameraController.swift */,
-				3C526F3F2B9CBF9400C53762 /* LiveCameraRepresentable.swift */,
-			);
-			path = "Camera Controllers";
-			sourceTree = "<group>";
-		};
-		3C526F442B9CBFE700C53762 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				3C526F422B9CBFD300C53762 /* ClassifierViewModel.swift */,
-			);
-			path = "View Models";
-			sourceTree = "<group>";
-		};
-		3C526F4C2B9CC48300C53762 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CADB8A82BA467D2002F1710 /* TecMedMultipeer.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3CCA12C12BA2D1AF00B1D538 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3CCA12BF2BA2D15600B1D538 /* CameraView.swift */,
-				3CCA12C62BA2D9FF00B1D538 /* DetectedBodyPartView.swift */,
-				3CCA12C82BA2E32500B1D538 /* DetectedDeviceView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3CCA12C42BA2D4C200B1D538 /* Data Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CCA12C52BA2D55200B1D538 /* bodyparts.json */,
-				3CCA12C22BA2D2F600B1D538 /* BodyPart.swift */,
-			);
-			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C526F1A2B9CBD2B00C53762 /* TecMedTransmiter */ = {
+		3CF0E2F12BB0BC85001B0CC1 /* TecMedTransmiter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C526F292B9CBD2E00C53762 /* Build configuration list for PBXNativeTarget "TecMedTransmiter" */;
+			buildConfigurationList = 3CF0E3002BB0BC88001B0CC1 /* Build configuration list for PBXNativeTarget "TecMedTransmiter" */;
 			buildPhases = (
-				3C526F172B9CBD2B00C53762 /* Sources */,
-				3C526F182B9CBD2B00C53762 /* Frameworks */,
-				3C526F192B9CBD2B00C53762 /* Resources */,
+				3CF0E2EE2BB0BC85001B0CC1 /* Sources */,
+				3CF0E2EF2BB0BC85001B0CC1 /* Frameworks */,
+				3CF0E2F02BB0BC85001B0CC1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -188,25 +87,25 @@
 			);
 			name = TecMedTransmiter;
 			productName = TecMedTransmiter;
-			productReference = 3C526F1B2B9CBD2B00C53762 /* TecMedTransmiter.app */;
+			productReference = 3CF0E2F22BB0BC85001B0CC1 /* TecMedTransmiter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3C526F132B9CBD2B00C53762 /* Project object */ = {
+		3CF0E2EA2BB0BC85001B0CC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					3C526F1A2B9CBD2B00C53762 = {
+					3CF0E2F12BB0BC85001B0CC1 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 3C526F162B9CBD2B00C53762 /* Build configuration list for PBXProject "TecMedTransmiter" */;
+			buildConfigurationList = 3CF0E2ED2BB0BC85001B0CC1 /* Build configuration list for PBXProject "TecMedTransmiter" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,54 +113,43 @@
 				en,
 				Base,
 			);
-			mainGroup = 3C526F122B9CBD2B00C53762;
-			productRefGroup = 3C526F1C2B9CBD2B00C53762 /* Products */;
+			mainGroup = 3CF0E2E92BB0BC85001B0CC1;
+			productRefGroup = 3CF0E2F32BB0BC85001B0CC1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C526F1A2B9CBD2B00C53762 /* TecMedTransmiter */,
+				3CF0E2F12BB0BC85001B0CC1 /* TecMedTransmiter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C526F192B9CBD2B00C53762 /* Resources */ = {
+		3CF0E2F02BB0BC85001B0CC1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C526F262B9CBD2E00C53762 /* Preview Assets.xcassets in Resources */,
-				3C526F232B9CBD2E00C53762 /* Assets.xcassets in Resources */,
+				3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */,
+				3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C526F172B9CBD2B00C53762 /* Sources */ = {
+		3CF0E2EE2BB0BC85001B0CC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C526F3E2B9CBF6500C53762 /* LiveCameraController.swift in Sources */,
-				3C526F392B9CBEC600C53762 /* Constants.swift in Sources */,
-				3CADB8A92BA467D2002F1710 /* TecMedMultipeer.swift in Sources */,
-				3C526F3B2B9CBEE800C53762 /* Helpers.swift in Sources */,
-				3CCA12C72BA2D9FF00B1D538 /* DetectedBodyPartView.swift in Sources */,
-				3CCA12C92BA2E32500B1D538 /* DetectedDeviceView.swift in Sources */,
-				3C526F372B9CBE3E00C53762 /* BodyPartClassifier 2.mlmodel in Sources */,
-				3C526F432B9CBFD300C53762 /* ClassifierViewModel.swift in Sources */,
-				3C526F352B9CBE1200C53762 /* PredictionStatus.swift in Sources */,
-				3C526F402B9CBF9400C53762 /* LiveCameraRepresentable.swift in Sources */,
-				3CCA12C02BA2D15600B1D538 /* CameraView.swift in Sources */,
-				3C526F212B9CBD2B00C53762 /* ContentView.swift in Sources */,
-				3CCA12C32BA2D2F600B1D538 /* BodyPart.swift in Sources */,
-				3C526F1F2B9CBD2B00C53762 /* TecMedTransmiterApp.swift in Sources */,
+				3CF0E2F82BB0BC85001B0CC1 /* ContentView.swift in Sources */,
+				3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */,
+				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3C526F272B9CBD2E00C53762 /* Debug */ = {
+		3CF0E2FE2BB0BC88001B0CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		3C526F282B9CBD2E00C53762 /* Release */ = {
+		3CF0E2FF2BB0BC88001B0CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -380,7 +268,7 @@
 			};
 			name = Release;
 		};
-		3C526F2A2B9CBD2E00C53762 /* Debug */ = {
+		3CF0E3012BB0BC88001B0CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -391,19 +279,17 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed to enable multipeer connectivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is needed for image categoriazation with Core ML";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.TecMedTransmiter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TecMed.TecMedTransmiter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,7 +297,7 @@
 			};
 			name = Debug;
 		};
-		3C526F2B2B9CBD2E00C53762 /* Release */ = {
+		3CF0E3022BB0BC88001B0CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -422,19 +308,17 @@
 				DEVELOPMENT_TEAM = PSZW65H9Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TecMedTransmiter/Info.plist;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed to enable multipeer connectivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera use is needed for image categoriazation with Core ML";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.itesm.TecMedTransmiter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TecMed.TecMedTransmiter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -445,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C526F162B9CBD2B00C53762 /* Build configuration list for PBXProject "TecMedTransmiter" */ = {
+		3CF0E2ED2BB0BC85001B0CC1 /* Build configuration list for PBXProject "TecMedTransmiter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C526F272B9CBD2E00C53762 /* Debug */,
-				3C526F282B9CBD2E00C53762 /* Release */,
+				3CF0E2FE2BB0BC88001B0CC1 /* Debug */,
+				3CF0E2FF2BB0BC88001B0CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C526F292B9CBD2E00C53762 /* Build configuration list for PBXNativeTarget "TecMedTransmiter" */ = {
+		3CF0E3002BB0BC88001B0CC1 /* Build configuration list for PBXNativeTarget "TecMedTransmiter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C526F2A2B9CBD2E00C53762 /* Debug */,
-				3C526F2B2B9CBD2E00C53762 /* Release */,
+				3CF0E3012BB0BC88001B0CC1 /* Debug */,
+				3CF0E3022BB0BC88001B0CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3C526F132B9CBD2B00C53762 /* Project object */;
+	rootObject = 3CF0E2EA2BB0BC85001B0CC1 /* Project object */;
 }
