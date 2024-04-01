@@ -23,7 +23,7 @@ class TecMedMultiPeer: NSObject {
     var currentLabel: MLModelLabel? = nil
     
     /// Sends the specified color to all connected peers.
-    /// - Parameter color: The color to send.
+    /// - Parameter label: label returned by the ML model
     func send(label: MLModelLabel) {
         log.info("sendLabel: \(String(describing: label)) to \(self.session.connectedPeers.count) peers")
         self.currentLabel = label

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AnatomyStudyView: View {
+    @State private var selectedSystem: String? = nil
+    
+    private var bodySystems = ["Sistema circulatorio", "Sistema respiratorio", "Sistema nervioso", "Sistema visual", "Sistema esqueletico", "Sistema locomotor", "Sistema auditivo"]
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -28,6 +32,27 @@ struct AnatomyStudyView: View {
                     Spacer()
                 }
             }.scaleEffect(0.90)
+        }
+    }
+    
+    var mainContent: some View {
+        List(bodySystems,id: , selection: $selectedSystem) {system in
+            Button(action: {
+                selectedSystem = system
+            }) {
+                HStack {
+                    Text(system)
+                        .font(.title3)
+                        .minimumScaleFactor(0.5)
+                        .padding()
+                    Spacer()
+                }
+                .background(selectedSystem == system ? Color.blue : Color.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .frame(maxWidth: 260)
+            }
+            .buttonStyle(PlainButtonStyle())
+            
         }
     }
 }

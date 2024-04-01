@@ -14,7 +14,7 @@ struct MultiPeerView: View {
     @State var retrievedBodyPart: BodyPart? = BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm", renderName: "skeleton", doableProcedures: [])
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .top) {
             DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
         
             BodyPartView(bodyPart: $retrievedBodyPart)
