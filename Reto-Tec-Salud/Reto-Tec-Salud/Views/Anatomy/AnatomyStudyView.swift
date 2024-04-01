@@ -13,41 +13,43 @@ struct AnatomyStudyView: View {
     private var bodySystems = ["Sistema circulatorio", "Sistema respiratorio", "Sistema nervioso", "Sistema visual", "Sistema esqueletico", "Sistema locomotor", "Sistema auditivo"]
     
     var body: some View {
-        NavigationStack {
-            VStack{
-                Text("¿Qué parte del cuerpo quieres explorar?").font(.extraLargeTitle)
-                HStack {
-                    List{
-                        Text("Sistema circulatorio")
-                        Text("Sistema respiratorio")
-                        Text("Sistema nervioso")
-                        Text("Sistema visual")
-                        Text("Sistema esquelético")
-                        Text("Sistema locomotor")
-                        Text("Sistema auditivo")
-                    }.bold()
-                        .frame(width: 330)
-                    
-                    AnatomyDetailView()
-                    Spacer()
-                }
-            }.scaleEffect(0.90)
-        }
+        
+        SplitView(mainContent: mainContent, detailContent: AnatomyDetailView(), placeHolder: PlaceHolderView(header: "¿Qué sistema del cuerpo deseas explorar?", fillerText: "Lorem ipsum dolor sit amet bla, bla, bla"), selectedItem: $selectedSystem)
+//        NavigationStack {
+//            VStack{
+//                Text("¿Qué parte del cuerpo quieres explorar?").font(.extraLargeTitle)
+//                HStack {
+//                    List{
+//                        Text("Sistema circulatorio")
+//                        Text("Sistema respiratorio")
+//                        Text("Sistema nervioso")
+//                        Text("Sistema visual")
+//                        Text("Sistema esquelético")
+//                        Text("Sistema locomotor")
+//                        Text("Sistema auditivo")
+//                    }.bold()
+//                        .frame(width: 330)
+//                    
+//                    AnatomyDetailView()
+//                    Spacer()
+//                }
+//            }.scaleEffect(0.90)
+//        }
     }
     
     var mainContent: some View {
-        List(bodySystems,id: , selection: $selectedSystem) {system in
+        List(bodySystems.indices, id: \.self, selection: $selectedSystem) {system in
             Button(action: {
-                selectedSystem = system
+                selectedSystem = bodySystems[system]
             }) {
                 HStack {
-                    Text(system)
+                    Text(bodySystems[system])
                         .font(.title3)
                         .minimumScaleFactor(0.5)
                         .padding()
                     Spacer()
                 }
-                .background(selectedSystem == system ? Color.blue : Color.gray)
+                .background(selectedSystem == bodySystems[system] ? Color.blue : Color.gray)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .frame(maxWidth: 260)
             }
