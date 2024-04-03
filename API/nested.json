@@ -1,0 +1,225 @@
+[
+  {
+    "id": "BPT-001",
+    "medicalName": "Ear",
+    "imageName": "ear_image",
+    "renderName": "ear_render",
+    "procedures": [
+        {
+            "surgeryTechnicalName": "Tympanoplasty",
+            "description": "This surgery aims to repair a hole in the eardrum and, if necessary, restore the small bones of the middle ear. It's commonly performed to improve hearing and prevent water from entering the middle ear.",
+            "steps": [
+                {
+                    "description": "Make an incision behind the ear to access the eardrum. This provides a clear view and safe entry point for the surgery.",
+                    "imageName": "",
+                    "order": 1
+                },
+                {
+                    "description": "Remove any damaged or infected tissue from the middle ear. This step is crucial for preventing further infection and ensuring a clean environment for the eardrum's reconstruction.",
+                    "imageName": "",
+                    "order": 2
+                },
+                {
+                    "description": "Place a graft over the hole in the eardrum. The graft acts as a scaffold that allows the body's natural healing processes to regenerate the eardrum tissue.",
+                    "imageName": "",
+                    "order": 3
+                },
+                {
+                    "description": "Close the initial incision with stitches. This step finalizes the surgery, allowing the ear to heal properly with the new graft in place.",
+                    "imageName": "",
+                    "order": 4
+                }
+            ]
+        }
+    ]
+  },
+  {
+      "id": "BPT-002",
+      "medicalName": "Arm",
+      "imageName": "arm_image",
+      "renderName": "arm_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-003",
+      "medicalName": "Knee",
+      "imageName": "knee_image",
+      "renderName": "knee_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-004",
+      "medicalName": "Eye",
+      "imageName": "eye_image",
+      "renderName": "eye_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-005",
+      "medicalName": "Heart",
+      "imageName": "heart_image",
+      "renderName": "heart_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-006",
+      "medicalName": "Liver",
+      "imageName": "liver_image",
+      "renderName": "liver_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-007",
+      "medicalName": "Brain",
+      "imageName": "brain_image",
+      "renderName": "brain_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-008",
+      "medicalName": "Lung",
+      "imageName": "lung_image",
+      "renderName": "lung_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-009",
+      "medicalName": "Stomach",
+      "imageName": "stomach_image",
+      "renderName": "stomach_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-010",
+      "medicalName": "Intestine",
+      "imageName": "intestine_image",
+      "renderName": "intestine_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-011",
+      "medicalName": "Kidney",
+      "imageName": "kidney_image",
+      "renderName": "kidney_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-012",
+      "medicalName": "Pancreas",
+      "imageName": "pancreas_image",
+      "renderName": "pancreas_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-013",
+      "medicalName": "Skin",
+      "imageName": "skin_image",
+      "renderName": "skin_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-014",
+      "medicalName": "Bone",
+      "imageName": "bone_image",
+      "renderName": "bone_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-015",
+      "medicalName": "Muscle",
+      "imageName": "muscle_image",
+      "renderName": "muscle_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-016",
+      "medicalName": "Foot",
+      "imageName": "foot_image",
+      "renderName": "foot_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-017",
+      "medicalName": "Hand",
+      "imageName": "hand_image",
+      "renderName": "hand_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-018",
+      "medicalName": "Leg",
+      "imageName": "leg_image",
+      "renderName": "leg_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-019",
+      "medicalName": "Head",
+      "imageName": "head_image",
+      "renderName": "head_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-020",
+      "medicalName": "Shoulder",
+      "imageName": "shoulder_image",
+      "renderName": "shoulder_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-022",
+      "medicalName": "Back",
+      "imageName": "back_image",
+      "renderName": "back_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-021",
+      "medicalName": "Chest",
+      "imageName": "chest_image",
+      "renderName": "chest_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-023",
+      "medicalName": "Abdomen",
+      "imageName": "abdomen_image",
+      "renderName": "abdomen_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-024",
+      "medicalName": "Neck",
+      "imageName": "neck_image",
+      "renderName": "neck_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-025",
+      "medicalName": "Nose",
+      "imageName": "nose_image",
+      "renderName": "nose_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-026",
+      "medicalName": "Mouth",
+      "imageName": "mouth_image",
+      "renderName": "mouth_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-027",
+      "medicalName": "Teeth",
+      "imageName": "teeth_image",
+      "renderName": "teeth_render",
+      "procedures": []
+  },
+  {
+      "id": "BPT-028",
+      "medicalName": "Tongue",
+      "imageName": "tongue_image",
+      "renderName": "tongue_render",
+      "procedures": []
+  }
+]
