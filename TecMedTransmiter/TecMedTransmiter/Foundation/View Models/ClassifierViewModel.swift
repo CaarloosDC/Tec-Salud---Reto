@@ -50,7 +50,7 @@ final class ClassifierViewModel {
         
         if consecutivePredictions >= 35 {
             currentObject = label
-            return classifierData.filter { $0.id.rawValue == label }.first ?? BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm")
+            return classifierData.filter { $0.id.rawValue == label }.first ?? BodyPart(id: .Default, medicalName: "Default value", imageName: "arm")
         } else {
             return getBodyPart(label: currentObject)
         }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @Environment(TecMedMultiPeer.self) private var recieverSession
+ 
     @State var isConnected = false
     
     var body: some View {
