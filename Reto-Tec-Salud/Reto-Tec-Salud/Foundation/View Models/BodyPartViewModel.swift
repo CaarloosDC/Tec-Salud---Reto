@@ -39,5 +39,9 @@ final class BodyPartViewModel {
             fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
         }
     }
+    
+    func findBodyPart(label: String) -> BodyPart {
+        return bodyParts.filter { $0.id.rawValue == label }.first ?? BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm", renderName: "skeleton", doableProcedures: [])
+    }
 
 }

@@ -1,8 +1,8 @@
 //
-//  TecMedMultipeer.swift
+//  TecMedMultiPeer.swift
 //  TecMedTransmiter
 //
-//  Created by Sebastian Rosas Maciel on 3/9/24.
+//  Created by Sebastian Rosas Maciel on 3/25/24.
 //
 
 import Foundation
@@ -23,9 +23,9 @@ class TecMedMultiPeer: NSObject {
     var currentLabel: MLModelLabel? = nil
     
     /// Sends the specified color to all connected peers.
-    /// - Parameter color: The color to send.
+    /// - Parameter label: label returned by the ML model
     func send(label: MLModelLabel) {
-        log.info("sendColor: \(String(describing: label)) to \(self.session.connectedPeers.count) peers")
+        log.info("sendLabel: \(String(describing: label)) to \(self.session.connectedPeers.count) peers")
         self.currentLabel = label
 
         if !session.connectedPeers.isEmpty {
@@ -116,4 +116,3 @@ extension TecMedMultiPeer: MCSessionDelegate {
         log.error("Receiving resources is not supported")
     }
 }
-

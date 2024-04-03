@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */; };
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
 		3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379432BA42ED400C01C1C /* StepDetailView.swift */; };
@@ -91,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */,
+				3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +102,8 @@
 		3C43793F2BA419AB00C01C1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */,
+				D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */,
 				3CADB8E82BA47AC3002F1710 /* SkeletonModelView.swift */,
 				3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */,
 			);
@@ -252,10 +256,8 @@
 				3CADB8A22BA45999002F1710 /* Windows */,
 				3C4379402BA423CF00C01C1C /* Navigation Split Views */,
 				D7CA2B3E2B91BB02003CB892 /* MenuView.swift */,
-				D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */,
 				D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */,
 				3CADB8A52BA46772002F1710 /* MultiPeerView.swift */,
-				3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */,
 				D73694412BA954A5007A38EE /* NavigationView.swift */,
 			);
 			path = Views;
@@ -279,6 +281,7 @@
 			name = "Reto-Tec-Salud";
 			packageProductDependencies = (
 				D7BBD00D2B91568800F3F1C8 /* RealityKitContent */,
+				3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */,
 			);
 			productName = "Reto-Tec-Salud";
 			productReference = D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */;
@@ -309,7 +312,7 @@
 			);
 			mainGroup = D7BBCFFF2B91568800F3F1C8;
 			packageReferences = (
-				D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */,
+				3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = D7BBD0092B91568800F3F1C8 /* Products */;
 			projectDirPath = "";
@@ -571,14 +574,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		D71986B52BAA73B800C5FF2C /* XCLocalSwiftPackageReference "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main";
+/* Begin XCRemoteSwiftPackageReference section */
+		3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.8;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C1FAC4B2BAC90D600275D13 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
 		D7BBD00D2B91568800F3F1C8 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;

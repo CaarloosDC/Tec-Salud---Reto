@@ -9,11 +9,18 @@ import SwiftUI
 
 struct MultiPeerView: View {
     @State var recieverSession = TecMedMultiPeer()
+    @State var bodyPartsVM = BodyPartViewModel()
     @State var isConnected = false
+    @State var retrievedBodyPart: BodyPart? = BodyPart(id: .Arm, medicalName: "Default value", imageName: "arm", renderName: "skeleton", doableProcedures: [])
     var body: some View {
         
-        ZStack {
-            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)[0]))
+        ZStack(alignment: .top) {
+            DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
+        
+            BodyPartView(bodyPart: $retrievedBodyPart)
+        }
+        .onChange(of: recieverSession.currentLabel) { oldValue, newValue in
+            retrievedBodyPart = bodyPartsVM.findBodyPart(label: newValue!.rawValue)
         }
 
     }

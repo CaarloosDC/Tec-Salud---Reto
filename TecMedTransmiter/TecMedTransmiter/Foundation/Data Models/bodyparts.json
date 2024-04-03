@@ -1,0 +1,235 @@
+[
+  {
+    "id": "Ear",
+    "medicalName": "Auricle/Pinna",
+    "imageName": "ear",
+    "renderName": "Skeleton",
+    "doableProcedures": [
+      {
+        "id": 1,
+        "surgeryTechnicalName": "Tympanoplasty",
+        "description": "Surgical operation for the reconstruction of the eardrum (tympanic membrane) and/or the small bones of the middle ear.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision behind the ear",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Damaged tissue removal",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Graft placement",
+            "imageName": "arm"
+          },
+          {
+            "id": 4,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "surgeryTechnicalName": "Otoplasty",
+        "description": "Surgical reshaping of the pinna, or the outer ear, to improve its appearance or to correct defects.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision made",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Cartilage reshaped",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Excess skin removed",
+            "imageName": "arm"
+          },
+          {
+            "id": 4,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Arm",
+    "medicalName": "Brachium",
+    "imageName": "arm",
+    "renderName": "Skeleton",
+    "doableProcedures": [
+      {
+        "id": 3,
+        "surgeryTechnicalName": "Fracture Repair",
+        "description": "Surgical procedure to fix broken bones of the arm using metal rods, screws, or plates to hold the bone fragments together.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision over the fracture site",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Bones realigned",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Metal hardware attached",
+            "imageName": "arm"
+          },
+          {
+            "id": 4,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "surgeryTechnicalName": "Tendon Repair",
+        "description": "Surgical procedure to repair torn or damaged tendons in the arm.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision made in the arm",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Tendon ends reattached",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Knee",
+    "medicalName": "Tibiofemoral joint",
+    "imageName": "knee",
+    "renderName": "Skeleton",
+    "doableProcedures": [
+      {
+        "id": 5,
+        "surgeryTechnicalName": "Arthroplasty",
+        "description": "Replacement of a knee joint with a prosthetic joint.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision made in the knee",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Damaged joint surfaces removed",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Prosthetic joint inserted",
+            "imageName": "arm"
+          },
+          {
+            "id": 4,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "surgeryTechnicalName": "Anterior Cruciate Ligament Reconstruction",
+        "description": "Surgical procedure to reconstruct the ligament in the center of your knee with a new ligament.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Incision made in the knee",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Damaged ACL removed",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Graft ligament placed",
+            "imageName": "arm"
+          },
+          {
+            "id": 4,
+            "description": "Incision closed",
+            "imageName": "arm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Eye",
+    "medicalName": "Ocular",
+    "imageName": "eye",
+    "renderName": "Skeleton",
+    "doableProcedures": [
+      {
+        "id": 7,
+        "surgeryTechnicalName": "Cataract Surgery",
+        "description": "Surgical removal of the lens of the eye that has developed an opacification.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Small incision made in the eye",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Clouded lens removed",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Artificial lens inserted",
+            "imageName": "arm"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "surgeryTechnicalName": "LASIK",
+        "description": "Laser surgery to correct refractive vision issues.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Corneal flap created",
+            "imageName": "arm"
+          },
+          {
+            "id": 2,
+            "description": "Corneal reshaping with laser",
+            "imageName": "arm"
+          },
+          {
+            "id": 3,
+            "description": "Flap repositioned",
+            "imageName": "arm"
+          }
+        ]
+      }
+    ]
+  }
+]

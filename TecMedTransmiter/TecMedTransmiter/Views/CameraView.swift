@@ -9,45 +9,26 @@ import SwiftUI
 
 struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
-    @Environment(TecMedMultiPeer.self) private var recieverSession
-    @State private var classifierViewModel = ClassifierViewModel() // Also migrated
     
-    // State Vars
-    @State private var startingOffset: CGFloat = UIScreen.main.bounds.height * 0.95
-    @State private var currentOffset:CGFloat = 0
-    @State private var endOffset:CGFloat = 0
+    @State var multipeerSession = TecMedMultiPeer()
+    @State private var classifierViewModel = ClassifierViewModel() // Also migrated
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
             ZStack{
-                LiveCameraRepresentable() {
+                CameraViewControllerRepresentable() {
                     predictionStatus.setLivePrediction(with: $0, label: $1, confidence: $2)
                 }
+                .ignoresSafeArea()
                 
                 DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
-                    .offset(y:startingOffset)
-                    .offset(y:currentOffset)
-                    .offset(y:endOffset)
-                    .gesture(
-                        DragGesture()
-                            .onChanged{ value in
-                                withAnimation(.spring()){
-                                    currentOffset = value.translation.height
-                                }
-                            }
-                                
-                            .onEnded{ value in
-                                withAnimation(.spring()){
-                                    if currentOffset < -150{
-                                        endOffset = -startingOffset
-                                    }else if endOffset != 0 && currentOffset > 150 {
-                                        endOffset = .zero
-                                    }
-                                    currentOffset = 0
-                                }
-                            }
-                    )
-                    .scaleEffect(0.8)
+            }
+            .onAppear {
+                classifierViewModel.loadJSON()
+            }
+            .onChange(of: classifierViewModel.currentObject) { oldValue, newValue in
+                var newBodyPart = classifierViewModel.getBodyPart(label: newValue)
+                multipeerSession.send(label: newBodyPart.id)
             }
     }
 }

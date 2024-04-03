@@ -14,26 +14,26 @@ struct SurgeryStepByStepView: View {
     var body: some View {
         SplitView(mainContent: mainContent, detailContent: StepDetailView(stepNo: selectedStep ?? Step(id: 1, description: "not found", shortDescription: "Short description", imageName: "garbage")), placeHolder: PlaceHolderView(header: surgicalProcedure.surgeryTechnicalName, fillerText: "Selecciona un paso  para comenzar"), selectedItem: $selectedStep)
         }
-        
-        var mainContent: some View {
-            List(surgicalProcedure.steps, selection: $selectedStep) { step in
-                Button(action: {
-                    selectedStep = step
-                }) {
-                    HStack {
-                        Text("Paso No. \(step.id)")
-                            .font(.title3)
-                            .minimumScaleFactor(0.5)
-                            .padding()
-                        Spacer()
-                    }
-                    .background(selectedStep == step ? Color.blue : Color.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .frame(maxWidth: 260)
+    
+    var mainContent: some View {
+        List(surgicalProcedure.steps, selection: $selectedStep) { step in
+            Button(action: {
+                selectedStep = step
+            }) {
+                HStack {
+                    Text("Paso No. \(step.id)")
+                        .font(.title3)
+                        .minimumScaleFactor(0.5)
+                        .padding()
+                    Spacer()
                 }
-                .buttonStyle(PlainButtonStyle())
+                .background(selectedStep == step ? Color.blue : Color.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .frame(maxWidth: 260)
             }
+            .buttonStyle(PlainButtonStyle())
         }
+    }
 }
 
 #Preview {
