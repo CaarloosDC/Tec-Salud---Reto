@@ -45,8 +45,7 @@ This will install the dependencies inside the pipfile as well as creating a virt
 ```bash
 pipenv shell
 ```
-
-Now you are ready to roll!
+### Migrating
 
 ## Contact
 
