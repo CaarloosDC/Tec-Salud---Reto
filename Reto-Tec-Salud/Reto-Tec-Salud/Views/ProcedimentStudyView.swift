@@ -16,13 +16,39 @@ struct ProcedimentStudyView: View {
                     NavigationLink {
                         MultiPeerView()
                     } label: {
-                        OpcionCardView(ImageName: "surgery2", TextString: "Procedimiento real").padding()
+                        VStack {
+                            Image("surgery2")
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .frame(maxWidth: .infinity)
+                            
+                            Text("Procedimiento real")
+                                .font(.title)
+                        }
+                        .padding()
                     }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
+                    
                     NavigationLink {
                         SurgeryDetailView()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                     } label: {
-                        OpcionCardView(ImageName: "hologram", TextString: "Procedimiento virtual").padding()
+                        VStack {
+                            Image("hologram")
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .frame(maxWidth: .infinity)
+                            
+                            Text("Procedimiento Virtual")
+                                .font(.title)
+                        }
+                        .padding()
                     }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
                 }
             }.scaleEffect(0.95)
         }

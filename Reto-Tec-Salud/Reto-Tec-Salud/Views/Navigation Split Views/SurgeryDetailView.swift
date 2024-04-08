@@ -13,6 +13,7 @@ struct SurgeryDetailView: View {
     @State var bodyParts = BodyPartViewModel()
     @State private var selectedBodyPart: BodyPart? = nil
     
+    
     var body: some View {
         SplitView(mainContent: mainContent, detailContent: BodyPartView(bodyPart: $selectedBodyPart), placeHolder: PlaceHolderView(header: "Cirugia Virtual", fillerText: "Selecciona una parte del cuerpo para comenzar"), selectedItem: $selectedBodyPart)
     }
@@ -34,11 +35,11 @@ struct SurgeryDetailView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .frame(maxWidth: 260)
             }
-            .buttonStyle(PlainButtonStyle())
+            .buttonStyle(.plain)
         }
-        .listStyle(.plain)
     }
 }
+
 
 
 #Preview {

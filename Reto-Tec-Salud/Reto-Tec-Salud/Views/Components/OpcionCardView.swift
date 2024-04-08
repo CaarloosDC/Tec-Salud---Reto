@@ -9,25 +9,28 @@ import SwiftUI
 
 struct OpcionCardView: View {
     
-    var ImageName: String
-    var TextString: String
+    var imageName: String
+    var textString: String
     
     var body: some View {
-        VStack{
-            HStack {
-                ZStack{
-                    Rectangle().foregroundStyle(.gray).opacity(0.5).frame(width: 400, height: 400)
-                    VStack{
-                        Image(ImageName).resizable().scaledToFit().padding(.bottom, 35)
-                        Text(TextString).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        Spacer()
-                    }
-                }.frame(width: 380, height: 380).cornerRadius(20)
+        Button(action: {}) {
+            VStack {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .frame(maxWidth: .infinity)
+                
+                Text(textString)
+                    .font(.title)
             }
+            .padding()
         }
+        .buttonStyle(.bordered)
+        .buttonBorderShape(.roundedRectangle(radius: 20))
     }
 }
 
 #Preview {
-    OpcionCardView(ImageName: "surgery", TextString: "Procedimiento")
+    OpcionCardView(imageName: "surgery", textString: "Procedimiento")
 }

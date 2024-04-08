@@ -14,15 +14,31 @@ struct MenuView: View {
                 Text("¿Qué deseas hacer el día de hoy?").font(.extraLargeTitle)
                     .padding(.bottom, 20) // Added padding, cuz why not
                 HStack{
-                    NavigationLink {
-                        ProcedimentStudyView()
-                    } label: {
-                        OpcionCardView(ImageName: "surgery", TextString: "Estudiar un procedimiento").padding()
+                    Button(action: {
+                        NavigationLink("Procedure") {
+                            ProcedimentStudyView()
+                        }
+
+                    }) {
+                        VStack {
+                            Image("surgery")
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .frame(maxWidth: .infinity)
+                            
+                            Text("Estudiar un procedimiento")
+                                .font(.title)
+                        }
+                        .padding()
                     }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
+    
                     NavigationLink {
                         AnatomyStudyView()
                     } label: {
-                        OpcionCardView(ImageName: "anatomy", TextString: "Estudiar anatomía").padding()
+                        OpcionCardView(imageName: "anatomy", textString: "Estudiar anatomía").padding()
                     }
                 }
             }.scaleEffect(0.95)

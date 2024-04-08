@@ -10,15 +10,19 @@ import SwiftUI
 struct NavigationView: View {
     var body: some View {
         TabView {
-            ProcedimentStudyView().tabItem {
+            ProcedimentStudyView()
+                .tabItem {
                 Image(systemName: "person.fill")
                 Text("Procediment")
             }
-            AnatomyStudyView().tabItem {
+            AnatomyStudyView()
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .tabItem {
                 Image(systemName: "figure")
                 Text("Anatomy")
             }
-            MultiturnChatView().tabItem {
+            MultiturnChatView()
+                .tabItem {
                 Image(systemName: "ellipsis.message.fill")
                 Text("Medic Chat")
             }

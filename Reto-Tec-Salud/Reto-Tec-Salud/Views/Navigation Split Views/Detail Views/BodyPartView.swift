@@ -74,8 +74,8 @@ struct BodyPartView: View {
                         }
                         .background(Color.blue)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .buttonStyle(.plain)
                     }
+                    .buttonStyle(.plain)
                     .environment(\.selectedProcedure, selectedProcedure)
 
                     Spacer()

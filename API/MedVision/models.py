@@ -20,7 +20,7 @@ class DoableProcedure(models.Model):
         return self.surgeryTechnicalName
 
 class Step(models.Model):
-    procedure = models.ForeignKey(DoableProcedure, on_delete=models.CASCADE, related_name='steps')
+    procedure = models.ForeignKey(DoableProcedure, on_delete=models.CASCADE, related_name='steps') #Foreign key
     order = models.IntegerField(default=0)  # Campo adicional para el orden
     description = models.TextField(max_length=255)
     imageName = models.CharField(max_length=255, blank=True, default='')
