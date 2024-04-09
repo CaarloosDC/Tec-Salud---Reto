@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 import json 
 from MedVision.models import BodyPart, DoableProcedure, Step
+
 class Command(BaseCommand):
     help = 'Load data from a json file into DB'
 
@@ -29,5 +30,6 @@ class Command(BaseCommand):
                             procedure = doable_procedure,
                             order = step['order'],
                             description = step['description'],
+                            shortDescription = step['shortDescription'],
                             imageName = step['imageName']
                         )

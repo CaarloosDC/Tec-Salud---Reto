@@ -22,7 +22,8 @@ class DoableProcedure(models.Model):
 class Step(models.Model):
     procedure = models.ForeignKey(DoableProcedure, on_delete=models.CASCADE, related_name='steps') #Foreign key
     order = models.IntegerField(default=0)  # Campo adicional para el orden
-    description = models.TextField(max_length=255)
+    description = models.TextField()
+    shortDescription = models.TextField(max_length=255,  blank=True, default='')
     imageName = models.CharField(max_length=255, blank=True, default='')
 
     class Meta:

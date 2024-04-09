@@ -14,9 +14,8 @@ import os
 class TecMedMultiPeer: NSObject {
     private let serviceType = "TecMed-ML-Comm"
     private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
-    private let serviceAdvertiser: MCNearbyServiceAdvertiser
     private let serviceBrowser: MCNearbyServiceBrowser
-    private let session: MCSession
+    let mcSession: MCSession
     private let log = Logger()
     
     var connectedPeers: [MCPeerID] = []
@@ -25,12 +24,12 @@ class TecMedMultiPeer: NSObject {
     /// Sends the specified color to all connected peers.
     /// - Parameter color: The color to send.
     func send(label: MLModelLabel) {
-        log.info("sendLabel: \(String(describing: label)) to \(self.session.connectedPeers.count) peers")
+        log.info("sendLabel: \(String(describing: label)) to \(self.mcSession.connectedPeers.count) peers")
         self.currentLabel = label
 
-        if !session.connectedPeers.isEmpty {
+        if !mcSession.connectedPeers.isEmpty {
             do {
-                try session.send(label.rawValue.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+                try mcSession.send(label.rawValue.data(using: .utf8)!, toPeers: mcSession.connectedPeers, with: .reliable)
             } catch {
                 log.error("Error for sending: \(String(describing: error))")
             }
@@ -38,34 +37,19 @@ class TecMedMultiPeer: NSObject {
     }
     
     override init() {
-        session = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
-        serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: serviceType)
+        mcSession = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
         serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: serviceType)
 
         super.init()
 
-        session.delegate = self
-        serviceAdvertiser.delegate = self
+        mcSession.delegate = self
         serviceBrowser.delegate = self
 
-        serviceAdvertiser.startAdvertisingPeer()
         serviceBrowser.startBrowsingForPeers()
     }
 
     deinit {
-        serviceAdvertiser.stopAdvertisingPeer()
         serviceBrowser.stopBrowsingForPeers()
-    }
-}
-
-extension TecMedMultiPeer: MCNearbyServiceAdvertiserDelegate {
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
-        log.error("ServiceAdvertiser didNotStartAdvertisingPeer: \(String(describing: error))")
-    }
-
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-        log.info("didReceiveInvitationFromPeer \(peerID)")
-        invitationHandler(true, session)
     }
 }
 
@@ -76,7 +60,7 @@ extension TecMedMultiPeer: MCNearbyServiceBrowserDelegate {
 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
         log.info("ServiceBrowser found peer: \(peerID)")
-        browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10) // Invite a peer
+        browser.invitePeer(peerID, to: mcSession, withContext: nil, timeout: 10) // Invite a peer
     }
 
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {

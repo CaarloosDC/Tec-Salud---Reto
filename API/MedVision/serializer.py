@@ -11,7 +11,7 @@ class DoableProcedureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DoableProcedure
-        fields = ['surgeryTechnicalName', 'description', 'steps']
+        fields = ['pk','surgeryTechnicalName', 'description', 'steps']
 
 class BodyPartSerializer(serializers.ModelSerializer):
     procedures = DoableProcedureSerializer(many=True, read_only=True)  # 'procedures' es el related_name en el modelo

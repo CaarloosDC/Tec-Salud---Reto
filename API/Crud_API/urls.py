@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bodyparts/', include('MedVision.urls')),
+    path('MedVision/', include('MedVision.urls')),
 ]

@@ -11,7 +11,7 @@ struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
     
     @State var multipeerSession = TecMedMultiPeer()
-    @State private var classifierViewModel = ClassifierViewModel() // Also migrated
+    @State var classifierViewModel = ClassifierViewModel() // Also migrated
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel

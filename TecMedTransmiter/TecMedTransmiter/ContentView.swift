@@ -9,28 +9,32 @@ import SwiftUI
 import MultipeerConnectivity
 
 struct ContentView: View {
- 
-    @State var isConnected = false
-    let mcSession = MCSession(peer: MCPeerID(displayName: "Preview Peer"))
-    let mcServiceType = "your-service-type-here"
-    
+    @State private var multipeerSession = TecMedMultiPeer()
+    @State private var classifierViewModel = ClassifierViewModel()
+    @State private var isPresentingBrowser = false
+
     var body: some View {
-        ZStack(alignment: .center) {
-            CameraView()
-            
-            
-//            VStack {
-//                if !recieverSession.connectedPeers.isEmpty {
-//                    DetectedDeviceView(deviceName: String(describing: recieverSession.connectedPeers.map(\.displayName)))
-//                        .transition(.move(edge: .bottom))
-//                }
-//                
-//                Spacer()
-//            }
+        NavigationView {
+            ZStack(alignment: .center) {
+                CameraView(multipeerSession: multipeerSession, classifierViewModel: classifierViewModel)
+            }
+            .navigationTitle("ML Test")
+            .navigationBarItems(trailing: MultiPeerBrowserButton(isPresentingBrowser: $isPresentingBrowser, mcSession: multipeerSession.mcSession))
         }
     }
 }
 
-#Preview {
-    ContentView()
+struct MultiPeerBrowserButton: View {
+    @Binding var isPresentingBrowser: Bool
+    let mcSession: MCSession
+    var body: some View {
+        Button(action: {
+            isPresentingBrowser.toggle()
+        }) {
+            Image(systemName: "person.2.square.stack")
+        }
+        .sheet(isPresented: $isPresentingBrowser) {
+            MultiPeerBrowserView(mcSession: mcSession)
+        }
+    }
 }
