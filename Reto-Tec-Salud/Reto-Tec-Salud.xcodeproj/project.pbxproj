@@ -23,7 +23,6 @@
 		3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */; };
 		3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */; };
 		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
-		D71986AE2BAA71EB00C5FF2C /* Config in Resources */ = {isa = PBXBuildFile; fileRef = D71986A62BAA71EB00C5FF2C /* Config */; };
 		D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */; };
 		D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */; };
 		D71986B12BAA71EB00C5FF2C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A92BAA71EB00C5FF2C /* APIKey.swift */; };
@@ -60,7 +59,6 @@
 		3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecMedMultipeer.swift; sourceTree = "<group>"; };
 		3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartViewModel.swift; sourceTree = "<group>"; };
 		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
-		D71986A62BAA71EB00C5FF2C /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
 		D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiturnChatView.swift; sourceTree = "<group>"; };
 		D71986A92BAA71EB00C5FF2C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -186,15 +184,22 @@
 		D71986A42BAA71B500C5FF2C /* MedicBot */ = {
 			isa = PBXGroup;
 			children = (
-				D71986A92BAA71EB00C5FF2C /* APIKey.swift */,
 				D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */,
 				D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */,
 				D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */,
 				D71986A52BAA71EB00C5FF2C /* ChatService.swift */,
-				D71986A62BAA71EB00C5FF2C /* Config */,
-				D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */,
+				D765D7D52BC5C7C300B37A8D /* Config */,
 			);
 			path = MedicBot;
+			sourceTree = "<group>";
+		};
+		D765D7D52BC5C7C300B37A8D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D71986A92BAA71EB00C5FF2C /* APIKey.swift */,
+				D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		D7BBCFFF2B91568800F3F1C8 = {
@@ -325,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D71986AE2BAA71EB00C5FF2C /* Config in Resources */,
 				D71986B42BAA71EB00C5FF2C /* GenerativeAI-Info.plist in Resources */,
 				D7BBD0172B91568A00F3F1C8 /* Preview Assets.xcassets in Resources */,
 				D7BBD0142B91568A00F3F1C8 /* Assets.xcassets in Resources */,
