@@ -5,7 +5,7 @@ from django.db import models
 class BodyPart(models.Model):
     id = models.CharField(primary_key=True, max_length=7)
     medicalName = models.CharField(max_length=25)
-    imageName = models.CharField(max_length=255)
+    imageName = models.CharField(max_length=255) # Cambiar por imagen
     renderName = models.CharField(max_length=255)
 
     def __str__(self):
