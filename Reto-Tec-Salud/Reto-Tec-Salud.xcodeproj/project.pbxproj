@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */; };
+		3C2CF1E92BC5D633007A4587 /* SurgeonSymViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF1E82BC5D633007A4587 /* SurgeonSymViewModel.swift */; };
+		3C2CF1EC2BC5DB0B007A4587 /* SurgeonSymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF1EB2BC5DB0B007A4587 /* SurgeonSymView.swift */; };
+		3C2CF1EF2BC5DE19007A4587 /* ModelEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF1EE2BC5DE19007A4587 /* ModelEntityExtension.swift */; };
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
 		3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379432BA42ED400C01C1C /* StepDetailView.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C2CF1E82BC5D633007A4587 /* SurgeonSymViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeonSymViewModel.swift; sourceTree = "<group>"; };
+		3C2CF1EB2BC5DB0B007A4587 /* SurgeonSymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeonSymView.swift; sourceTree = "<group>"; };
+		3C2CF1EE2BC5DE19007A4587 /* ModelEntityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntityExtension.swift; sourceTree = "<group>"; };
 		3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		3C4379412BA4274F00C01C1C /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		3C4379432BA42ED400C01C1C /* StepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetailView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C2CF1EA2BC5DADC007A4587 /* SurgeonSym */ = {
+			isa = PBXGroup;
+			children = (
+				3C2CF1EB2BC5DB0B007A4587 /* SurgeonSymView.swift */,
+			);
+			path = SurgeonSym;
+			sourceTree = "<group>";
+		};
+		3C2CF1ED2BC5DE05007A4587 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3C2CF1EE2BC5DE19007A4587 /* ModelEntityExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3C43793F2BA419AB00C01C1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +180,7 @@
 		3CCA12CB2BA2ED2F00B1D538 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				3C2CF1ED2BC5DE05007A4587 /* Helpers */,
 				3CCA12D32BA2EF1700B1D538 /* View Models */,
 				3CADB8A72BA467A5002F1710 /* Models */,
 				3CCA12D02BA2ED6800B1D538 /* Data Models */,
@@ -179,6 +202,7 @@
 			children = (
 				3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */,
 				3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */,
+				3C2CF1E82BC5D633007A4587 /* SurgeonSymViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -248,6 +272,7 @@
 		D7CA2B3D2B91BAF0003CB892 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C2CF1EA2BC5DADC007A4587 /* SurgeonSym */,
 				3CADB8A32BA459AE002F1710 /* Anatomy */,
 				3C43793F2BA419AB00C01C1C /* Components */,
 				3CADB8A22BA45999002F1710 /* Windows */,
@@ -350,6 +375,7 @@
 				D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */,
 				3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */,
 				3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */,
+				3C2CF1EC2BC5DB0B007A4587 /* SurgeonSymView.swift in Sources */,
 				D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
@@ -357,6 +383,8 @@
 				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,
 				3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */,
 				3CADB89F2BA45137002F1710 /* ProcedureViewModel.swift in Sources */,
+				3C2CF1EF2BC5DE19007A4587 /* ModelEntityExtension.swift in Sources */,
+				3C2CF1E92BC5D633007A4587 /* SurgeonSymViewModel.swift in Sources */,
 				3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */,
 				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */,
@@ -505,6 +533,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_LSBackgroundOnly = NO;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed for multipeer framework";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,6 +561,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_LSBackgroundOnly = NO;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needed for multipeer framework";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

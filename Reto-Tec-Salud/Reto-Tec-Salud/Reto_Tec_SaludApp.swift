@@ -28,6 +28,11 @@ struct Reto_Tec_SaludApp: App {
         }
         .immersionStyle(selection: .constant(.full), in: .full)
         .immersiveContentBrightness(.bright)
+        
+        // Immersive space for Scanner
+        ImmersiveSpace(id: "ScannerSpace") {
+            SurgeonSymView()
+        }
     }
 }
 

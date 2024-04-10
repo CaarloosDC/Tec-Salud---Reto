@@ -8,6 +8,8 @@
 		<string>_TecMed-ML-Comm._udp</string>
 		<string>_http._tcp.</string>
 	</array>
+	<key>NSWorldSensingUsageDescription</key>
+	<string>Needed for AR Mapping</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
