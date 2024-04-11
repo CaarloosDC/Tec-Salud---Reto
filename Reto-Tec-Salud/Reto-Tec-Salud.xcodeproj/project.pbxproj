@@ -14,6 +14,7 @@
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
 		3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379432BA42ED400C01C1C /* StepDetailView.swift */; };
+		3C835F092BC84AB0004011F3 /* PinPointPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C835F082BC84AB0004011F3 /* PinPointPropertyWrapper.swift */; };
 		3CADB89B2BA44F52002F1710 /* SecondWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB89A2BA44F52002F1710 /* SecondWindow.swift */; };
 		3CADB89F2BA45137002F1710 /* ProcedureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */; };
 		3CADB8A62BA46772002F1710 /* MultiPeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A52BA46772002F1710 /* MultiPeerView.swift */; };
@@ -54,6 +55,7 @@
 		3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		3C4379412BA4274F00C01C1C /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		3C4379432BA42ED400C01C1C /* StepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetailView.swift; sourceTree = "<group>"; };
+		3C835F082BC84AB0004011F3 /* PinPointPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPointPropertyWrapper.swift; sourceTree = "<group>"; };
 		3CADB89A2BA44F52002F1710 /* SecondWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindow.swift; sourceTree = "<group>"; };
 		3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureViewModel.swift; sourceTree = "<group>"; };
 		3CADB8A52BA46772002F1710 /* MultiPeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2CF1EE2BC5DE19007A4587 /* ModelEntityExtension.swift */,
+				3C835F082BC84AB0004011F3 /* PinPointPropertyWrapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
 				D73694422BA954A5007A38EE /* NavigationView.swift in Sources */,
+				3C835F092BC84AB0004011F3 /* PinPointPropertyWrapper.swift in Sources */,
 				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,
 				3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */,
 				3CADB89F2BA45137002F1710 /* ProcedureViewModel.swift in Sources */,

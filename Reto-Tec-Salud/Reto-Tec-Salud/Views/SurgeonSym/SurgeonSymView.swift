@@ -25,10 +25,18 @@ struct SurgeonSymView: View {
         }.task {
             // Process world reconstruction
             await model.processReconstructionUpdates()
+        }.task {
+            // Process world processing and anchor placement
+            await model.processWorldUpdates()
         }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
                 // Pace a cube, change to pin point a world anchor instead
-                await model.placeCube()
+                if (model.pinPointEntity == nil) {
+                    await model.placeCube()
+                }
+                else {
+                    await model.deletePinPoint()
+                }
             }
         }))
     }

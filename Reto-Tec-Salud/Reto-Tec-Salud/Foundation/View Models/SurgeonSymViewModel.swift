@@ -14,6 +14,9 @@ import RealityKitContent
 
 @MainActor
 class SurgeonSymViewModel: ObservableObject {
+    @pinPoint var pinPointEntity: ModelEntity?
+    private var worldAnchorMap: [ModelEntity: WorldAnchor] = [:]
+    
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
     private let sceneReconstruction = SceneReconstructionProvider()
@@ -122,24 +125,56 @@ class SurgeonSymViewModel: ObservableObject {
         
         let placementLocation = rightFingerPosition + SIMD3<Float>(0,-0.05,0)
         
-        let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
-        
-        entity.setPosition(placementLocation, relativeTo: nil)
-        
-        // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
-        let entityWorldTransform = entity.transform.matrix
-        
-        // Create world anchor
-        let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)
-        
-        entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
-        entity.components.set(GroundingShadowComponent(castsShadow: true))
-        
-        let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
-        
-        entity.components.set(PhysicsBodyComponent(shapes: entity.collision!.shapes, mass: 1.0, material: material, mode: .dynamic))
-        
-        contentEntity.addChild(entity)
+        if pinPointEntity == nil {
+            let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
+            entity.setPosition(placementLocation, relativeTo: nil)
+            
+            // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
+            let entityWorldTransform = entity.transform.matrix
+            
+            // Create world anchor
+            let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)
+            pinPointEntity = entity
+            contentEntity.addChild(entity)
+            worldAnchorMap[entity] = anchor  // Add to map using entity ID
+            
+            entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+            entity.components.set(GroundingShadowComponent(castsShadow: true))
+            
+            let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
+            
+            entity.components.set(PhysicsBodyComponent(shapes: entity.collision!.shapes, mass: 1.0, material: material, mode: .dynamic))
+            
+            pinPointEntity = entity
+            contentEntity.addChild(entity)
+        } else {
+            print("Pinpoint placed")
+        }
     }
+    
+    func deletePinPoint() async {
+      guard let entity = pinPointEntity else {
+        print("No entity to delete")
+        return
+      }
+      
+      // Remove entity from scene
+      entity.removeFromParent()
+      pinPointEntity = nil
+      
+      // Remove world anchor using the map (force unwrap)
+      if let anchorToRemove = worldAnchorMap[entity] {
+        do {
+          try await worldTracking.removeAnchor(anchorToRemove)
+          worldAnchorMap.removeValue(forKey: entity)
+        } catch {
+          print("Error removing world anchor: \(error)")
+        }
+      } else {
+        print("Error: World anchor not found for entity")
+      }
+    }
+
+
 }
  
