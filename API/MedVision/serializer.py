@@ -21,4 +21,4 @@ class BodyPartSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)
     class Meta:
         model = BodyPart
-        fields = ['id', 'medicalName', 'image', 'renderName']
+        fields = ['id', 'medicalName', 'image', 'render']
