@@ -18,7 +18,8 @@ struct SurgeonSymView: View {
         }.task {
             // Run ARKit Session
             await model.runSession()
-        }.task {
+        }
+        .task {
             // Process Hand Updates
             await model.processHandUpdates()
         }.task {

@@ -5,6 +5,8 @@
 //  Created by Sebastian Rosas Maciel on 4/9/24.
 //
 
+/// May switch to protocol oriented programming later
+
 import SwiftUI
 import ARKit
 import RealityKit
@@ -15,6 +17,9 @@ class SurgeonSymViewModel: ObservableObject {
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
     private let sceneReconstruction = SceneReconstructionProvider()
+    
+    // Spacial recognition, needed for world anchor placement
+    private let worldTracking = WorldTrackingProvider()
     
     private var contentEntity = Entity()
     
@@ -39,12 +44,13 @@ class SurgeonSymViewModel: ObservableObject {
     // Start scene reconstruction and handtracking services
     func runSession() async {
         do {
-            try await session.run([sceneReconstruction, handTracking])
+            try await session.run([sceneReconstruction, handTracking, worldTracking])
         } catch {
             print("Failed to start session : \(error)")
         }
     }
     
+    // MARK: Hand updates handled here
     func processHandUpdates() async {
         // Iterate through the hand provider´s updates
         for await update in handTracking.anchorUpdates {
@@ -66,6 +72,7 @@ class SurgeonSymViewModel: ObservableObject {
         }
     }
     
+    // MARK: Scene reconstruction handled here
     func processReconstructionUpdates() async {
         for await update in sceneReconstruction.anchorUpdates {
             guard let shape = try? await ShapeResource.generateStaticMesh(from: update.anchor) else { continue }
@@ -96,6 +103,20 @@ class SurgeonSymViewModel: ObservableObject {
         }
     }
     
+    // MARK: Handle world anchor uptates (AR Mapping and dot clouds)
+    func processWorldUpdates() async {
+        for await update in worldTracking.anchorUpdates {
+            switch update.event {
+            case .added, .updated:
+                print("anchor position for \(update.anchor.id) updated to \(update.description)")
+            case .removed:
+                print("Anchor \(update.anchor.id) position now unknown")
+            }
+            
+        }
+    }
+    
+    // MARK: Entity placement
     func placeCube() async {
         guard let rightFingerPosition = fingerEntities[.right]?.transform.translation else { return }
         
@@ -105,6 +126,12 @@ class SurgeonSymViewModel: ObservableObject {
         
         entity.setPosition(placementLocation, relativeTo: nil)
         
+        // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
+        let entityWorldTransform = entity.transform.matrix
+        
+        // Create world anchor
+        let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)
+        
         entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
         entity.components.set(GroundingShadowComponent(castsShadow: true))
         
@@ -112,7 +139,7 @@ class SurgeonSymViewModel: ObservableObject {
         
         entity.components.set(PhysicsBodyComponent(shapes: entity.collision!.shapes, mass: 1.0, material: material, mode: .dynamic))
         
-        contentEntity.addChild(entity )
+        contentEntity.addChild(entity)
     }
 }
  
