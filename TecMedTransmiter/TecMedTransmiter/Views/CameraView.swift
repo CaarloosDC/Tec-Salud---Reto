@@ -21,13 +21,17 @@ struct CameraView: View {
                 }
                 .ignoresSafeArea()
                 
-                DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
+                VStack {
+                    Spacer()   
+                    DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
+                        .transition(.slide)
+                }
             }
             .onAppear {
                 classifierViewModel.loadJSON()
             }
             .onChange(of: classifierViewModel.currentObject) { oldValue, newValue in
-                var newBodyPart = classifierViewModel.getBodyPart(label: newValue)
+                let newBodyPart = classifierViewModel.getBodyPart(label: newValue)
                 multipeerSession.send(label: newBodyPart.id)
             }
     }

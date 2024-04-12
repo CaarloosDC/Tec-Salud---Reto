@@ -6,35 +6,27 @@
 //
 
 import SwiftUI
-import MultipeerConnectivity
 
 struct ContentView: View {
-    @State private var multipeerSession = TecMedMultiPeer()
-    @State private var classifierViewModel = ClassifierViewModel()
-    @State private var isPresentingBrowser = false
+    @State private var isLoading = true
 
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .center) {
-                CameraView(multipeerSession: multipeerSession, classifierViewModel: classifierViewModel)
+        ZStack {
+            if isLoading {
+                LoadingView()
+                    .transition(.opacity)
+            } else {
+                MainView()
+                    .transition(.opacity)
             }
-            .navigationTitle("ML Test")
-            .navigationBarItems(trailing: MultiPeerBrowserButton(isPresentingBrowser: $isPresentingBrowser, mcSession: multipeerSession.mcSession))
         }
+        .onAppear{
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+                isLoading = false
+            }
+        }
+        
     }
 }
 
-struct MultiPeerBrowserButton: View {
-    @Binding var isPresentingBrowser: Bool
-    let mcSession: MCSession
-    var body: some View {
-        Button(action: {
-            isPresentingBrowser.toggle()
-        }) {
-            Image(systemName: "person.2.square.stack")
-        }
-        .sheet(isPresented: $isPresentingBrowser) {
-            MultiPeerBrowserView(mcSession: mcSession)
-        }
-    }
-}
+
