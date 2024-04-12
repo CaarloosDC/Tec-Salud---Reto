@@ -9,11 +9,14 @@ import SwiftUI
 
 @main
 struct Reto_Tec_SaludApp: App {
-    @State  var selectedProcedure = ProcedureViewModel(sentProcedure: nil)
+    @State var selectedProcedure = ProcedureViewModel(sentProcedure: nil)
+    @State var volumeData = VolumeViewModel(volumeRotationAngle: 0, sentRenderName: nil)
+    // Temporary
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(selectedProcedure)
+                .environment(volumeData)
                 .environment(TecMedMultiPeer())
         }
         
@@ -27,12 +30,14 @@ struct Reto_Tec_SaludApp: App {
         WindowGroup (id: "SurgeryDetailContentWindow") {
             SurgeryDetailContentWindow()
                 .environment(selectedProcedure)
+                .environment(volumeData)
         }
         .defaultSize(CGSize(width: 500, height: 600))
         
         // Volumetric view for render vizualization (temporary, will eventually switch to an immersive space)
         WindowGroup(id: "BodyPartVolume") {
             VolumeView()
+                .environment(volumeData)
         }
         .windowStyle(.volumetric)
         .defaultSize(width: 40, height: 10, depth: 10, in: .centimeters)

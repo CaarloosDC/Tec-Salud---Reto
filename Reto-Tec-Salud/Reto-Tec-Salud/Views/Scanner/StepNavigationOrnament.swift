@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct StepNavigationOrnament: View {
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+    @Environment(VolumeViewModel.self) private var volumeData
+    
     var procedure: Procedure?
     @Binding var currentStep: Int
     
@@ -17,6 +21,8 @@ struct StepNavigationOrnament: View {
             Button {
                 if (currentStep > 0) {
                     currentStep -= 1
+                    
+                    volumeData.volumeRotationAngle = Double.random(in: 1..<360)
                 }
             } label: {
                 Image(systemName: "arrowtriangle.left")
@@ -42,6 +48,8 @@ struct StepNavigationOrnament: View {
             Button {
                 if let procedure = procedure, procedure.steps.count > currentStep + 1 {
                     currentStep += 1
+                    
+                    volumeData.volumeRotationAngle = Double.random(in: 1..<360)
                 }
             } label: {
                 Image(systemName: "arrowtriangle.right")

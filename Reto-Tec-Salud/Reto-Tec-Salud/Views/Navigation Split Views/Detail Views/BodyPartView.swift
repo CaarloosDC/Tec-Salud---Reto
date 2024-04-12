@@ -15,6 +15,7 @@ struct BodyPartView: View {
     @Binding var bodyPart: BodyPart?
     @State  var selectedProcedure: Procedure? = nil
     @Environment(ProcedureViewModel.self) private var selected
+    @Environment(VolumeViewModel.self) private var volumeData
     
     var contentType: ContentType
     
@@ -65,13 +66,16 @@ struct BodyPartView: View {
                 if selectedProcedure != nil {
                     Button(action: {
                         selected.sentProcedure = selectedProcedure
+                        volumeData.sentRenderName = bodyPart?.renderName
                         
                         switch contentType {
                         case .threedimentional:
                             openWindow(id: "SurgeryDetailContentWindow")
+                            openWindow(id: "BodyPartVolume")
                             
                         case .bidimentional:
                             openWindow(id: "SecondWindow")
+                            
                         }
                     }) {
                         HStack(alignment: .center) {
