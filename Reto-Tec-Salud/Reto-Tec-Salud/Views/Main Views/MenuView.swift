@@ -18,7 +18,6 @@ struct MenuView: View {
                         NavigationLink("Procedure") {
                             ProcedimentStudyView()
                         }
-
                     }) {
                         VStack {
                             Image("surgery")
