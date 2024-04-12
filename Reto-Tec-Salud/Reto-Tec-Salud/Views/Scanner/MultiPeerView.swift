@@ -35,7 +35,7 @@ struct MultiPeerView: View {
                 ProgressView()
                     .scaleEffect(1.3)
             } else {
-                BodyPartView(bodyPart: $retrievedBodyPart)
+                BodyPartView(bodyPart: $retrievedBodyPart, contentType: .threedimentional)
             }
             
         }

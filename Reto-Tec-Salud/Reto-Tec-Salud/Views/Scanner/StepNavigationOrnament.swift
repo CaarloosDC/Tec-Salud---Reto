@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct StepNavigationOrnament: View {
+    var procedure: Procedure?
+    @Binding var currentStep: Int
+    
     var body: some View {
         HStack(alignment: .center) {
             // Left button, previous step
             Button {
-                
+                if (currentStep > 0) {
+                    currentStep -= 1
+                }
             } label: {
                 Image(systemName: "arrowtriangle.left")
             }
+            .disabled(currentStep == 0)
             .buttonStyle(.bordered)
             .buttonBorderShape(.circle)
             .padding()
             
             // Short step container
             ZStack {
-                Text("Instructions go here")
+                Text(procedure?.steps[currentStep].shortDescription ?? "No Step Available")
                     .font(.footnote)
                     .minimumScaleFactor(0.5)
                     .padding()
@@ -34,10 +40,13 @@ struct StepNavigationOrnament: View {
             
             // Right button, next step
             Button {
-                
+                if let procedure = procedure, procedure.steps.count > currentStep + 1 {
+                    currentStep += 1
+                }
             } label: {
                 Image(systemName: "arrowtriangle.right")
             }
+            .disabled(procedure == nil || currentStep == (procedure?.steps.count)! - 1)
             .buttonStyle(.bordered)
             .buttonBorderShape(.circle)
             .padding()
@@ -49,5 +58,9 @@ struct StepNavigationOrnament: View {
 }
 
 #Preview {
-    StepNavigationOrnament()
+    StepNavigationOrnament(procedure: Procedure(id: 1, surgeryTechnicalName: "Appendectomy", description: "This is a surgical procedure to remove the appendix.", steps: [
+        Step(id: 1, description: "Make an incision in the lower right abdomen.", shortDescription: "Incision", imageName: "image1.png"),
+        Step(id: 2, description: "Locate and remove the appendix.", shortDescription: "Remove Appendix", imageName: "image2.png"),
+        Step(id: 3, description: "Close the incision with stitches or staples.", shortDescription: "Close Incision", imageName: "image3.png"),
+    ]), currentStep: .constant(0))
 }

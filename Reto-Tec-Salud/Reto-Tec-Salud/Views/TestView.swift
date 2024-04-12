@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct TestView: View {
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .ornament(attachmentAnchor: .scene(.bottom)) {
-                StepNavigationOrnament()
-            }
+            
+
+        Button(action: {openWindow(id: "SurgeryDetailContentWindow")}, label: {
+            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+        })
     }
 }
 

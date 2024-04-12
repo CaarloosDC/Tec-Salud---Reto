@@ -16,6 +16,8 @@ struct BodyPartView: View {
     @State  var selectedProcedure: Procedure? = nil
     @Environment(ProcedureViewModel.self) private var selected
     
+    var contentType: ContentType
+    
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
@@ -63,7 +65,14 @@ struct BodyPartView: View {
                 if selectedProcedure != nil {
                     Button(action: {
                         selected.sentProcedure = selectedProcedure
-                        openWindow(id: "SecondWindow")
+                        
+                        switch contentType {
+                        case .threedimentional:
+                            openWindow(id: "SurgeryDetailContentWindow")
+                            
+                        case .bidimentional:
+                            openWindow(id: "SecondWindow")
+                        }
                     }) {
                         HStack(alignment: .center) {
                             Text("Go to \(selectedProcedure?.surgeryTechnicalName ?? "Unknown Procedure")")
@@ -88,6 +97,7 @@ struct BodyPartView: View {
         }
     }
 }
+    
 
 struct BodyPartView_Previews: PreviewProvider {
     static var previews: some View {
@@ -99,6 +109,11 @@ struct BodyPartView_Previews: PreviewProvider {
                 Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm"),
                 Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear")
             ]
-        )])))
+        )])), contentType: .bidimentional)
     }
+}
+
+// MARK: If the selected view is the scanner view, set to threedimentional, if a normal procedure, select bidimentional
+enum ContentType {
+    case threedimentional, bidimentional
 }

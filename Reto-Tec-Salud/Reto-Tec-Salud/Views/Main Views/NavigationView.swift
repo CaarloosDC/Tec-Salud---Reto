@@ -12,20 +12,20 @@ struct NavigationView: View {
         TabView {
             ProcedimentStudyView()
                 .tabItem {
-                Image(systemName: "person.fill")
-                Text("Procediment")
-            }
+                    Image(systemName: "person.fill")
+                    Text("Procediment")
+                }
             AnatomyStudyView()
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .tabItem {
-                Image(systemName: "figure")
-                Text("Anatomy")
-            }
+                    Image(systemName: "figure")
+                    Text("Anatomy")
+                }
             MultiturnChatView()
                 .tabItem {
-                Image(systemName: "ellipsis.message.fill")
-                Text("Medic Chat")
-            }
+                    Image(systemName: "ellipsis.message.fill")
+                    Text("Medic Chat")
+                }
         }
     }
 }

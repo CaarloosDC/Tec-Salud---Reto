@@ -22,6 +22,15 @@ struct Reto_Tec_SaludApp: App {
                 .environment(selectedProcedure)
                 .environment(TecMedMultiPeer())
         }
+        
+        // Surgery detail window for Scanner
+        WindowGroup (id: "SurgeryDetailContentWindow") {
+            SurgeryDetailContentWindow()
+                .environment(selectedProcedure)
+        }
+        .defaultSize(CGSize(width: 500, height: 600))
+        
+        
         // Immersive space for the skeleton model
         ImmersiveSpace(id: "skeletonImmersiveView") {
             SkeletonModelView()
