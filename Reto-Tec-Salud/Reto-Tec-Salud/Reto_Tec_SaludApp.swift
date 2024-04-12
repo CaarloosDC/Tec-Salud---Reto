@@ -30,6 +30,12 @@ struct Reto_Tec_SaludApp: App {
         }
         .defaultSize(CGSize(width: 500, height: 600))
         
+        // Volumetric view for render vizualization (temporary, will eventually switch to an immersive space)
+        WindowGroup(id: "BodyPartVolume") {
+            VolumeView()
+        }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 40, height: 10, depth: 10, in: .centimeters)
         
         // Immersive space for the skeleton model
         ImmersiveSpace(id: "skeletonImmersiveView") {

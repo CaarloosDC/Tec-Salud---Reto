@@ -25,6 +25,7 @@
 		3CEB14AC2BC8E84F00767B8A /* StepNavigationOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */; };
 		3CEB14AE2BC8ECEE00767B8A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AD2BC8ECEE00767B8A /* TestView.swift */; };
 		3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */; };
+		3CEB14B22BC91BFE00767B8A /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B12BC91BFE00767B8A /* VolumeView.swift */; };
 		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
 		D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */; };
 		D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */; };
@@ -64,6 +65,7 @@
 		3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepNavigationOrnament.swift; sourceTree = "<group>"; };
 		3CEB14AD2BC8ECEE00767B8A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
+		3CEB14B12BC91BFE00767B8A /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiturnChatView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				3CADB8A52BA46772002F1710 /* MultiPeerView.swift */,
 				3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */,
+				3CEB14B12BC91BFE00767B8A /* VolumeView.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */,
 				3CADB8E92BA47AC4002F1710 /* SkeletonModelView.swift in Sources */,
 				D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */,
+				3CEB14B22BC91BFE00767B8A /* VolumeView.swift in Sources */,
 				D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

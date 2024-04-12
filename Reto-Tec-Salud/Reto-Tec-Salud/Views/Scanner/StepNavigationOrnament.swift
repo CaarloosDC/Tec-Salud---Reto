@@ -28,12 +28,12 @@ struct StepNavigationOrnament: View {
             
             // Short step container
             ZStack {
-                Text(procedure?.steps[currentStep].shortDescription ?? "No Step Available")
+                Text("Paso no. \(currentStep + 1)")
                     .font(.footnote)
                     .minimumScaleFactor(0.5)
                     .padding()
             }
-            .frame(minWidth:350,maxWidth: 350, maxHeight: 50)
+            .frame(minWidth:200,maxWidth: 200, maxHeight: 50)
             .padding(.horizontal, 10)
             .background(.thickMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 20))
