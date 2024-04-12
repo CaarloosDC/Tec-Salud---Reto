@@ -26,44 +26,42 @@ class UploadToPathAndRename(object):
         return os.path.join(self.sub_path, filename)
 
 def upload_to(instance, filename):
-    ext = filename.split('.')[-1]
-    base = 'media/images/' if isinstance(instance, BodyPart) and ext in ['jpg', 'jpeg', 'png', 'webp'] else 'media/renders/'
+    ext = filename.split('.')[-1].lower()
+    base = 'media/images/' if ext in ['jpg', 'jpeg', 'png'] else 'media/renders/'
     filename = '{}.{}'.format(instance.id if instance.id else 'temp', ext)
     return os.path.join(base, filename)
-
 
 class BodyPart(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     medicalName = models.CharField(max_length=25)
     image = models.ImageField(upload_to=upload_to)
-    render = models.FileField(upload_to=upload_to, null=True, blank=True)  # Campo para el archivo .usdz
+    render = models.FileField(upload_to=upload_to, null=True, blank=True)
 
     def __str__(self):
         return self.medicalName
 
     def save(self, *args, **kwargs):
-        # Lógica para manejar la actualización o eliminación de imágenes y archivos .usdz
+        # Si el objeto ya existe, verifica si los archivos necesitan ser eliminados antes de la actualización
         if self.pk:
-            try:
-                old_instance = BodyPart.objects.get(pk=self.pk)
-                if old_instance.image and self.image and old_instance.image != self.image:
-                    if os.path.isfile(old_instance.image.path):
-                        os.remove(old_instance.image.path)
-                if old_instance.render and self.render and old_instance.render != self.render:
-                    if os.path.isfile(old_instance.render.path):
-                        os.remove(old_instance.render.path)
-            except BodyPart.DoesNotExist:
-                pass
+            old_instance = BodyPart.objects.get(pk=self.pk)
+            # Verifica y elimina la imagen antigua si ha cambiado
+            if old_instance.image and self.image and old_instance.image.path != self.image.path:
+                if os.path.isfile(old_instance.image.path):
+                    os.remove(old_instance.image.path)
+            # Verifica y elimina el render antiguo si ha cambiado
+            if old_instance.render and self.render and old_instance.render.path != self.render.path:
+                if os.path.isfile(old_instance.render.path):
+                    os.remove(old_instance.render.path)
+
         super(BodyPart, self).save(*args, **kwargs)
 
 @receiver(post_delete, sender=BodyPart)
 def submission_delete(sender, instance, **kwargs):
-    if instance.image:
-        if os.path.isfile(instance.image.path):
-            os.remove(instance.image.path)
-    if instance.render:
-        if os.path.isfile(instance.render.path):
-            os.remove(instance.render.path)
+    # Elimina archivos cuando se elimina el objeto
+    if instance.image and os.path.isfile(instance.image.path):
+        os.remove(instance.image.path)
+    if instance.render and os.path.isfile(instance.render.path):
+        os.remove(instance.render.path)
 
 class DoableProcedure(models.Model):
     bodyPart = models.ForeignKey(BodyPart, on_delete=models.CASCADE, related_name='procedures')

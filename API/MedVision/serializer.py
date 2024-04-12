@@ -22,3 +22,14 @@ class BodyPartSerializer(serializers.ModelSerializer):
     class Meta:
         model = BodyPart
         fields = ['id', 'medicalName', 'image', 'render']
+
+    def create(self, validated_data):
+        return BodyPart.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.id = validated_data.get('id', instance.id)
+        instance.medicalName = validated_data.get('medicalName', instance.medicalName)
+        instance.image = validated_data.get('image', instance.image)
+        instance.render = validated_data.get('render', instance.render)
+        instance.save()
+        return instance
