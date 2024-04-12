@@ -190,6 +190,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let topResult = observations.first
             let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
             
+            
             DispatchQueue.main.async {
                 self.handleObservations(compiledResults, topResult!.identifier, String(format: "%.0f%%", topResult!.confidence * 100))
             }
