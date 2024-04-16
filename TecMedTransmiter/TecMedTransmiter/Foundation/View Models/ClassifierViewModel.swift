@@ -10,6 +10,7 @@ import SwiftUI
 
 @Observable 
 final class ClassifierViewModel {
+    var boundingBoxes: [String: CGRect] = [:] // Dictionary to store bounding boxes
     var classifierData: [BodyPart] = [] // Published for SwiftUI updates
     var dataWhenAboutTapped: Int = 0
     private(set) var consecutivePredictions = 0
@@ -55,5 +56,15 @@ final class ClassifierViewModel {
             return getBodyPart(label: currentObject)
         }
         // Inline if, if the first condition is true, it will return the first value, if not, it will return a default value
+    }
+    
+    // MARK: Bounding Box functions
+    func updateBoundingBox(label: String, boundingBox: CGRect) {
+        boundingBoxes[label] = boundingBox
+    }
+    
+    // Function to get the bounding box for a label
+    func getBoundingBox(label: String) -> CGRect? {
+        return boundingBoxes[label]
     }
 }

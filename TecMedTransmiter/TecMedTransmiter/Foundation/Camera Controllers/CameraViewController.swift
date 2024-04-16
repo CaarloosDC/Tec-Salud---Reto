@@ -26,6 +26,7 @@ class CameraViewController: UIViewController {
     private var handleObservations: (LivePredictionResults) -> ()
     // Camera view settings
     private var permissionGranted = false // flag for camera use permission
+    private var classifierViewModel = ClassifierViewModel()
     
     private let captureSession = AVCaptureSession()
     private let dataOutput = AVCaptureVideoDataOutput()
@@ -195,14 +196,17 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 let displayValue = String(format: "%.0f%%", confidence * 100)
                 predictionResults[identifier] = (basicValue: Double(confidence), displayValue: displayValue)
                 
-                if confidence > topConfidence {
+                if confidence > (topConfidence as NSString).floatValue {
                     topPrediction = identifier
                     topConfidence = displayValue
                     boundingBox = result.boundingBox
+                    
+                    // Send bounding box information to ViewModel
+                    self.classifierViewModel.updateBoundingBox(label: identifier, boundingBox: boundingBox)
                 }
             }
             
-            let livePredictionResultsWithBoundingBox = LivePredictionResultsWithBoundingBox(
+            let livePredictionResultsWithBoundingBox = LivePredictionResults(
                 predictions: predictionResults,
                 topPrediction: topPrediction,
                 topConfidence: topConfidence,
