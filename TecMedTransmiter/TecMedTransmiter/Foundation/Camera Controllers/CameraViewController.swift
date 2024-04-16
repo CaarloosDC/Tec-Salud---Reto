@@ -12,7 +12,8 @@ import SwiftUI
 import AVFoundation
 import Vision
 
-typealias LivePredictionResults = [String: (basicValue: Double, displayValue: String)]
+typealias BoundingBox = CGRect
+typealias LivePredictionResults = (predictions: [String: (basicValue: Double, displayValue: String)], topPrediction: String, topConfidence: String, boundingBox: BoundingBox)
 
 struct ValuePerCategory {
     var category: String
@@ -22,7 +23,7 @@ struct ValuePerCategory {
 class CameraViewController: UIViewController {
     // ML Model Settings
     private var model: VNCoreMLModel?
-    private var handleObservations: (LivePredictionResults, String, String) -> ()
+    private var handleObservations: (LivePredictionResults) -> ()
     // Camera view settings
     private var permissionGranted = false // flag for camera use permission
     
@@ -38,7 +39,7 @@ class CameraViewController: UIViewController {
     private var previewLayer = AVCaptureVideoPreviewLayer()
     var screenRect: CGRect! = nil // used to determine view dimensions
     
-    init(handleObservations: @escaping (LivePredictionResults, String, String) -> ()) {
+    init(handleObservations: @escaping (LivePredictionResults) -> ()) {
         self.handleObservations = handleObservations
         super.init(nibName: nil, bundle: nil)
     }
@@ -171,30 +172,48 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         /// Debuging statement for Camera controler image capture
         //print("New frame captured and processing started")
         
-        let request = VNCoreMLRequest(model: model){ request, error in
+        let request = VNCoreMLRequest(model: model) { request, error in
             if let error = error {
                 print("Error during model inference: \(error.localizedDescription)")
+                return
             }
             
-            let observations = request.results as? [VNClassificationObservation] ?? []
-            
-            let predictionResultsMap = observations.map {
-                (
-                    $0.identifier,
-                    (basicValue: Double($0.confidence), displayValue: String(format: "%.0f%%", $0.confidence * 100))
-                )
+            guard let results = request.results as? [VNRecognizedObjectObservation] else {
+                print("Unable to get results from VNCoreMLRequest")
+                return
             }
             
-            /// Debugging statement for ML Model inference
-//            print("Model inference completed: \(observations)")
-            let topResult = observations.first
-            let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
+            var predictionResults: [String: (basicValue: Double, displayValue: String)] = [:]
+            var topPrediction = ""
+            var topConfidence = ""
+            var boundingBox = CGRect.zero
             
+            for result in results {
+                let identifier = result.labels.first?.identifier ?? "Unknown"
+                let confidence = result.labels.first?.confidence ?? 0.0
+                
+                let displayValue = String(format: "%.0f%%", confidence * 100)
+                predictionResults[identifier] = (basicValue: Double(confidence), displayValue: displayValue)
+                
+                if confidence > topConfidence {
+                    topPrediction = identifier
+                    topConfidence = displayValue
+                    boundingBox = result.boundingBox
+                }
+            }
+            
+            let livePredictionResultsWithBoundingBox = LivePredictionResultsWithBoundingBox(
+                predictions: predictionResults,
+                topPrediction: topPrediction,
+                topConfidence: topConfidence,
+                boundingBox: boundingBox
+            )
             
             DispatchQueue.main.async {
-                self.handleObservations(compiledResults, topResult!.identifier, String(format: "%.0f%%", topResult!.confidence * 100))
+                self.handleObservations(livePredictionResultsWithBoundingBox)
             }
         }
+
         
         request.imageCropAndScaleOption = .centerCrop
 

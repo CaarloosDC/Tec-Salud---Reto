@@ -15,6 +15,7 @@
 		3C57A1B82BB17EAC006747FE /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */; };
 		3C57A1BA2BB17ED2006747FE /* BodyPartClassifier 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B92BB17ED2006747FE /* BodyPartClassifier 2.mlmodel */; };
 		3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */; };
+		3C6D07FF2BCDC5510072F373 /* BodyPartClassifierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D07FE2BCDC5510072F373 /* BodyPartClassifierExtension.swift */; };
 		3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */; };
 		3CB70EF92BB15F4C00DA9A99 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */; };
 		3CB70EFA2BB15F4C00DA9A99 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */; };
@@ -37,6 +38,7 @@
 		3C57A1B92BB17ED2006747FE /* BodyPartClassifier 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BodyPartClassifier 2.mlmodel"; sourceTree = "<group>"; };
 		3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedMultiPeer.swift; sourceTree = "<group>"; };
 		3C57A1BE2BB18D3E006747FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3C6D07FE2BCDC5510072F373 /* BodyPartClassifierExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartClassifierExtension.swift; sourceTree = "<group>"; };
 		3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
 		3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBodyPartView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				3C57A1B22BB17E90006747FE /* Constants.swift */,
 				3C57A1B32BB17E90006747FE /* Helpers.swift */,
+				3C6D07FE2BCDC5510072F373 /* BodyPartClassifierExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				3C57A1B82BB17EAC006747FE /* PredictionStatus.swift in Sources */,
 				3CD7E76E2BC4BE31008AA8A2 /* MultiPeerBrowserView.swift in Sources */,
 				3C57A1B42BB17E90006747FE /* Constants.swift in Sources */,
+				3C6D07FF2BCDC5510072F373 /* BodyPartClassifierExtension.swift in Sources */,
 				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
 				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
 				3C57A1AE2BB17E48006747FE /* BodyPart.swift in Sources */,
