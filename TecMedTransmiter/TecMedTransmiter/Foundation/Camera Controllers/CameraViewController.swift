@@ -151,16 +151,15 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         didOutput sampleBuffer: CMSampleBuffer,
         from connection: AVCaptureConnection
     ) {
-        
         guard
             let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
             let model = model
-            else {
-                return
-            }
-            //let model2 = model2
-        
-        // process image and resize to scale with training image dimensions
+        else {
+            print("Error: Unable to get pixel buffer or model")
+            return
+        }
+
+        // Process image and resize to scale with training image dimensions
         let cvImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
         
         let ciimage = CIImage(cvImageBuffer: cvImageBuffer)
@@ -170,8 +169,8 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let uiImageResized = uiImage.scaleAndCropImage(uiImage, toSize: CGSize(width: Constants.imgDim, height: Constants.imgDim))
         let newCiImage = CIImage(image: uiImageResized)
         
-        /// Debuging statement for Camera controler image capture
-        //print("New frame captured and processing started")
+        // Debug statement for Camera controller image capture
+        // print("New frame captured and processing started")
         
         let request = VNCoreMLRequest(model: model) { request, error in
             if let error = error {
@@ -179,53 +178,36 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 return
             }
             
-            guard let results = request.results as? [VNRecognizedObjectObservation] else {
-                print("Unable to get results from VNCoreMLRequest")
+            // Print the type of request results
+            print("Type of request.results: \(type(of: request.results))")
+            
+            if let results = request.results {
+                for result in results {
+                    print("Individual result: \(result)")
+                }
+            } else {
+                print("No results found.")
+            }
+            
+            guard let recognizedObjectObservations = request.results as? [VNClassificationObservation] else {
+                print("Error: Unable to cast request results to [VNRecognizedObjectObservation]")
                 return
             }
             
-            var predictionResults: [String: (basicValue: Double, displayValue: String)] = [:]
-            var topPrediction = ""
-            var topConfidence = ""
-            var boundingBox = CGRect.zero
-            
-            for result in results {
-                let identifier = result.labels.first?.identifier ?? "Unknown"
-                let confidence = result.labels.first?.confidence ?? 0.0
-                
-                let displayValue = String(format: "%.0f%%", confidence * 100)
-                predictionResults[identifier] = (basicValue: Double(confidence), displayValue: displayValue)
-                
-                if confidence > (topConfidence as NSString).floatValue {
-                    topPrediction = identifier
-                    topConfidence = displayValue
-                    boundingBox = result.boundingBox
-                    
-                    // Send bounding box information to ViewModel
-                    self.classifierViewModel.updateBoundingBox(label: identifier, boundingBox: boundingBox)
-                }
-            }
-            
-            let livePredictionResultsWithBoundingBox = LivePredictionResults(
-                predictions: predictionResults,
-                topPrediction: topPrediction,
-                topConfidence: topConfidence,
-                boundingBox: boundingBox
-            )
-            
-            DispatchQueue.main.async {
-                self.handleObservations(livePredictionResultsWithBoundingBox)
-            }
+            // Rest of the code for processing results...
         }
-
         
         request.imageCropAndScaleOption = .centerCrop
-
-        try? VNImageRequestHandler(
-            ciImage: newCiImage!,
-            orientation: exifOrientation(),
-            options: [:]
-        ).perform([request])
+        
+        do {
+            try VNImageRequestHandler(
+                ciImage: newCiImage!,
+                orientation: exifOrientation(),
+                options: [:]
+            ).perform([request])
+        } catch {
+            print("Error performing VNImageRequestHandler: \(error.localizedDescription)")
+        }
     }
 }
 

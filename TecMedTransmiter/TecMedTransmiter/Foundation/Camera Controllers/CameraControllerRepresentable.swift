@@ -10,7 +10,7 @@ import SwiftUI
 import AVFoundation
 
 struct CameraViewControllerRepresentable: UIViewControllerRepresentable {
-    var handleObservations: (LivePredictionResults, String, String) -> ()
+    var handleObservations: (LivePredictionResults) -> ()
     
     func makeUIViewController(context: Context) -> CameraViewController {
         let vc = CameraViewController(handleObservations: handleObservations)
