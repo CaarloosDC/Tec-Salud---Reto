@@ -16,19 +16,31 @@ La API de MedVision facilita el acceso a datos y funciones específicas mediante
 
 Antes de usar la API, es necesario preparar el entorno. Sigue estos pasos:
 
-1. Inicia el entorno virtual con:
+1. En caso de no tener instalado Homebrew en tu Mac, puedes hacerlo con el cómando:
+
+   `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+2. Instalar pipenv:
+   
+   `brew install pipenv`
+
+3. Inicia el entorno virtual con:
    
    `pipenv shell`
 
-2. Instala las dependencias necesarias ejecutando:
+4. Instala las dependencias necesarias ejecutando:
 
    `pipenv install fastapi supabase "uvicorn[standard]"`
 
-#### Ejecutar la API
+#### Ejecución la API
 
-Para iniciar el servidor en modo de desarrollo, lo que permite la recarga automática al modificar el código, usa:
+1. Accede al directorio de la API:
 
-`uvicorn main:app --reload`
+   `cd API`
+
+2. Inicia el servidor en modo de desarrollo, lo que permite la recarga automática al modificar el código:
+
+   `uvicorn main:app --reload`
 
 Este comando inicia el servidor en modo de desarrollo, permitiendo que los cambios que hagas en el código se apliquen automáticamente.
 
