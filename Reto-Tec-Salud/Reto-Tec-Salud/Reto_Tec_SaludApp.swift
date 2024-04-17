@@ -40,7 +40,7 @@ struct Reto_Tec_SaludApp: App {
                 .environment(volumeData)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 40, height: 10, depth: 10, in: .centimeters)
+        .defaultSize(width: 0.6, height: 0.6, depth: 0.3, in: .meters)
         
         // Immersive space for the skeleton model
         ImmersiveSpace(id: "skeletonImmersiveView") {

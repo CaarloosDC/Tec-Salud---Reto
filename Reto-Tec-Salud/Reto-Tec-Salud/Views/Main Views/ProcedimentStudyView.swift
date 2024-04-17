@@ -23,7 +23,7 @@ struct ProcedimentStudyView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                                 .frame(maxWidth: .infinity)
                             
-                            Text("Procedimiento real")
+                            Text("Procedimiento por escaneo")
                                 .font(.title)
                         }
                         .padding()
@@ -42,7 +42,7 @@ struct ProcedimentStudyView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                                 .frame(maxWidth: .infinity)
                             
-                            Text("Procedimiento Virtual")
+                            Text("Procedimiento virtual")
                                 .font(.title)
                         }
                         .padding()

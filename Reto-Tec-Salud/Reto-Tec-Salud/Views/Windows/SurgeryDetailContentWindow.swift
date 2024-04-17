@@ -17,6 +17,7 @@ struct SurgeryDetailContentWindow: View {
                 ScrollView {
                     Text(procedure.steps[currentStep].shortDescription)
                         .font(.title)
+                        .multilineTextAlignment(.center)
                         .padding()
                     
                     Text(procedure.steps[currentStep].description)
@@ -26,6 +27,7 @@ struct SurgeryDetailContentWindow: View {
                         .resizable()
                         .scaledToFit()
                         .shadow(radius: 10)
+                        .padding()
                 }
             }
             else {
@@ -46,6 +48,7 @@ struct SurgeryDetailContentWindow: View {
         .ornament(attachmentAnchor: .scene(.bottom)) {
             StepNavigationOrnament(procedure: selectedProcedure.sentProcedure, currentStep: $currentStep)
         }
+        .padding()
     }
 }
 
