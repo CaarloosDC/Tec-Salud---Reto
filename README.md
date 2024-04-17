@@ -4,6 +4,12 @@
 
 MedVision es un proyecto innovador diseñado para ayudar a estudiantes de medicina en el estudio de anatomía y cirugía. Utilizando la aplicación compatible con los Vision Pro de Apple, los usuarios pueden aprender procedimientos quirúrgicos mediante el uso de maniquíes en un entorno presencial o a través de modelos 3D interactivos en un entorno virtual. La aplicación también ofrece módulos detallados de anatomía que permiten explorar y manipular modelos 3D de partes del cuerpo. Además, incluye un chatbot de IA especializado en medicina para responder preguntas durante el estudio.
 
+## Tecnologías Utilizadas
+
+- **Framework web:** FastAPI
+- **Base de datos:** PostgreSQL
+- **Host:** Supabase
+
 ## API
 
 ### Descripción general
