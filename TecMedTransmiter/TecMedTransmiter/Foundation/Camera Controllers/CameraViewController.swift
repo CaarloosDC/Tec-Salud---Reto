@@ -13,6 +13,7 @@ import AVFoundation
 import Vision
 
 typealias LivePredictionResults = [String: (basicValue: Double, displayValue: String)]
+typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect)]
 
 struct ValuePerCategory {
     var category: String
@@ -21,7 +22,9 @@ struct ValuePerCategory {
 
 class CameraViewController: UIViewController {
     // ML Model Settings
-    private var model: VNCoreMLModel?
+    private var classifierModel: VNCoreMLModel?
+    private var objectDetectionModel: VNCoreMLModel?
+    
     private var handleObservations: (LivePredictionResults, String, String) -> ()
     // Camera view settings
     private var permissionGranted = false // flag for camera use permission
@@ -50,12 +53,27 @@ class CameraViewController: UIViewController {
     
     func startCameraCaptureAndProcessing() throws {
         guard permissionGranted else { return }
-        self.model = try? VNCoreMLModel(for: PredictionStatus().modelObject.model)
+        
+        self.classifierModel = try? VNCoreMLModel(for: PredictionStatus().classifierModel.model)
         setupCaptureSession()
+        self.objectDetectionModel = try? VNCoreMLModel(for: PredictionStatus().objectDetectionModel.model)
         
         sessionQueue.async { [weak self] in
             self?.captureSession.startRunning()
         }
+    }
+    
+    func handleObjectDetectionResults(_ results: [VNRecognizedObjectObservation]) {
+        var objectDetectionResults: ObjectDetectionResult = []
+        for result in results {
+            let identifier = result.labels.first?.identifier ?? "Unknown"
+            let confidence = result.labels.first?.confidence ?? 0.0
+            let boundingBox = result.boundingBox
+            
+            objectDetectionResults.append((identifier: identifier, confidence: confidence, boundingBox: boundingBox))
+        }
+        
+        // You can handle the object detection results here, e.g., send them to another function or process them directly
     }
     
     override func viewDidLoad() {
@@ -150,13 +168,10 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         from connection: AVCaptureConnection
     ) {
         
-        guard
-            let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
-            let model = model
-            else {
-                return
-            }
-            //let model2 = model2
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer), let classifierModel = classifierModel, let objectDetectionModel = objectDetectionModel
+        else {
+            return
+        }
         
         // process image and resize to scale with training image dimensions
         let cvImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
@@ -171,7 +186,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         /// Debuging statement for Camera controler image capture
         //print("New frame captured and processing started")
         
-        let request = VNCoreMLRequest(model: model){ request, error in
+        let request = VNCoreMLRequest(model: classifierModel){ request, error in
             if let error = error {
                 print("Error during model inference: \(error.localizedDescription)")
             }
@@ -186,17 +201,38 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
             
             /// Debugging statement for ML Model inference
-//            print("Model inference completed: \(observations)")
+            //            print("Model inference completed: \(observations)")
             let topResult = observations.first
             let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
             
-            DispatchQueue.main.async {
-                self.handleObservations(compiledResults, topResult!.identifier, String(format: "%.0f%%", topResult!.confidence * 100))
+            let objectDetectionRequest = VNCoreMLRequest(model: objectDetectionModel) { objectDetectionRequest, objectDetectionError in
+                if let objectDetectionError = objectDetectionError {
+                    print("Error during object detection model inference: \(objectDetectionError.localizedDescription)")
+                    return
+                }
+                
+                let objectDetectionResults = objectDetectionRequest.results as? [VNRecognizedObjectObservation] ?? []
+                
+                for result in objectDetectionResults {
+                    print("Detected object:")
+                    print("Bounding box: \(result.boundingBox)")
+                    print("Labels:")
+                    for label in result.labels {
+                        print("- Identifier: \(label.identifier), Confidence: \(label.confidence)")
+                    }
+                    print("==========")
+                }
+                
+                DispatchQueue.main.async {
+                    self.handleObservations(compiledResults, topResult!.identifier, String(format: "%.0f%%", topResult!.confidence * 100))
+                    self.handleObjectDetectionResults(objectDetectionResults)
+                }
             }
+            try? VNImageRequestHandler(ciImage: newCiImage!, options: [:]).perform([objectDetectionRequest])
         }
         
         request.imageCropAndScaleOption = .centerCrop
-
+        
         try? VNImageRequestHandler(
             ciImage: newCiImage!,
             orientation: exifOrientation(),
@@ -204,7 +240,3 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         ).perform([request])
     }
 }
-
-
-
-

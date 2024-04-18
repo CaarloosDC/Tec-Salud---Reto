@@ -13,10 +13,13 @@ import CoreML
 @Observable class PredictionStatus {
     var modelUrl = URL(fileURLWithPath: "")
     
-    // TODO - replace with the name of your classifier
-    var modelObject = try! BodyPartClassifier_2(configuration: MLModelConfiguration())
+    // MARK: Image classifier
+    var classifierModel = try! BodyPartClassifier(configuration: MLModelConfiguration())
     var topLabel = ""
     var topConfidence = ""
+    
+    // MARK: Object detection
+    var objectDetectionModel = try! BodyPart_Finder(configuration: MLModelConfiguration())
     
     // Live prediction results
     var livePrediction: LivePredictionResults = [:]
