@@ -33,7 +33,6 @@ struct ProcedimentStudyView: View {
                     
                     NavigationLink {
                         SurgeryDetailView()
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
                     } label: {
                         VStack {
                             Image("hologram")

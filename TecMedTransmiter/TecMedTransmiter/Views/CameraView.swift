@@ -17,7 +17,7 @@ struct CameraView: View {
         let predictionLabel = predictionStatus.topLabel
             ZStack{
                 CameraViewControllerRepresentable() {
-                    predictionStatus.setLivePrediction(with: $0, label: $1, confidence: $2)
+                    predictionStatus.setClassificationResults(with: $0, label: $1, confidence: $2)
                 }
                 .ignoresSafeArea()
                 

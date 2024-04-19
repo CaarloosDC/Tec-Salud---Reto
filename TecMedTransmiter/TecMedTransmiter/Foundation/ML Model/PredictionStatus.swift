@@ -20,13 +20,21 @@ import CoreML
     
     // MARK: Object detection
     var objectDetectionModel = try! BodyPart_Finder(configuration: MLModelConfiguration())
+    var boundingBox: CGRect = CGRect.zero
     
     // Live prediction results
-    var livePrediction: LivePredictionResults = [:]
+    var classificationResults: ImageClassificationResult = [:] // Empty dictionary
+    var objectDetectionResults: ObjectDetectionResult = [] // Empty array of tuples
     
-    func setLivePrediction(with results: LivePredictionResults, label: String, confidence: String) {
-        livePrediction = results
+    // CoML Classification Model
+    func setClassificationResults(with results: ImageClassificationResult, label: String, confidence: String) {
+        classificationResults = results
         topLabel = label
         topConfidence = confidence
+    }
+    
+    // Object Detection Model
+    func setObjectDetectionResults(results: ObjectDetectionResult, boundingBox: CGRect){
+        
     }
 }

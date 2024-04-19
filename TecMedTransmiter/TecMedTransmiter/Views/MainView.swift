@@ -20,7 +20,10 @@ struct MainView: View {
                     .foregroundStyle(Color("light-dark"))
                     .frame(maxHeight: 10)
                 
-                CameraView(multipeerSession: multipeerSession, classifierViewModel: classifierViewModel)
+//                CameraView(multipeerSession: multipeerSession, classifierViewModel: classifierViewModel)
+                Rectangle()
+                    .frame(width: .infinity, height: .infinity)
+                    .foregroundStyle(.black)
             }
             .navigationTitle("ML Test")
             .navigationBarItems(trailing: MultiPeerBrowserButton(isPresentingBrowser: $isPresentingBrowser, mcSession: multipeerSession.mcSession))

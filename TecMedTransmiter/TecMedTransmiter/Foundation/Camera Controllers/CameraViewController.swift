@@ -12,7 +12,7 @@ import SwiftUI
 import AVFoundation
 import Vision
 
-typealias LivePredictionResults = [String: (basicValue: Double, displayValue: String)]
+typealias ImageClassificationResult = [String: (basicValue: Double, displayValue: String)]
 typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect)]
 
 struct ValuePerCategory {
@@ -25,7 +25,7 @@ class CameraViewController: UIViewController {
     private var classifierModel: VNCoreMLModel?
     private var objectDetectionModel: VNCoreMLModel?
     
-    private var handleObservations: (LivePredictionResults, String, String) -> ()
+    private var handleObservations: (ImageClassificationResult, String, String) -> ()
     // Camera view settings
     private var permissionGranted = false // flag for camera use permission
     
@@ -41,7 +41,7 @@ class CameraViewController: UIViewController {
     private var previewLayer = AVCaptureVideoPreviewLayer()
     var screenRect: CGRect! = nil // used to determine view dimensions
     
-    init(handleObservations: @escaping (LivePredictionResults, String, String) -> ()) {
+    init(handleObservations: @escaping (ImageClassificationResult, String, String) -> ()) {
         self.handleObservations = handleObservations
         super.init(nibName: nil, bundle: nil)
     }
