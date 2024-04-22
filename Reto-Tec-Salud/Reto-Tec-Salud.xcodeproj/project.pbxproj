@@ -40,7 +40,6 @@
 		D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD0112B91568800F3F1C8 /* ContentView.swift */; };
 		D7BBD0142B91568A00F3F1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BBD0132B91568A00F3F1C8 /* Assets.xcassets */; };
 		D7BBD0172B91568A00F3F1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BBD0162B91568A00F3F1C8 /* Preview Assets.xcassets */; };
-		D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B3E2B91BB02003CB892 /* MenuView.swift */; };
 		D7CA2B412B91BBFC003CB892 /* OpcionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */; };
 		D7CA2B432B91C24A003CB892 /* ProcedimentStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */; };
 		D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */; };
@@ -84,7 +83,6 @@
 		D7BBD0132B91568A00F3F1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7BBD0162B91568A00F3F1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7BBD0182B91568A00F3F1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7CA2B3E2B91BB02003CB892 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCardView.swift; sourceTree = "<group>"; };
 		D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedimentStudyView.swift; sourceTree = "<group>"; };
 		D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyStudyView.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 		3CEB14AA2BC8E65800767B8A /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
-				D7CA2B3E2B91BB02003CB892 /* MenuView.swift */,
 				D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */,
 				D73694412BA954A5007A38EE /* NavigationView.swift */,
 			);
@@ -388,7 +385,6 @@
 				D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */,
 				3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */,
 				3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */,
-				D7CA2B3F2B91BB02003CB892 /* MenuView.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
 				3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */,

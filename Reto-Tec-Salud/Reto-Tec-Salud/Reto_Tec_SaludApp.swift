@@ -15,6 +15,7 @@ struct Reto_Tec_SaludApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
                 .environment(volumeData)
                 .environment(TecMedMultiPeer())
@@ -22,6 +23,7 @@ struct Reto_Tec_SaludApp: App {
         
         WindowGroup (id: "SecondWindow") {
             SecondWindow()
+                .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
                 .environment(TecMedMultiPeer())
         }
@@ -29,6 +31,7 @@ struct Reto_Tec_SaludApp: App {
         // Surgery detail window for Scanner
         WindowGroup (id: "SurgeryDetailContentWindow") {
             SurgeryDetailContentWindow()
+                .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
                 .environment(volumeData)
         }
