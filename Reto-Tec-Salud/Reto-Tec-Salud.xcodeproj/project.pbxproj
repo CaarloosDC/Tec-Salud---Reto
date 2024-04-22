@@ -27,6 +27,8 @@
 		3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */; };
 		3CEB14B22BC91BFE00767B8A /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B12BC91BFE00767B8A /* VolumeView.swift */; };
 		3CEB14B72BC9255700767B8A /* VolumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */; };
+		C320C2C62BD30F0100980DF9 /* NSCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320C2C52BD30F0100980DF9 /* NSCache.swift */; };
+		C33203ED2BD48C0100858DA4 /* NSCacheSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33203EC2BD48C0100858DA4 /* NSCacheSubscript.swift */; };
 		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
 		D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */; };
 		D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */; };
@@ -68,6 +70,8 @@
 		3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
 		3CEB14B12BC91BFE00767B8A /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModel.swift; sourceTree = "<group>"; };
+		C320C2C52BD30F0100980DF9 /* NSCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCache.swift; sourceTree = "<group>"; };
+		C33203EC2BD48C0100858DA4 /* NSCacheSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheSubscript.swift; sourceTree = "<group>"; };
 		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiturnChatView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		3CCA12CB2BA2ED2F00B1D538 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				C320C2C42BD30EEB00980DF9 /* Cache */,
 				3CCA12D32BA2EF1700B1D538 /* View Models */,
 				3CADB8A72BA467A5002F1710 /* Models */,
 				3CCA12D02BA2ED6800B1D538 /* Data Models */,
@@ -211,6 +216,15 @@
 				D73694412BA954A5007A38EE /* NavigationView.swift */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		C320C2C42BD30EEB00980DF9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C320C2C52BD30F0100980DF9 /* NSCache.swift */,
+				C33203EC2BD48C0100858DA4 /* NSCacheSubscript.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		D71986A42BAA71B500C5FF2C /* MedicBot */ = {
@@ -382,6 +396,7 @@
 				D73694442BA954C3007A38EE /* ChatView.swift in Sources */,
 				D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */,
 				3CEB14AE2BC8ECEE00767B8A /* TestView.swift in Sources */,
+				C320C2C62BD30F0100980DF9 /* NSCache.swift in Sources */,
 				D7CA2B432B91C24A003CB892 /* ProcedimentStudyView.swift in Sources */,
 				3CEB14B72BC9255700767B8A /* VolumeViewModel.swift in Sources */,
 				D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */,
@@ -397,6 +412,7 @@
 				3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */,
 				3CADB89F2BA45137002F1710 /* ProcedureViewModel.swift in Sources */,
 				3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */,
+				C33203ED2BD48C0100858DA4 /* NSCacheSubscript.swift in Sources */,
 				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */,
 				3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */,

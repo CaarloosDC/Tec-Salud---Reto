@@ -16,6 +16,7 @@ final class BodyPartViewModel {
         Task {
             do {
                 self.bodyParts = try await self.getBodyParts()
+                print("se uso inicializador api")
             } catch {
                 print("Error fetching body parts: \(error)")
                 // Handle the error as needed
@@ -63,6 +64,7 @@ final class BodyPartViewModel {
         }
         do {
             let decoder = JSONDecoder()
+            print("se usa api")
             return try decoder.decode([BodyPart].self, from: data)
         } catch {
             print("Error decoding JSON: \(error)")
