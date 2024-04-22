@@ -1,6 +1,44 @@
-version: '3.8'
 services:
-  web:
+  api:
     build: .
-    ports:
-      - "8000:8000"
+    container_name: api
+    expose:
+      - "8000"
+    networks:
+      - webnet
+  nginx:
+      restart: unless-stopped
+      image: nginx
+      container_name: nginx
+      ports:
+        - "80:80"
+        - "443:443"
+      volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./letsencrypt:/etc/letsencrypt
+      depends_on:
+        - api
+      networks:
+      - webnet
+
+  letsencrypt-cloudflare:
+    image: certbot/dns-cloudflare
+
+    # Dry Run
+    # command: certonly --non-interactive --dns-cloudflare --dns-cloudflare-credentials /opt/cloudflare/credentials --agree-tos --email r@sha.pm --dns-cloudflare-propagation-seconds 120 -d medvision.tec.st --server https://acme-v02.api.letsencrypt.org/directory --dry-run
+
+    # Issue certificate
+    # command: certonly --non-interactive --dns-cloudflare --dns-cloudflare-credentials /opt/cloudflare/credentials --agree-tos --email r@sha.pm --dns-cloudflare-propagation-seconds 120 -d medvision.tec.st --server https://acme-v02.api.letsencrypt.org/directory
+
+    # Renew certificate
+    # command: renew --non-interactive --no-self-upgrade --dns-cloudflare --dns-cloudflare-credentials /opt/cloudflare/credentials --agree-tos--email r@sha.pm --dns-cloudflare-propagation-seconds 120 --server https://acme-v02.api.letsencrypt.org/directory
+
+    volumes:
+      - ./cloudflare:/opt/cloudflare
+      - ./letsencrypt:/etc/letsencrypt
+      - ./letsencrypt/log:/var/log/letsencrypt
+    networks:
+    - webnet
+
+networks:
+  webnet:
