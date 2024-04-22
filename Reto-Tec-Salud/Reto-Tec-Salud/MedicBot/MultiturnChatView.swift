@@ -55,6 +55,7 @@ struct MultiturnChatView: View {
                 Button(action: sendMessage) {
                     Image(systemName: "paperplane.fill")
                 }
+                .disabled(textInput.isEmpty) // Si está vacío, no permite enviar el mensaje
             }
         }
         .foregroundStyle(.white)
