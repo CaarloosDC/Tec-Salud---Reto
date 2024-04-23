@@ -12,8 +12,8 @@ final class BodyPartViewModel {
     var bodyParts: [BodyPart] = []
     
     init() {
-        //self.bodyParts = load("bodyparts.json")
-        Task {
+        self.bodyParts = load("bodyparts.json")
+        /*Task {
             do {
                 self.bodyParts = try await self.getBodyParts()
             } catch {
@@ -21,6 +21,7 @@ final class BodyPartViewModel {
                 // Handle the error as needed
             }
         }
+         */
     }
     
     func load<T: Decodable>(_ filename: String) -> T {

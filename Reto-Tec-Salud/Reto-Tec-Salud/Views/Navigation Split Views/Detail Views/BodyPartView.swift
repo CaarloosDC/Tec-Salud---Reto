@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BodyPartView: View {
     // Second window functions
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
     
@@ -65,17 +66,18 @@ struct BodyPartView: View {
                 
                 if selectedProcedure != nil {
                     Button(action: {
-                        selected.sentProcedure = selectedProcedure
-                        volumeData.sentRenderName = bodyPart?.renderName
-                        
-                        switch contentType {
-                        case .threedimentional:
-                            openWindow(id: "SurgeryDetailContentWindow")
-                            openWindow(id: "BodyPartVolume")
+                        Task {
+                            selected.sentProcedure = selectedProcedure
+                            volumeData.sentRenderName = bodyPart?.renderName
                             
-                        case .bidimentional:
-                            openWindow(id: "SecondWindow")
-                            
+                            switch contentType {
+                            case .threedimentional:
+                                openWindow(id: "SurgeryDetailContentWindow")
+                                await openImmersiveSpace(id: "bodyPartImmersiveView")
+                                
+                            case .bidimentional:
+                                openWindow(id: "SecondWindow")
+                            }
                         }
                     }) {
                         HStack(alignment: .center) {

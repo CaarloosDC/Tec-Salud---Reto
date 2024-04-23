@@ -13,6 +13,7 @@ class TecMedMultiPeer: NSObject {
     
     var connectedPeers: [MCPeerID] = []
     var currentLabel: MLModelLabel? = nil
+    var currentDistance: SIMD3<Float>? = nil
     
     override init() {
         session = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
@@ -52,13 +53,24 @@ extension TecMedMultiPeer: MCSessionDelegate {
 
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        if let string = String(data: data, encoding: .utf8), let label = MLModelLabel(rawValue: string) {
-            log.info("didReceive ML Model Label \(string)")
-            DispatchQueue.main.async {
-                self.currentLabel = label
-            }
-        } else {
-            log.info("didReceive invalid value \(data.count) bytes")
+        // Extract label data
+        let labelData = data.prefix(while: { $0 != 0 })
+        guard let labelString = String(data: labelData, encoding: .utf8),
+              let label = MLModelLabel(rawValue: labelString) else {
+            log.info("didReceive invalid label data")
+            return
+        }
+
+        // Extract coordinates data
+        let coordinatesData = data.suffix(from: labelData.endIndex)
+        let coordinates = SIMD3<Float>(from: coordinatesData)
+        
+        log.info("didReceive ML Model Label \(labelString) with coordinates \(coordinates)")
+        
+        DispatchQueue.main.async {
+            // Update UI or perform actions with received label and coordinates
+            self.currentLabel = label
+            self.currentDistance = coordinates
         }
     }
     
@@ -72,5 +84,26 @@ extension TecMedMultiPeer: MCSessionDelegate {
 
     public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         log.error("Receiving resources is not supported")
+    }
+}
+
+extension SIMD3 where Scalar == Float {
+    init(from data: Data) {
+        var value: SIMD3<Float> = .zero
+        data.withUnsafeBytes { ptr in
+            guard ptr.count == MemoryLayout<Float>.size * 3 else { return }
+            value.x = ptr.load(fromByteOffset: 0, as: Float.self)
+            value.y = ptr.load(fromByteOffset: MemoryLayout<Float>.size, as: Float.self)
+            value.z = ptr.load(fromByteOffset: MemoryLayout<Float>.size * 2, as: Float.self)
+        }
+        self = value
+    }
+    
+    func toData() -> Data {
+        var data = Data()
+        withUnsafeBytes(of: self) { ptr in
+            data.append(ptr.bindMemory(to: UInt8.self))
+        }
+        return data
     }
 }

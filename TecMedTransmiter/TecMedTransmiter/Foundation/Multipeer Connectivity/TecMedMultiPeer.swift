@@ -20,16 +20,27 @@ class TecMedMultiPeer: NSObject {
     
     var connectedPeers: [MCPeerID] = []
     var currentLabel: MLModelLabel? = nil
+    var currentDistance: SIMD3<Float>? = nil
     
     /// Sends the specified color to all connected peers.
     /// - Parameter color: The color to send.
-    func send(label: MLModelLabel) {
+    func send(label: MLModelLabel, coordinates: SIMD3<Float>) {
         log.info("sendLabel: \(String(describing: label)) to \(self.mcSession.connectedPeers.count) peers")
         self.currentLabel = label
-
+        self.currentDistance = coordinates
+        
         if !mcSession.connectedPeers.isEmpty {
             do {
-                try mcSession.send(label.rawValue.data(using: .utf8)!, toPeers: mcSession.connectedPeers, with: .reliable)
+                // Serialize coordinates into Data
+                let coordinatesData = coordinates.toData()
+                
+                // Concatenate label data and coordinates data
+                var combinedData = Data()
+                combinedData.append(label.rawValue.data(using: .utf8)!)
+                combinedData.append(coordinatesData)
+                
+                // Send combined data to peers
+                try mcSession.send(combinedData, toPeers: mcSession.connectedPeers, with: .reliable)
             } catch {
                 log.error("Error for sending: \(String(describing: error))")
             }
@@ -100,3 +111,26 @@ extension TecMedMultiPeer: MCSessionDelegate {
         log.error("Receiving resources is not supported")
     }
 }
+
+
+extension SIMD3 where Scalar == Float {
+    init(from data: Data) {
+        var value: SIMD3<Float> = .zero
+        data.withUnsafeBytes { ptr in
+            guard ptr.count == MemoryLayout<Float>.size * 3 else { return }
+            value.x = ptr.load(fromByteOffset: 0, as: Float.self)
+            value.y = ptr.load(fromByteOffset: MemoryLayout<Float>.size, as: Float.self)
+            value.z = ptr.load(fromByteOffset: MemoryLayout<Float>.size * 2, as: Float.self)
+        }
+        self = value
+    }
+    
+    func toData() -> Data {
+        var data = Data()
+        withUnsafeBytes(of: self) { ptr in
+            data.append(ptr.bindMemory(to: UInt8.self))
+        }
+        return data
+    }
+}
+

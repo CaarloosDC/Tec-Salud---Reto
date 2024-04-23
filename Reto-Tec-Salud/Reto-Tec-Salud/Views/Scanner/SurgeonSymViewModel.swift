@@ -20,6 +20,7 @@ class SurgeonSymViewModel: ObservableObject {
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
     private let sceneReconstruction = SceneReconstructionProvider()
+    private var phoneCoordinates = SIMD3<Float>(0,0,0)
     
     // Spacial recognition, needed for world anchor placement
     private let worldTracking = WorldTrackingProvider()
@@ -124,6 +125,7 @@ class SurgeonSymViewModel: ObservableObject {
         guard let rightFingerPosition = fingerEntities[.right]?.transform.translation else { return }
         
         let placementLocation = rightFingerPosition + SIMD3<Float>(0,-0.05,0)
+        phoneCoordinates = placementLocation
         
         if pinPointEntity == nil {
             let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
@@ -174,7 +176,23 @@ class SurgeonSymViewModel: ObservableObject {
         print("Error: World anchor not found for entity")
       }
     }
-
+    
+    func placeEntityAtCoordinate(coordinate: SIMD3<Float>, distanceToConnectedDevice: Float) {
+        // Calculate the offset based on the distance to the connected device
+        let offset = coordinate - phoneCoordinates // Calculate offset based on distance (e.g., a fraction of the distance)
+        
+        // Apply the offset to the received coordinate
+        let adjustedCoordinate = phoneCoordinates + offset
+        
+        // Place an entity at the adjusted coordinate
+        let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
+        entity.setPosition(adjustedCoordinate, relativeTo: nil)
+        
+        // Add the entity to the content entity or the scene
+        contentEntity.addChild(entity)
+        
+        // Optionally, you can store the entity in a dictionary or array if you need to reference it later
+    }
 
 }
  

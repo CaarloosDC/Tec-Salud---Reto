@@ -117,6 +117,38 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
                 // Reset frame skip count
                 self.frameSkipCount = 0
             }
+            
+            // Update the UI based on tracking state
+            self.onSessionUpdate(for: frame, trackingState: trackingState)
+        }
+    }
+    
+    private func onSessionUpdate(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
+        // Update the UI to provide feedback on the state of the AR experience.
+        let message: String
+        
+        switch trackingState {
+        case .normal where frame.anchors.isEmpty:
+            // No planes detected; provide instructions for this app's AR interactions.
+            print("Move the device around to detect horizontal and vertical surfaces.")
+            
+        case .notAvailable:
+            print("Tracking unavailable.")
+            
+        case .limited(.excessiveMotion):
+            print("Tracking limited - Move the device more slowly.")
+            
+        case .limited(.insufficientFeatures):
+            print("Tracking limited - Point the device at an area with visible surface detail, or improve lighting conditions.")
+            
+        case .limited(.initializing):
+            print("Initializing AR session.")
+            
+        default:
+            // No feedback needed when tracking is normal and planes are visible.
+            // (Nor when in unreachable limited-tracking states.)
+            
+            print("Tracking normal")
         }
     }
     

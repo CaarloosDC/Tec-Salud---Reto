@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MultiPeerView: View {
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @State var recieverSession = TecMedMultiPeer()
     @State var bodyPartsVM = BodyPartViewModel()
     @State var isConnected = false

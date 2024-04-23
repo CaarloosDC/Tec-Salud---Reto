@@ -51,6 +51,10 @@ struct Reto_Tec_SaludApp: App {
         }
         .immersionStyle(selection: .constant(.full), in: .full)
         .immersiveContentBrightness(.bright)
+        
+        ImmersiveSpace(id: "bodyPartImmersiveView") {
+            SurgeonSymView()
+        }
     }
 }
 
