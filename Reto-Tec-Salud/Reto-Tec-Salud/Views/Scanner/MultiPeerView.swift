@@ -30,7 +30,7 @@ struct MultiPeerView: View {
             }
             
             if isLoading {
-                Text("Cargando... Comienza a Escanear!")
+                Text("¡Comienza a escanear!")
                     .font(.extraLargeTitle)
                 ProgressView()
                     .scaleEffect(1.3)

@@ -8,27 +8,42 @@
 import SwiftUI
 
 struct NavigationView: View {
+    @State private var selectedView: String?
+    
     var body: some View {
-        TabView {
-            ProcedimentStudyView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Procediment")
+        NavigationStack {
+            Group {
+                if selectedView == "Anatomy" {
+                    AnatomyStudyView()
+                } else if selectedView == "Medic Chat" {
+                    MultiturnChatView()
+                } else {
+                    ProcedimentStudyView()
                 }
-            AnatomyStudyView()
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .tabItem {
-                    Image(systemName: "figure")
-                    Text("Anatomy")
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomOrnament) {
+                    Button(action: {selectedView = "Procediment" }) {
+                        Image(systemName: "person.fill")
+                        Text("Procedimiento")
+                    }
+                    Spacer()
+                    Button(action: {selectedView = "Anatomy" }) {
+                        Image(systemName: "figure")
+                        Text("Anatomía")
+                    }
+                    Spacer()
+                    Button(action: {selectedView = "Medic Chat" }) {
+                        Image(systemName: "ellipsis.message.fill")
+                        Text("Medi-Chat")
+                    }
                 }
-            MultiturnChatView()
-                .tabItem {
-                    Image(systemName: "ellipsis.message.fill")
-                    Text("Medic Chat")
-                }
+            }
+//            .navigationTitle("MedVision")
         }
     }
 }
+
 
 #Preview {
     NavigationView()

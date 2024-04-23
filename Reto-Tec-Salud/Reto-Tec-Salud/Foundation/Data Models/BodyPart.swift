@@ -21,9 +21,9 @@ struct Procedure: Identifiable, Codable, Hashable {
 
 struct Step: Identifiable, Codable, Hashable {
     let id: Int
-    let description, shortDescription, imageName: String
+    let description, shortDescription, imageName, videoName: String
 }
 
 enum MLModelLabel: String, Codable, CaseIterable, Hashable {
-    case Arm, Ear, Eye, Knee
+    case Arm, Ear, Eye, Knee, Unknown
 }
