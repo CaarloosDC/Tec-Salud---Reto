@@ -19,6 +19,9 @@
 		3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */; };
 		3CB70EF92BB15F4C00DA9A99 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */; };
 		3CB70EFA2BB15F4C00DA9A99 /* DetectedBodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */; };
+		3CC1E0742BD76BF10065EFBE /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1E0732BD76BF10065EFBE /* Throttler.swift */; };
+		3CC1E0762BD76ECB0065EFBE /* RayCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1E0752BD76ECB0065EFBE /* RayCastViewController.swift */; };
+		3CC1E0782BD78C730065EFBE /* ARSessionDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1E0772BD78C730065EFBE /* ARSessionDelegateCoordinator.swift */; };
 		3CD7E76E2BC4BE31008AA8A2 /* MultiPeerBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7E76D2BC4BE31008AA8A2 /* MultiPeerBrowserView.swift */; };
 		3CEB14A52BC8D82300767B8A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14A42BC8D82300767B8A /* MainView.swift */; };
 		3CEB14A82BC8D8DA00767B8A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14A72BC8D8DA00767B8A /* LoadingView.swift */; };
@@ -44,6 +47,9 @@
 		3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
 		3CB70EF62BB15F4C00DA9A99 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		3CB70EF72BB15F4C00DA9A99 /* DetectedBodyPartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBodyPartView.swift; sourceTree = "<group>"; };
+		3CC1E0732BD76BF10065EFBE /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		3CC1E0752BD76ECB0065EFBE /* RayCastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayCastViewController.swift; sourceTree = "<group>"; };
+		3CC1E0772BD78C730065EFBE /* ARSessionDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionDelegateCoordinator.swift; sourceTree = "<group>"; };
 		3CD7E76D2BC4BE31008AA8A2 /* MultiPeerBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerBrowserView.swift; sourceTree = "<group>"; };
 		3CEB14A42BC8D82300767B8A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3CEB14A72BC8D8DA00767B8A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,7 @@
 			children = (
 				3C57A1B22BB17E90006747FE /* Constants.swift */,
 				3C57A1B32BB17E90006747FE /* Helpers.swift */,
+				3CC1E0732BD76BF10065EFBE /* Throttler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,6 +182,8 @@
 			children = (
 				3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */,
 				3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */,
+				3CC1E0752BD76ECB0065EFBE /* RayCastViewController.swift */,
+				3CC1E0772BD78C730065EFBE /* ARSessionDelegateCoordinator.swift */,
 			);
 			path = "Camera Controllers";
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 				3CF0E2F62BB0BC85001B0CC1 /* TecMedTransmiterApp.swift in Sources */,
 				3CB70EFA2BB15F4C00DA9A99 /* DetectedBodyPartView.swift in Sources */,
 				3CB70EF92BB15F4C00DA9A99 /* CameraView.swift in Sources */,
+				3CC1E0742BD76BF10065EFBE /* Throttler.swift in Sources */,
 				3CEB14A82BC8D8DA00767B8A /* LoadingView.swift in Sources */,
 				3C57A1B52BB17E90006747FE /* Helpers.swift in Sources */,
 				3C57A1B12BB17E4F006747FE /* ClassifierViewModel.swift in Sources */,
@@ -275,9 +285,11 @@
 				3CD7E76E2BC4BE31008AA8A2 /* MultiPeerBrowserView.swift in Sources */,
 				3CA0F3872BD1A4080020A0C8 /* BodyPart Finder.mlmodel in Sources */,
 				3C57A1B42BB17E90006747FE /* Constants.swift in Sources */,
+				3CC1E0782BD78C730065EFBE /* ARSessionDelegateCoordinator.swift in Sources */,
 				3CEB14A52BC8D82300767B8A /* MainView.swift in Sources */,
 				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
 				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
+				3CC1E0762BD76ECB0065EFBE /* RayCastViewController.swift in Sources */,
 				3C57A1AE2BB17E48006747FE /* BodyPart.swift in Sources */,
 				3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */,
 				3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */,

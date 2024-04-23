@@ -16,11 +16,10 @@ struct CameraView: View {
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
             ZStack{
-                CameraViewControllerRepresentable() {
-                    predictionStatus.setClassificationResults(with: $0, label: $1, confidence: $2)
+                RayCastViewController(predictionStatus: predictionStatus) { classificationResults, label, confidence in
+                    predictionStatus.setClassificationResults(with: classificationResults, label: label, confidence: confidence)
                 }
-                .ignoresSafeArea()
-                
+                   
                 VStack {
                     Spacer()   
                     DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
