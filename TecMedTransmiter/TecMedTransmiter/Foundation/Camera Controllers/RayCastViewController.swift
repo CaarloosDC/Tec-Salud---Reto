@@ -17,9 +17,10 @@ struct RayCastViewController: UIViewRepresentable {
     var predictionStatus: PredictionStatus
     private var classifierModel: VNCoreMLModel?
     private var objectDetectionModel: VNCoreMLModel?
-    
+    @State var sessionInfoLabel: String = ""
     var handleObservations: (ImageClassificationResult, String, String) -> ()
- 
+    
+    // Constructor
     init(predictionStatus: PredictionStatus, handleObservations: @escaping (ImageClassificationResult, String, String) -> Void) {
         self.classifierModel = try? VNCoreMLModel(for: PredictionStatus().classifierModel.model)
         self.objectDetectionModel = try? VNCoreMLModel(for: PredictionStatus().objectDetectionModel.model)
@@ -31,6 +32,8 @@ struct RayCastViewController: UIViewRepresentable {
         let arView = ARView(frame: .zero)
         let config = ARWorldTrackingConfiguration()
         config.environmentTexturing = .automatic
+        
+        context.coordinator.makeUIView(arView)
         
         arView.session.delegate = context.coordinator
         arView.session.run(config)
@@ -47,5 +50,4 @@ struct RayCastViewController: UIViewRepresentable {
     }
     
     // Other ARKit related code
-   
 }

@@ -14,6 +14,10 @@
 		3C57A1B52BB17E90006747FE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B32BB17E90006747FE /* Helpers.swift */; };
 		3C57A1B82BB17EAC006747FE /* PredictionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */; };
 		3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */; };
+		3C9679882BD7CD1800668184 /* ARSessionDelegateCoordinatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9679872BD7CD1800668184 /* ARSessionDelegateCoordinatorExtension.swift */; };
+		3C96798B2BD7D13200668184 /* Location_Pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3C96798A2BD7D13200668184 /* Location_Pin.usdz */; };
+		3C96798D2BD7D14200668184 /* Location_Pin.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3C96798C2BD7D14200668184 /* Location_Pin.scn */; };
+		3C96798F2BD7D1A900668184 /* PinPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C96798E2BD7D1A900668184 /* PinPoint.swift */; };
 		3CA0F3872BD1A4080020A0C8 /* BodyPart Finder.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0F3852BD1A4080020A0C8 /* BodyPart Finder.mlmodel */; };
 		3CA0F3882BD1A4080020A0C8 /* BodyPartClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0F3862BD1A4080020A0C8 /* BodyPartClassifier.mlmodel */; };
 		3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */; };
@@ -42,6 +46,10 @@
 		3C57A1B72BB17EAC006747FE /* PredictionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionStatus.swift; sourceTree = "<group>"; };
 		3C57A1BC2BB17F16006747FE /* TecMedMultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecMedMultiPeer.swift; sourceTree = "<group>"; };
 		3C57A1BE2BB18D3E006747FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3C9679872BD7CD1800668184 /* ARSessionDelegateCoordinatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionDelegateCoordinatorExtension.swift; sourceTree = "<group>"; };
+		3C96798A2BD7D13200668184 /* Location_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Location_Pin.usdz; sourceTree = "<group>"; };
+		3C96798C2BD7D14200668184 /* Location_Pin.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Location_Pin.scn; sourceTree = "<group>"; };
+		3C96798E2BD7D1A900668184 /* PinPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPoint.swift; sourceTree = "<group>"; };
 		3CA0F3852BD1A4080020A0C8 /* BodyPart Finder.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BodyPart Finder.mlmodel"; sourceTree = "<group>"; };
 		3CA0F3862BD1A4080020A0C8 /* BodyPartClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BodyPartClassifier.mlmodel; sourceTree = "<group>"; };
 		3CB70EF52BB15F4C00DA9A99 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
@@ -118,6 +126,16 @@
 			path = "Multipeer Connectivity";
 			sourceTree = "<group>";
 		};
+		3C9679892BD7D12400668184 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				3C96798A2BD7D13200668184 /* Location_Pin.usdz */,
+				3C96798C2BD7D14200668184 /* Location_Pin.scn */,
+				3C96798E2BD7D1A900668184 /* PinPoint.swift */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
 		3CEB14A62BC8D8B800767B8A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +185,7 @@
 		3CF0E3052BB1097C001B0CC1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				3C9679892BD7D12400668184 /* ARKit */,
 				3C57A1BB2BB17EEA006747FE /* Multipeer Connectivity */,
 				3C57A1B62BB17EAC006747FE /* ML Model */,
 				3C57A1AF2BB17E4F006747FE /* View Models */,
@@ -184,6 +203,7 @@
 				3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */,
 				3CC1E0752BD76ECB0065EFBE /* RayCastViewController.swift */,
 				3CC1E0772BD78C730065EFBE /* ARSessionDelegateCoordinator.swift */,
+				3C9679872BD7CD1800668184 /* ARSessionDelegateCoordinatorExtension.swift */,
 			);
 			path = "Camera Controllers";
 			sourceTree = "<group>";
@@ -259,6 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C96798B2BD7D13200668184 /* Location_Pin.usdz in Resources */,
+				3C96798D2BD7D14200668184 /* Location_Pin.scn in Resources */,
 				3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */,
 				3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */,
 				3C57A1AD2BB17E48006747FE /* bodyparts.json in Resources */,
@@ -287,6 +309,8 @@
 				3C57A1B42BB17E90006747FE /* Constants.swift in Sources */,
 				3CC1E0782BD78C730065EFBE /* ARSessionDelegateCoordinator.swift in Sources */,
 				3CEB14A52BC8D82300767B8A /* MainView.swift in Sources */,
+				3C9679882BD7CD1800668184 /* ARSessionDelegateCoordinatorExtension.swift in Sources */,
+				3C96798F2BD7D1A900668184 /* PinPoint.swift in Sources */,
 				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
 				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
 				3CC1E0762BD76ECB0065EFBE /* RayCastViewController.swift in Sources */,

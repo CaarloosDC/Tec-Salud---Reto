@@ -7,18 +7,22 @@
 
 import Foundation
 import ARKit
+import RealityKit
 
+// Typealiases for result processing and interaction
 typealias ImageClassificationResult = [String: (basicValue: Double, displayValue: String)]
 typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect)]
 
+
+
 class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     var predictionStatus: PredictionStatus
-    let throttler = Throttler(queue: .global(qos: .userInteractive), minimumDelay: 5)
     // CoreML Models
     private var classifierModel: VNCoreMLModel?
     private var objectDetectionModel: VNCoreMLModel?
     
     private var handleObservations: (ImageClassificationResult, String, String) -> ()
+    var arView: ARView?
     
     // Constructor
     init(predictionStatus: PredictionStatus, classifierModel: VNCoreMLModel?, objectDetectionModel: VNCoreMLModel?, handleObservations: @escaping (ImageClassificationResult, String, String) -> ()) {
@@ -40,7 +44,15 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         
         super.init()
     }
-
+    
+    // Not necessary, only here in order to make it possible to add annotations
+    func makeUIView(_ view: ARView) {
+        self.arView = view  // Store the ARView reference passed from makeUIView
+        view.session.delegate = self
+        let config = ARWorldTrackingConfiguration()
+        config.environmentTexturing = .automatic
+        view.session.run(config)
+    }
     
     // Observation results handling
     func handleObjectDetectionResults(_ results: [VNRecognizedObjectObservation]) {
@@ -56,10 +68,13 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         // You can handle the object detection results here, e.g., send them to another function or process them directly
     }
     
+    // Frame skipping handling, best performance at 10 frames, vn requests crash at 15 frames, camera feed becomes more fluid though
     private var frameSkipCount = 0
-    private let maxFrameSkip = 10
+    private let maxFrameSkip = 15
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
+        let trackingState = frame.camera.trackingState
+        
         let pixelBuffer = frame.capturedImage
         
         guard let classifierModel = classifierModel, let objectDetectionModel = objectDetectionModel else { return }
@@ -105,6 +120,7 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         }
     }
     
+    // MARK: VN request result handling
     private func handleResults(classificationResults: [VNClassificationObservation], objectDetectionResults: [VNRecognizedObjectObservation]) {
         // Handle classification results
         let predictionResultsMap = classificationResults.map {
@@ -129,11 +145,19 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
             print("==========")
         }
         
-        // You can call any additional handling methods here
+        guard let firstResultBoundingBox = objectDetectionResults.first?.boundingBox else { return }
+        let boundingBox = CGRect(x: CGFloat(firstResultBoundingBox.minX), y: CGFloat(firstResultBoundingBox.minY), width: CGFloat(firstResultBoundingBox.width), height: CGFloat(firstResultBoundingBox.height))
+
+        DispatchQueue.main.async {
+            self.addAnnotation(rectBounds: boundingBox)
+        }
+        // Additional handling methods can be called in here
         // For example:
         // self.handleObservations(compiledResults, classificationResults.first?.identifier ?? "Unknown", String(format: "%.0f%%", classificationResults.first?.confidence ?? 0.0))
         // self.handleObjectDetectionResults(objectDetectionResults)
     }
+    
+    // MARK: On session updates
     
 }
 
