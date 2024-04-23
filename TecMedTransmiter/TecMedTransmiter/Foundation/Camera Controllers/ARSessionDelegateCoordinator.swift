@@ -57,75 +57,83 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     }
     
     private var frameSkipCount = 0
-    private let maxFrameSkip = 4
+    private let maxFrameSkip = 10
+    
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        // Delay execution by 5 seconds
-        DispatchQueue.global().asyncAfter(deadline: .now() + 5) { [weak self] in
-            guard let self = self else { return }
-
-            // Saving current frame
-            let pixelBuffer = frame.capturedImage
-
-            if (pixelBuffer != nil) {
-                print("Pixel buffer captured")
-            } else {
-                print("Failed to capture pixel buffer")
+        let pixelBuffer = frame.capturedImage
+        
+        guard let classifierModel = classifierModel, let objectDetectionModel = objectDetectionModel else { return }
+        
+        let requestGroup = DispatchGroup()
+        
+        var classificationResults: [VNClassificationObservation] = []
+        var objectDetectionResults: [VNRecognizedObjectObservation] = []
+        
+        // Image Classification Request
+        requestGroup.enter()
+        let classificationRequest = VNCoreMLRequest(model: classifierModel) { request, error in
+            defer { requestGroup.leave() }
+            guard let results = request.results as? [VNClassificationObservation] else { return }
+            classificationResults = results
+        }
+        classificationRequest.imageCropAndScaleOption = .centerCrop
+        
+        // Object Detection Request
+        requestGroup.enter()
+        let objectDetectionRequest = VNCoreMLRequest(model: objectDetectionModel) { request, error in
+            defer { requestGroup.leave() }
+            guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
+            objectDetectionResults = results
+        }
+        objectDetectionRequest.imageCropAndScaleOption = .centerCrop
+        
+        // Perform both requests
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        try? requestHandler.perform([classificationRequest, objectDetectionRequest])
+        
+        // Wait for both requests to complete
+        requestGroup.notify(queue: .main) {
+            // Increment frame skip count and check if frame should be processed
+            self.frameSkipCount += 1
+            if self.frameSkipCount >= self.maxFrameSkip {
+                // Process the frame
+                self.handleResults(classificationResults: classificationResults, objectDetectionResults: objectDetectionResults)
+                
+                // Reset frame skip count
+                self.frameSkipCount = 0
             }
-
-            // Resizing image for detection ease
-            let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
-            let resizedCIImage = ciImage.resize(to: CGSize(width: Constants.imgDim, height: Constants.imgDim))
-
-            // MARK: VN Model Request handling, image classification request
-            let request = VNCoreMLRequest(model: self.classifierModel!) { request, error in
-                if let error = error {
-                    print("Error during model inference: \(error.localizedDescription)")
-                }
-
-                let observations = request.results as? [VNClassificationObservation] ?? []
-
-                let predictionResultsMap = observations.map {
-                    ($0.identifier,
-                     (basicValue: Double($0.confidence), displayValue: String(format: "%.0f%%", $0.confidence * 100))
-                    )
-                }
-
-                let topResult = observations.first
-                let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
-
-                // MARK: Object detection request
-                let objectDetectionRequest = VNCoreMLRequest(model: self.objectDetectionModel!) { objectDetectionRequest, objectDetectionError in
-                    if let objectDetectionError = objectDetectionError {
-                        print("Error during object detection model inference: \(objectDetectionError.localizedDescription)")
-                        return
-                    }
-
-                    let objectDetectionResults = objectDetectionRequest.results as? [VNRecognizedObjectObservation] ?? []
-
-                    for result in objectDetectionResults {
-                        print("Detected object:")
-                        print("Bounding box: \(result.boundingBox)")
-                        print("Labels:")
-                        for label in result.labels {
-                            print("- Identifier: \(label.identifier), Confidence: \(label.confidence)")
-                        }
-                        print("==========")
-                    }
-                    self.handleObservations(compiledResults, topResult!.identifier, String(format: "%.0f%%", topResult!.confidence * 100))
-
-                    self.handleObjectDetectionResults(objectDetectionResults)
-                }
-                try? VNImageRequestHandler(ciImage: resizedCIImage!, options: [:]).perform([objectDetectionRequest])
-            }
-            request.imageCropAndScaleOption = .centerCrop
-
-            try? VNImageRequestHandler(
-                ciImage: resizedCIImage!,
-                orientation: exifOrientation(),
-                options: [:]
-            )
-            .perform([request])
         }
     }
-
+    
+    private func handleResults(classificationResults: [VNClassificationObservation], objectDetectionResults: [VNRecognizedObjectObservation]) {
+        // Handle classification results
+        let predictionResultsMap = classificationResults.map {
+            (
+                $0.identifier,
+                (basicValue: Double($0.confidence), displayValue: String(format: "%.0f%%", $0.confidence * 100))
+            )
+        }
+        let compiledResults = Dictionary(uniqueKeysWithValues: predictionResultsMap)
+        
+        // Update PredictionStatus with classification results
+        self.predictionStatus.setClassificationResults(with: compiledResults, label: classificationResults.first?.identifier ?? "Unknown", confidence: String(format: "%.0f%%", classificationResults.first?.confidence ?? 0.0))
+        
+        // Handle object detection results
+        for result in objectDetectionResults {
+            print("Detected object:")
+            print("Bounding box: \(result.boundingBox)")
+            print("Labels:")
+            for label in result.labels {
+                print("- Identifier: \(label.identifier), Confidence: \(label.confidence)")
+            }
+            print("==========")
+        }
+        
+        // You can call any additional handling methods here
+        // For example:
+        // self.handleObservations(compiledResults, classificationResults.first?.identifier ?? "Unknown", String(format: "%.0f%%", classificationResults.first?.confidence ?? 0.0))
+        // self.handleObjectDetectionResults(objectDetectionResults)
+    }
+    
 }
+
