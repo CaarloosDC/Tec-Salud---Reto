@@ -43,5 +43,5 @@ struct StepDetailView: View {
 }
 
 #Preview {
-    StepDetailView(stepNo: Step(id: 1, description: "Do something", shortDescription: "Same instruction, just shorter", imageName: "garbage"))
+    StepDetailView(stepNo: Step(id: 1, description: "Do something", shortDescription: "Same instruction, just shorter", imageName: "garbage", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"))
 }

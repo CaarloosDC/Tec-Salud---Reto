@@ -110,8 +110,8 @@ struct BodyPartView_Previews: PreviewProvider {
             surgeryTechnicalName: "Dummy Surgery",
             description: "This is a dummy procedure for testing purposes.",
             steps: [
-                Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm"),
-                Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear")
+                Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+                Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             ]
         )])), contentType: .bidimentional)
     }
