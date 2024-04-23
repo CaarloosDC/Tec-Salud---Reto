@@ -51,7 +51,8 @@ def get_all():
                         "id": step['step_no'],
                         "description": step['description'],
                         "shortDescription": step['detailed_description'],
-                        "imageName": step['image']
+                        "imageName": step['image'],
+                        "videoName": step['video']
                     }
                     procedure_dict["steps"].append(step_dict)
                 bodypart_dict["doableProcedures"].append(procedure_dict)
