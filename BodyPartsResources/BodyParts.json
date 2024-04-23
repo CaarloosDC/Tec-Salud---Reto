@@ -115,6 +115,48 @@
             "imageName": ""
           }
         ]
+      },
+      {
+        "id": 9,
+        "surgeryTechnicalName": "Carpal Tunnel Release",
+        "description": "Surgical procedure to relieve pressure on the median nerve in the wrist by cutting the transverse carpal ligament, commonly performed to alleviate symptoms associated with carpal tunnel syndrome.",
+        "steps": [
+          {
+            "id": 1,
+            "description": "Patient preparation and anesthesia - The patient's wrist is cleaned and sterilized. Local anesthesia is administered to numb the wrist and hand area. The arm is placed on the operating table, and a tourniquet is applied to control blood flow.",
+            "imageName": ""
+          },
+          {
+            "id": 2,
+            "description": "Incision - A small incision (about 1 to 2 inches) is made in the palm of the hand, directly over the carpal tunnel area. This incision is used to access the transverse carpal ligament while minimizing damage to surrounding structures.",
+            "imageName": ""
+          },
+          {
+            "id": 3,
+            "description": "Exposure and visualization - The skin and subcutaneous tissues are gently retracted to expose the transverse carpal ligament. The surgeon carefully identifies and protects the median nerve and tendons running through the tunnel.",
+            "imageName": ""
+          },
+          {
+            "id": 4,
+            "description": "Cutting the ligament - Special surgical instruments are used to divide the transverse carpal ligament, which relieves pressure on the median nerve. The ligament is cut precisely to avoid injury to the underlying nerve and tendons.",
+            "imageName": ""
+          },
+          {
+            "id": 5,
+            "description": "Closure and dressing - After ensuring the nerve is decompressed, the incision is closed with sutures or staples. A sterile dressing is applied, and sometimes a splint is placed to stabilize the wrist during initial recovery.",
+            "imageName": ""
+          },
+          {
+            "id": 6,
+            "description": "Post-operative care - The patient is monitored for any immediate complications such as excessive bleeding or infection. Post-operative instructions are provided, including care of the incision site, signs of complications, and activity limitations.",
+            "imageName": ""
+          },
+          {
+            "id": 7,
+            "description": "Follow-up and rehabilitation - The patient will typically return to have sutures removed 10-14 days post-surgery. Rehabilitation exercises or hand therapy may be recommended to restore movement and strength.",
+            "imageName": ""
+          }
+        ]
       }
     ]
   },
