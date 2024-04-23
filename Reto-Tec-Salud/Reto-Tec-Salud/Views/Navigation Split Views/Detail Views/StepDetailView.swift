@@ -25,7 +25,9 @@ struct StepDetailView: View {
                     Image(stepNo.imageName)
                         .resizable()
                         .scaledToFit()
-                    
+                    VideoPlayerView(videoID: stepNo.videoName).frame(width: 500.0, height: 300.0)
+                        .scaleEffect(0.7)
+                        .padding()
                     Spacer()
                 }
                 .frame(maxHeight: 200)

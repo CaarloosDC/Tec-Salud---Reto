@@ -45,6 +45,7 @@
 		D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */; };
 		D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */; };
 		D7CA2B4B2B91CFE2003CB892 /* SurgeryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */; };
+		D7D85B6B2BD8531500C719D9 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D85B6A2BD8531500C719D9 /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyStudyView.swift; sourceTree = "<group>"; };
 		D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyDetailView.swift; sourceTree = "<group>"; };
 		D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryDetailView.swift; sourceTree = "<group>"; };
+		D7D85B6A2BD8531500C719D9 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */,
 				3C4379432BA42ED400C01C1C /* StepDetailView.swift */,
+				D7D85B6A2BD8531500C719D9 /* VideoPlayerView.swift */,
 			);
 			path = "Detail Views";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */,
 				3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
+				D7D85B6B2BD8531500C719D9 /* VideoPlayerView.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
 				3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */,
 				D73694422BA954A5007A38EE /* NavigationView.swift in Sources */,
