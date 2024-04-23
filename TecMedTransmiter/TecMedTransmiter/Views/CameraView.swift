@@ -11,32 +11,36 @@ struct CameraView: View {
     @Environment(PredictionStatus.self) private var predictionStatus // Just migrated
     
     @State var multipeerSession = TecMedMultiPeer()
-    @State var classifierViewModel = ClassifierViewModel() // Also migrated
+    @State var classifierViewModel = ClassifierViewModel()
+    @State private var distance: Float = 0.0
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
-            ZStack{
-                CameraViewControllerRepresentable() {
-                    predictionStatus.setClassificationResults(with: $0, label: $1, confidence: $2)
-                }
-                .ignoresSafeArea()
-                
-                VStack {
-                    Spacer()   
-                    DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel))
-                        .transition(.slide)
-                }
+        ZStack {
+            // Use ARViewController instead of CameraViewControllerRepresentable
+            ARViewController(distance: $distance, predictionStatus: predictionStatus) { classificationResults, label, confidence in
+                predictionStatus.setClassificationResults(with: classificationResults, label: label, confidence: confidence)
             }
-            .onAppear {
-                classifierViewModel.loadJSON()
+            .ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                DetectedBodyPartView(bodyPart: classifierViewModel.getPredictionData(label: predictionLabel), distance: $distance)
+                    .transition(.slide)
             }
-            .onChange(of: classifierViewModel.currentObject) { oldValue, newValue in
-                let newBodyPart = classifierViewModel.getBodyPart(label: newValue)
-                multipeerSession.send(label: newBodyPart.id)
-            }
+        }
+        .onAppear {
+            classifierViewModel.loadJSON()
+        }
+        .onChange(of: classifierViewModel.currentObject) { oldValue, newValue in
+            let newBodyPart = classifierViewModel.getBodyPart(label: newValue)
+            multipeerSession.send(label: newBodyPart.id)
+        }
     }
 }
 
-#Preview {
-    CameraView()
+struct CameraView_Previews: PreviewProvider {
+    static var previews: some View {
+        CameraView()
+    }
 }

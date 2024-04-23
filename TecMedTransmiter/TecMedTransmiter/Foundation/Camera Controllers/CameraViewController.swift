@@ -12,8 +12,6 @@ import SwiftUI
 import AVFoundation
 import Vision
 
-typealias ImageClassificationResult = [String: (basicValue: Double, displayValue: String)]
-typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect)]
 
 struct ValuePerCategory {
     var category: String
