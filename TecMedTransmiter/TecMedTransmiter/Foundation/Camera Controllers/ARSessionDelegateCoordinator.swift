@@ -23,7 +23,9 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     // Closure for handling classification and object detection observations
     private var handleObservations: (ImageClassificationResult, String, String) -> ()
     
-    private let arSessionQueue = DispatchQueue(label: "ARSessionQueue")
+    // Frame Skipping Handling
+    private var frameSkipCount = 0
+    private let maxFrameSkip = 10
     
     init(distance: Binding<Float>, predictionStatus: PredictionStatus, classifierModel: VNCoreMLModel?, objectDetectionModel: VNCoreMLModel?, handleObservations: @escaping (ImageClassificationResult, String, String) -> ()) {
         _distance = distance
@@ -48,52 +50,16 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        let pixelBuffer = frame.capturedImage
-        if pixelBuffer != nil {
-            print("Pixel buffer captured successfully")
-        } else {
-            print("Error: Failed to capture pixel buffer")
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.processCoreML(for: frame)
         }
         
-        guard let classifierModel = classifierModel, let objectDetectionModel = objectDetectionModel else { return }
-        
-        let requestGroup = DispatchGroup()
-        
-        var classificationResults: [VNClassificationObservation] = []
-        var objectDetectionResults: [VNRecognizedObjectObservation] = []
-        
-        // Image Classification Request
-        requestGroup.enter()
-        let classificationRequest = VNCoreMLRequest(model: classifierModel) { request, error in
-            defer { requestGroup.leave() }
-            guard let results = request.results as? [VNClassificationObservation] else { return }
-            classificationResults = results
-        }
-        classificationRequest.imageCropAndScaleOption = .centerCrop
-        
-        // Object Detection Request
-        requestGroup.enter()
-        let objectDetectionRequest = VNCoreMLRequest(model: objectDetectionModel) { request, error in
-            defer { requestGroup.leave() }
-            guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
-            objectDetectionResults = results
-        }
-        objectDetectionRequest.imageCropAndScaleOption = .centerCrop
-        
-        // Perform both requests
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
-        try? requestHandler.perform([classificationRequest, objectDetectionRequest])
-        
-        // Wait for both requests to complete
-        requestGroup.notify(queue: .main) {
-            self.handleResults(classificationResults: classificationResults, objectDetectionResults: objectDetectionResults)
+        DispatchQueue.global().async {
+            self.readLiDar(for: frame)
         }
     }
     
-    private var frameSkipCount = 0
-    private let maxFrameSkip = 4
-    // Maximum number of frames to skip
-
+    // MARK: Handle CoreML Classification Results
     private func handleResults(classificationResults: [VNClassificationObservation], objectDetectionResults: [VNRecognizedObjectObservation]) {
         // Handle classification results
         let predictionResultsMap = classificationResults.map {
@@ -143,4 +109,65 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         
         // You can handle the object detection results here, e.g., send them to another function or process them directly
     }
+    // MARK: CoreML Processing
+    private func processCoreML(for frame: ARFrame) {
+        // CoreML Model Management
+        let pixelBuffer = frame.capturedImage
+        
+        guard let classifierModel = classifierModel, let objectDetectionModel = objectDetectionModel else { return }
+        
+        let requestGroup = DispatchGroup()
+        
+        var classificationResults: [VNClassificationObservation] = []
+        var objectDetectionResults: [VNRecognizedObjectObservation] = []
+        
+        // Image Classification Request
+        requestGroup.enter()
+        let classificationRequest = VNCoreMLRequest(model: classifierModel) { request, error in
+            defer { requestGroup.leave() }
+            guard let results = request.results as? [VNClassificationObservation] else { return }
+            classificationResults = results
+        }
+        classificationRequest.imageCropAndScaleOption = .centerCrop
+        
+        // Object Detection Request
+        requestGroup.enter()
+        let objectDetectionRequest = VNCoreMLRequest(model: objectDetectionModel) { request, error in
+            defer { requestGroup.leave() }
+            guard let results = request.results as? [VNRecognizedObjectObservation] else { return }
+            objectDetectionResults = results
+        }
+        objectDetectionRequest.imageCropAndScaleOption = .centerCrop
+        
+        // Perform both requests
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        try? requestHandler.perform([classificationRequest, objectDetectionRequest])
+        
+        // Wait for both requests to complete
+        requestGroup.notify(queue: .main) {
+            self.handleResults(classificationResults: classificationResults, objectDetectionResults: objectDetectionResults)
+        }
+    }
+    
+    
+    // MARK: LiDar Reading
+    private func readLiDar(for frame: ARFrame) {
+        guard let currentPointCloud = frame.rawFeaturePoints else { return }
+        let cameraTransform = frame.camera.transform
+        
+        var closestDistance: Float = Float.greatestFiniteMagnitude
+        
+        for point in currentPointCloud.points {
+            let pointInSpace = cameraTransform.inverse * SIMD4(point, 1)
+            let distance2Camera = sqrt(pow(pointInSpace.x, 2) + pow(pointInSpace.y, 2) + pow(pointInSpace.z, 2))
+            
+            if (distance2Camera < closestDistance) {
+                closestDistance = distance2Camera
+            }
+        }
+        
+        
+        self.distance = closestDistance
+    }
 }
+
