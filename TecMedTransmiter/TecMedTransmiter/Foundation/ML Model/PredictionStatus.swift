@@ -10,7 +10,8 @@ import SwiftUI
 import Vision
 import CoreML
 
-@Observable class PredictionStatus {
+@Observable 
+class PredictionStatus {
     var modelUrl = URL(fileURLWithPath: "")
     
     // MARK: Image classifier

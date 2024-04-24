@@ -10,6 +10,7 @@ import SwiftUI
 struct DetectedBodyPartView: View {
     private(set) var bodyPart: BodyPart
 //    @Environment(TecMedMultiPeer.self) private var recieverSession
+    @Binding var distance: Float
     
     var body: some View {
         VStack {
@@ -18,6 +19,7 @@ struct DetectedBodyPartView: View {
                 .bold()
                 .padding()
             
+            Text("Distance: \(distance)")
             
             HStack {
                 VStack(alignment: .leading) {
@@ -55,6 +57,6 @@ struct DetectedBodyPartView: View {
 }
 
 #Preview {
-    DetectedBodyPartView(bodyPart: BodyPart(id: .Arm, medicalName: "It's me", imageName: "arm"))
+    DetectedBodyPartView(bodyPart: BodyPart(id: .Arm, medicalName: "It's me", imageName: "arm"), distance: .constant(0.0))
 }
 
