@@ -33,6 +33,7 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         self.classifierModel = classifierModel
         self.objectDetectionModel = objectDetectionModel
         self.handleObservations = handleObservations
+
         
         if classifierModel != nil {
             print("Classifier model initialized successfully")
