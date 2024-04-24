@@ -25,32 +25,41 @@ struct BodyPartView: View {
                 Text(bodyPart?.medicalName ?? "No data recieved")
                     .font(.largeTitle)
                     .bold()
-                    .padding()
+                    .padding(.bottom)
                 
                 Text("Procedimientos disponibles:")
                     .font(.subheadline)
-                    .padding()
+                    .padding(.bottom)
                 
-                
-                List(bodyPart?.doableProcedures ?? []) { procedure in
-                    Button(action: {
-                        selectedProcedure = procedure
-                        selected.sentProcedure = procedure
-                    }) {
-                        HStack {
-                            Text(procedure.surgeryTechnicalName)
-                                .padding()
-                            Spacer()
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(bodyPart?.doableProcedures ?? [], id: \.self) { procedure in
+                            Button(action: {
+                                selectedProcedure = procedure
+                                selected.sentProcedure = procedure
+                            }) {
+                                HStack {
+                                    Text(procedure.surgeryTechnicalName)
+                                        .font(.title3)
+                                        .minimumScaleFactor(0.5)
+                                        .padding()
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .contentShape(Rectangle())
+                                .background(selectedProcedure == procedure ? Color.blue : Color(UIColor.secondarySystemBackground)) // Se utiliza secondarySystemBackground para el fondo transparente
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            // Se añade un divisor después de cada botón, excepto el último
+                            if bodyPart?.doableProcedures.last != procedure {
+                                Divider()
+                            }
                         }
-                        .background(selectedProcedure == procedure ? Color.blue : Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .frame(maxWidth: 200)
                     }
-                    .buttonStyle(.plain)
                 }
-                .listStyle(InsetListStyle())
             }
-            .padding()
+            .padding(.horizontal)
             
             VStack {
                 ZStack {
@@ -79,7 +88,7 @@ struct BodyPartView: View {
                         }
                     }) {
                         HStack(alignment: .center) {
-                            Text("Go to \(selectedProcedure?.surgeryTechnicalName ?? "Unknown Procedure")")
+                            Text("Estudiar \(selectedProcedure?.surgeryTechnicalName ?? "Procedimiento desconocido")")
                                 .foregroundColor(.white)
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -89,7 +98,7 @@ struct BodyPartView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
                     .buttonStyle(.plain)
-
+                    
                     Spacer()
                 } else {
                     Spacer()
@@ -101,7 +110,7 @@ struct BodyPartView: View {
         }
     }
 }
-    
+
 
 struct BodyPartView_Previews: PreviewProvider {
     static var previews: some View {

@@ -19,7 +19,6 @@ struct SurgeryDetailView: View {
     }
     
     var mainContent: some View {
-        // Cambiamos de List a ScrollView y LazyVStack para una apariencia personalizada
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(bodyParts.bodyParts.indices, id: \.self) { index in
@@ -33,9 +32,9 @@ struct SurgeryDetailView: View {
                                 .padding()
                             Spacer()
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading) // Se extiende el ancho al máximo
+                        .frame(maxWidth: .infinity, alignment: .leading) // Extiender el ancho al máximo
                         .contentShape(Rectangle()) // Hace que todo el espacio del botón sea interactivo
-                        .background(selectedBodyPart == bodyParts.bodyParts[index] ? Color.blue : Color.clear) // El fondo se vuelve transparente cuando no está seleccionado
+                        .background(selectedBodyPart == bodyParts.bodyParts[index] ? Color.blue : Color.clear) // Cambiar fondo si está seleccionado
                     }
                     .buttonStyle(PlainButtonStyle())
                     
@@ -47,10 +46,7 @@ struct SurgeryDetailView: View {
             }
         }
     }
-
 }
-
-
 
 #Preview {
     SurgeryDetailView()

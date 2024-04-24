@@ -14,7 +14,7 @@ struct StepDetailView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 VStack(alignment:.leading) {
-                    Text("Paso No. \(stepNo.id)")
+                    Text("Paso no. \(stepNo.id)")
                         .font(.title)
                     Text(stepNo.description)
                         .font(.footnote)

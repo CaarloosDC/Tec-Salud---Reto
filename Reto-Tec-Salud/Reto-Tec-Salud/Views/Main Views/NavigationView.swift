@@ -39,7 +39,6 @@ struct NavigationView: View {
                     }
                 }
             }
-//            .navigationTitle("MedVision")
         }
     }
 }

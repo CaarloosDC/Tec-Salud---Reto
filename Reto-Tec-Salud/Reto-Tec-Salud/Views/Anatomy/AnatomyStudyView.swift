@@ -18,9 +18,7 @@ struct AnatomyStudyView: View {
     }
     
     var mainContent: some View {
-        // Usar ScrollView en lugar de List para permitir mayor personalización
         ScrollView {
-            // Usar LazyVStack para comportamiento de lista perezosa con personalización
             LazyVStack(spacing: 0) { // spacing: 0 para que los divisores toquen los elementos
                 ForEach(bodySystems.indices, id: \.self) { system in
                     Button(action: {
@@ -34,13 +32,13 @@ struct AnatomyStudyView: View {
                             Spacer()
                         }
                         .frame(maxWidth: .infinity, alignment: .leading) // Extender ancho al máximo
-                        .contentShape(Rectangle()) // Hacer que todo el espacio sea "tocable"
+                        .contentShape(Rectangle()) // Hace que todo el espacio del botón sea interactivo
                         .background(selectedSystem == bodySystems[system] ? Color.blue : Color.clear) // Cambiar fondo si está seleccionado
                     }
                     .buttonStyle(PlainButtonStyle())
                     
-                    // Divisor
-                    if system < bodySystems.count {
+                    // Divisor, excepto después del último elemento
+                    if system < bodySystems.count - 1 {
                         Divider()
                     }
                 }

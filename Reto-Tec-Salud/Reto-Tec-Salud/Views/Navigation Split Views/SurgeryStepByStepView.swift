@@ -13,25 +13,34 @@ struct SurgeryStepByStepView: View {
     
     var body: some View {
         SplitView(mainContent: mainContent, detailContent: StepDetailView(stepNo: selectedStep ?? Step(id: 1, description: "not found", shortDescription: "Short description", imageName: "garbage", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")), placeHolder: PlaceHolderView(header: surgicalProcedure.surgeryTechnicalName, fillerText: "Selecciona un paso  para comenzar"), selectedItem: $selectedStep)
-        }
+    }
     
     var mainContent: some View {
-        List(surgicalProcedure.steps, selection: $selectedStep) { step in
-            Button(action: {
-                selectedStep = step
-            }) {
-                HStack {
-                    Text("Paso No. \(step.id)")
-                        .font(.title3)
-                        .minimumScaleFactor(0.5)
-                        .padding()
-                    Spacer()
+        ScrollView {
+            LazyVStack(spacing: 0) { // spacing: 0 para que los divisores toquen los elementos
+                ForEach(surgicalProcedure.steps.indices, id: \.self) { index in
+                    Button(action: {
+                        selectedStep = surgicalProcedure.steps[index]
+                    }) {
+                        HStack {
+                            Text("Paso no. \(surgicalProcedure.steps[index].id)")
+                                .font(.title3)
+                                .minimumScaleFactor(0.5)
+                                .padding()
+                            Spacer()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading) // Extender ancho al máximo
+                        .contentShape(Rectangle()) // Hacer que todo el espacio sea "tocable"
+                        .background(selectedStep == surgicalProcedure.steps[index] ? Color.blue : Color.clear) // Cambiar fondo si está seleccionado
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    // Divisor, excepto después del último elemento
+                    if index < surgicalProcedure.steps.count - 1 {
+                        Divider().padding(.leading)
+                    }
                 }
-                .background(selectedStep == step ? Color.blue : Color.gray)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .frame(maxWidth: 260)
             }
-            .buttonStyle(PlainButtonStyle())
         }
     }
 }
