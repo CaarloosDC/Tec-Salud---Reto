@@ -8,13 +8,17 @@
 import Foundation
 import ARKit
 import SwiftUI
+import RealityKit
 
 typealias ImageClassificationResult = [String: (basicValue: Double, displayValue: String)]
-typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect)]
+typealias ObjectDetectionResult = [(identifier: String, confidence: Float, boundingBox: CGRect, averageDistance: Float, objectCoordinates: SIMD3<Float>)]
 
 class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     @Binding var distance: Float
+    @Binding var multiPeerSession: TecMedMultiPeer
+    
     var predictionStatus: PredictionStatus
+    private var arView: ARView?
     
     // CoreML Models
     private var classifierModel: VNCoreMLModel?
@@ -27,8 +31,9 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     private var frameSkipCount = 0
     private let maxFrameSkip = 10
     
-    init(distance: Binding<Float>, predictionStatus: PredictionStatus, classifierModel: VNCoreMLModel?, objectDetectionModel: VNCoreMLModel?, handleObservations: @escaping (ImageClassificationResult, String, String) -> ()) {
+    init(distance: Binding<Float>, multiPeerSession: Binding<TecMedMultiPeer>, predictionStatus: PredictionStatus, classifierModel: VNCoreMLModel?, objectDetectionModel: VNCoreMLModel?, handleObservations: @escaping (ImageClassificationResult, String, String) -> ()) {
         _distance = distance
+        _multiPeerSession = multiPeerSession
         self.predictionStatus = predictionStatus
         self.classifierModel = classifierModel
         self.objectDetectionModel = objectDetectionModel
@@ -49,6 +54,14 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         super.init()
     }
     
+    func makeUIView(_ view: ARView) {
+        self.arView = view  // Store the ARView reference passed from makeUIView
+        view.session.delegate = self
+        let config = ARWorldTrackingConfiguration()
+        config.environmentTexturing = .automatic
+        view.session.run(config)
+    }
+    
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         DispatchQueue.global(qos: .userInteractive).async {
@@ -61,7 +74,7 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     }
     
     // MARK: Handle CoreML Classification Results
-    private func handleResults(classificationResults: [VNClassificationObservation], objectDetectionResults: [VNRecognizedObjectObservation]) {
+    private func handleResults(classificationResults: [VNClassificationObservation], objectDetectionResults: [VNRecognizedObjectObservation], frame: ARFrame) {
         // Handle classification results
         let predictionResultsMap = classificationResults.map {
             (
@@ -90,26 +103,67 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         if frameSkipCount >= maxFrameSkip {
             // Process the frame
             self.handleObservations(compiledResults, classificationResults.first?.identifier ?? "Unknown", String(format: "%.0f%%", classificationResults.first?.confidence ?? 0.0))
-            self.handleObjectDetectionResults(objectDetectionResults)
+            self.handleObjectDetectionResults(objectDetectionResults, for: frame)
             
             // Reset frame skip count
             frameSkipCount = 0
         }
     }
 
-    private func handleObjectDetectionResults(_ results: [VNRecognizedObjectObservation]) {
+    private func handleObjectDetectionResults(_ results: [VNRecognizedObjectObservation], for frame: ARFrame) {
         // Handle object detection results
         var objectDetectionResults: ObjectDetectionResult = []
+        
+        guard let currentPointCloud = frame.rawFeaturePoints else {
+            print("No point cloud available.")
+            return
+        }
+        
+        let cameraTransform = frame.camera.transform
+        
         for result in results {
             let identifier = result.labels.first?.identifier ?? "Unknown"
             let confidence = result.labels.first?.confidence ?? 0.0
             let boundingBox = result.boundingBox
             
-            objectDetectionResults.append((identifier: identifier, confidence: confidence, boundingBox: boundingBox))
+            // Bound box center coordinates
+            let centerX = boundingBox.midX
+            let centerY = boundingBox.midY
+            
+            // Convert center point coordinates to 3D coordinates
+            let centerPoint = CGPoint(x: centerX, y: centerY)
+            let raycastQuery = frame.raycastQuery(from: centerPoint, allowing: .estimatedPlane, alignment: .any)
+            let raycastResults = arView?.session.raycast(raycastQuery).first
+            let centerPoint3D = raycastResults?.worldTransform.columns.3
+            
+            // Calculcate the average distance of the points
+            var totalDistance: Float = 0.0
+            var pointCount: Float = 0.0
+            
+            for point in currentPointCloud.points {
+                let pointInSpace = cameraTransform.inverse * SIMD4(point, 1)
+                let distance2Camera = sqrt(pow(pointInSpace.x, 2) + pow(pointInSpace.y, 2) + pow(pointInSpace.z, 2))
+                
+                let convertedPoint = CGPoint(x: CGFloat(point.x) - boundingBox.origin.x, y: CGFloat(point.y) - boundingBox.origin.y)
+
+                if boundingBox.contains(convertedPoint) {
+                    totalDistance += distance2Camera
+                    pointCount += 1.0
+                }
+            }
+            
+            let averageDistance = pointCount > 0 ? totalDistance / pointCount : 0.0
+            let objectCoordinates = SIMD3<Float>(x: centerPoint3D?.x ?? 0.0, y: centerPoint3D?.y ?? 0.0, z: centerPoint3D?.z ?? 0.0)
+            
+            let objectInfo = ObjectInfo(coordinates: objectCoordinates, distance: averageDistance)
+            multiPeerSession.sendObjectInfo(objectInfo: objectInfo)
+            
+            objectDetectionResults.append((identifier: identifier, confidence: confidence, boundingBox: boundingBox, averageDistance: averageDistance, objectCoordinates: objectCoordinates))
         }
         
         // You can handle the object detection results here, e.g., send them to another function or process them directly
     }
+    
     // MARK: CoreML Processing
     private func processCoreML(for frame: ARFrame) {
         // CoreML Model Management
@@ -146,7 +200,7 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
         
         // Wait for both requests to complete
         requestGroup.notify(queue: .main) {
-            self.handleResults(classificationResults: classificationResults, objectDetectionResults: objectDetectionResults)
+            self.handleResults(classificationResults: classificationResults, objectDetectionResults: objectDetectionResults, frame: frame)
         }
     }
     
@@ -172,3 +226,10 @@ class ARSessionDelegateCoordinator: NSObject, ARSessionDelegate {
     }
 }
 
+
+
+// Object info struct
+struct ObjectInfo: Codable {
+    let coordinates: SIMD3<Float>
+    let distance: Float
+}

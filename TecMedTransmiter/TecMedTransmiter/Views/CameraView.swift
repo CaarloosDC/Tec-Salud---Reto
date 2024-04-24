@@ -14,11 +14,13 @@ struct CameraView: View {
     @State var classifierViewModel = ClassifierViewModel()
     @State private var distance: Float = 0.0
     
+    @State private var objectDetectionResults: ObjectDetectionResult = []
+    
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
         ZStack {
             // Use ARViewController instead of CameraViewControllerRepresentable
-            ARViewController(distance: $distance, predictionStatus: predictionStatus) { classificationResults, label, confidence in
+            ARViewController(distance: $distance, multiPeerSession: $multipeerSession, predictionStatus: predictionStatus) { classificationResults, label, confidence in
                 predictionStatus.setClassificationResults(with: classificationResults, label: label, confidence: confidence)
             }
             .ignoresSafeArea()

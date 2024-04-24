@@ -28,8 +28,6 @@
 		3CF0E2F82BB0BC85001B0CC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */; };
 		3CF0E2FA2BB0BC88001B0CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */; };
 		3CF0E2FD2BB0BC88001B0CC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */; };
-		3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */; };
-		3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +54,6 @@
 		3CF0E2F72BB0BC85001B0CC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CF0E2F92BB0BC88001B0CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CF0E2FC2BB0BC88001B0CC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				3CC1E06F2BD71D7A0065EFBE /* ARViewController.swift */,
-				3CF0E3032BB0BCB4001B0CC1 /* CameraViewController.swift */,
-				3CF0E30F2BB10A29001B0CC1 /* CameraControllerRepresentable.swift */,
 				3CC1E0712BD71E190065EFBE /* ARSessionDelegateCoordinator.swift */,
 			);
 			path = "Camera Controllers";
@@ -283,9 +277,7 @@
 				3CA0F3872BD1A4080020A0C8 /* BodyPart Finder.mlmodel in Sources */,
 				3C57A1B42BB17E90006747FE /* Constants.swift in Sources */,
 				3CEB14A52BC8D82300767B8A /* MainView.swift in Sources */,
-				3CF0E3102BB10A29001B0CC1 /* CameraControllerRepresentable.swift in Sources */,
 				3CC1E0722BD71E190065EFBE /* ARSessionDelegateCoordinator.swift in Sources */,
-				3CF0E3042BB0BCB4001B0CC1 /* CameraViewController.swift in Sources */,
 				3C57A1AE2BB17E48006747FE /* BodyPart.swift in Sources */,
 				3CB70EF82BB15F4C00DA9A99 /* DetectedDeviceView.swift in Sources */,
 				3C57A1BD2BB17F16006747FE /* TecMedMultiPeer.swift in Sources */,
