@@ -11,10 +11,15 @@ import RealityKitContent
 
 struct SurgeonSymView: View {
     @StateObject var model = SurgeonSymViewModel()
+    @State private var trackedEntity: Entity?
+    @Environment(TecMedMultiPeer.self) var multiPeersession
+    
     var body: some View {
         RealityView { content in
             // Content Entity
-            content.add(model.setUpContentEntity() )
+            trackedEntity = model.trackedEntity
+            trackedEntity?.setPosition(multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>(0,0,0), relativeTo: model.pinPointEntity)
+            content.add(model.setUpContentEntity())
         }.task {
             // Run ARKit Session
             await model.runSession()
@@ -28,6 +33,8 @@ struct SurgeonSymView: View {
         }.task {
             // Process world processing and anchor placement
             await model.processWorldUpdates()
+        }.task {
+            await model.processObjectTrackingUpdates(objectPosition: multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>.zero, trackedEntity: trackedEntity)
         }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
                 // Pace a cube, change to pin point a world anchor instead

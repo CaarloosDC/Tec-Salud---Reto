@@ -14,8 +14,10 @@ import RealityKitContent
 
 @MainActor
 class SurgeonSymViewModel: ObservableObject {
-    @pinPoint var pinPointEntity: ModelEntity?
-    private var worldAnchorMap: [ModelEntity: WorldAnchor] = [:]
+    @pinPoint var pinPointEntity: Entity?
+    var trackedEntity: Entity?
+    
+    private var worldAnchorMap: [Entity: WorldAnchor] = [:]
     
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
@@ -115,7 +117,18 @@ class SurgeonSymViewModel: ObservableObject {
             case .removed:
                 print("Anchor \(update.anchor.id) position now unknown")
             }
-            
+        }
+    }
+    
+    // MARK: Change tracked object coordinates
+    func processObjectTrackingUpdates(objectPosition: SIMD3<Float>, trackedEntity: Entity?) async {
+        if trackedEntity == nil {
+            print("Unexistent pinPoint")
+            return
+        }
+        else {
+            print("Entity moving")
+            trackedEntity?.setPosition(objectPosition, relativeTo: trackedEntity)
         }
     }
     
@@ -125,9 +138,12 @@ class SurgeonSymViewModel: ObservableObject {
         
         let placementLocation = rightFingerPosition + SIMD3<Float>(0,-0.05,0)
         
-        if pinPointEntity == nil {
-            let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
+        do {
+            let entity = try await Entity(named: "PinPoint", in: realityKitContentBundle)
+            let armEntity = try await Entity(named: "Skeleton", in: realityKitContentBundle)
+            
             entity.setPosition(placementLocation, relativeTo: nil)
+            armEntity.setPosition(placementLocation, relativeTo: nil)
             
             // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
             let entityWorldTransform = entity.transform.matrix
@@ -141,16 +157,20 @@ class SurgeonSymViewModel: ObservableObject {
             entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
             entity.components.set(GroundingShadowComponent(castsShadow: true))
             
+            armEntity.components.set(GroundingShadowComponent(castsShadow: true))
+            
             let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
             
-            entity.components.set(PhysicsBodyComponent(shapes: entity.collision!.shapes, mass: 1.0, material: material, mode: .dynamic))
-            
             pinPointEntity = entity
-            contentEntity.addChild(entity)
-        } else {
-            print("Pinpoint placed")
+            trackedEntity = armEntity
+            
+            contentEntity.addChild(pinPointEntity!)
+            contentEntity.addChild(trackedEntity!)
+        } catch {
+            print("Error creating entity: \(error)")
         }
     }
+
     
     func deletePinPoint() async {
       guard let entity = pinPointEntity else {
