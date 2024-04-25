@@ -40,6 +40,10 @@ struct NavigationView: View {
                 }
             }
         }
+//        .ornament(visibility: .visible,attachmentAnchor: .scene(.trailing)) {
+//            MultiturnChatView()
+//                .frame(width: 200)
+//        }
     }
 }
 

@@ -11,6 +11,7 @@ struct BodyPartView: View {
     // Second window functions
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     
     @Binding var bodyPart: BodyPart?
     @State  var selectedProcedure: Procedure? = nil
@@ -80,7 +81,9 @@ struct BodyPartView: View {
                         switch contentType {
                         case .threedimentional:
                             openWindow(id: "SurgeryDetailContentWindow")
-                            openWindow(id: "BodyPartVolume")
+                            Task {
+                                await openImmersiveSpace(id: "ObjectTrackingImmersiveSpace")
+                            }
                             
                         case .bidimentional:
                             openWindow(id: "SecondWindow")

@@ -33,7 +33,6 @@ struct Reto_Tec_SaludApp: App {
             SurgeryDetailContentWindow()
                 .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
-                .environment(volumeData)
         }
         .defaultSize(CGSize(width: 500, height: 600))
         
@@ -51,6 +50,11 @@ struct Reto_Tec_SaludApp: App {
         }
         .immersionStyle(selection: .constant(.full), in: .full)
         .immersiveContentBrightness(.bright)
+        
+        ImmersiveSpace(id: "ObjectTrackingImmersiveSpace") {
+            SurgeonSymView()
+                .environment(TecMedMultiPeer())
+        }
     }
 }
 

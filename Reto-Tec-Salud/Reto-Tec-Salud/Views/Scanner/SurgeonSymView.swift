@@ -10,11 +10,34 @@ import RealityKit
 import RealityKitContent
 
 struct SurgeonSymView: View {
+    @Environment(TecMedMultiPeer.self) private var multiPeerSession
+
     @StateObject var model = SurgeonSymViewModel()
+    @State var objectData: ObjectInfo = ObjectInfo(coordinates: SIMD3<Float>.zero, distance: 0.0)
+    @State var sceneEntity: Entity?
+    @State var realityContent: RealityViewContent?
+    
     var body: some View {
         RealityView { content in
             // Content Entity
-            content.add(model.setUpContentEntity() )
+            do {
+                content.add(model.setUpContentEntity())
+                
+                if model.pinPointEntity != nil {
+                    print("excecuting")
+                    let scene = try await Entity(named: "PinPoint", in: realityKitContentBundle)
+                    self.sceneEntity = scene
+                    content.add(self.sceneEntity!)
+                    
+                }
+                else {
+                    print("Entity is nil")
+                }
+                self.realityContent = content
+            } catch {
+                // Handle any potential errors
+                print("Error adding content to RealityView: \(error)")
+            }
         }.task {
             // Run ARKit Session
             await model.runSession()
@@ -30,7 +53,6 @@ struct SurgeonSymView: View {
             await model.processWorldUpdates()
         }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
-                // Pace a cube, change to pin point a world anchor instead
                 if (model.pinPointEntity == nil) {
                     await model.placeCube()
                 }
@@ -39,6 +61,17 @@ struct SurgeonSymView: View {
                 }
             }
         }))
+        .onChange(of: multiPeerSession.currentObjectData) { oldValue, newValue in
+            print("moving")
+            updateScenePosition()
+        }
+    }
+    
+    private func updateScenePosition() {
+        guard let sceneEntity = sceneEntity else { return }
+        guard let pinPointEntity = model.pinPointEntity else { return }
+        // Update scene position relative to the pinPointEntity using objectData.coordinates
+        sceneEntity.setPosition(multiPeerSession.currentObjectData?.coordinates ?? SIMD3<Float>(0,0,0), relativeTo: pinPointEntity)
     }
 }
 
