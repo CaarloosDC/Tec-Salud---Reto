@@ -12,10 +12,10 @@ import ARKit
 
 @propertyWrapper
 struct pinPoint {
-    private var entity: Entity?
+    private var entity: ModelEntity?
     
     // Check if the entity already exists
-    var wrappedValue: Entity? {
+    var wrappedValue: ModelEntity? {
         get { return entity }
         set {
             guard entity == nil else { return }
@@ -23,12 +23,11 @@ struct pinPoint {
         }
     }
     
-    init(wrappedValue: Entity?) {
+    init(wrappedValue: ModelEntity?) {
         self.wrappedValue = wrappedValue
     }
     
     mutating func deletePinPoint() {
-        print("triggered")
         entity?.removeFromParent()
         entity = nil
     }

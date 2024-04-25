@@ -14,8 +14,8 @@ import RealityKitContent
 
 @MainActor
 class SurgeonSymViewModel: ObservableObject {
-    @pinPoint var pinPointEntity: Entity?
-    private var worldAnchorMap: [Entity: WorldAnchor] = [:]
+    @pinPoint var pinPointEntity: ModelEntity?
+    private var worldAnchorMap: [ModelEntity: WorldAnchor] = [:]
     
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
@@ -126,56 +126,55 @@ class SurgeonSymViewModel: ObservableObject {
         let placementLocation = rightFingerPosition + SIMD3<Float>(0,-0.05,0)
         
         if pinPointEntity == nil {
-            if let scene = try? await Entity(named: "PinPoint", in: realityKitContentBundle) {
-                scene.setPosition(placementLocation, relativeTo: nil)
-                
-                // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
-                let entityWorldTransform = scene.transform.matrix
-                
-                // Create world anchor
-                let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)// Add to map using entity ID
-                
-                scene.components.set(InputTargetComponent(allowedInputTypes: .indirect))
-                scene.components.set(GroundingShadowComponent(castsShadow: true))
-                
-                let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
-                
-                pinPointEntity = scene
-                contentEntity.addChild(scene)
-                worldAnchorMap[scene] = anchor
-                
-            }
+            let entity = ModelEntity(mesh: .generateBox(size: 0.1), materials: [SimpleMaterial(color: .systemBlue, isMetallic: false)], collisionShape: .generateBox(size: SIMD3<Float>(repeating: 0.1)), mass: 1)
+            entity.setPosition(placementLocation, relativeTo: nil)
+            
+            // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
+            let entityWorldTransform = entity.transform.matrix
+            
+            // Create world anchor
+            let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)
+            pinPointEntity = entity
+            contentEntity.addChild(entity)
+            worldAnchorMap[entity] = anchor  // Add to map using entity ID
+            
+            entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+            entity.components.set(GroundingShadowComponent(castsShadow: true))
+            
+            let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
+            
+            entity.components.set(PhysicsBodyComponent(shapes: entity.collision!.shapes, mass: 1.0, material: material, mode: .dynamic))
+            
+            pinPointEntity = entity
+            contentEntity.addChild(entity)
         } else {
             print("Pinpoint placed")
         }
     }
     
     func deletePinPoint() async {
-        guard let entity = pinPointEntity else {
-            print("No entity to delete")
-            return
+      guard let entity = pinPointEntity else {
+        print("No entity to delete")
+        return
+      }
+      
+      // Remove entity from scene
+      entity.removeFromParent()
+      pinPointEntity = nil
+      
+      // Remove world anchor using the map (force unwrap)
+      if let anchorToRemove = worldAnchorMap[entity] {
+        do {
+          try await worldTracking.removeAnchor(anchorToRemove)
+          worldAnchorMap.removeValue(forKey: entity)
+        } catch {
+          print("Error removing world anchor: \(error)")
         }
-
-        // Remove entity from scene
-        entity.removeFromParent()
-        pinPointEntity = nil
-
-        // Remove world anchor using the map
-        if let anchorToRemove = worldAnchorMap[entity] {
-            do {
-                // Check if the anchor is tracked before attempting to remove it
-                if anchorToRemove.isTracked {
-                    try await worldTracking.removeAnchor(anchorToRemove)
-                    worldAnchorMap.removeValue(forKey: entity)
-                } else {
-                    print("Error: Attempted to remove untracked world anchor")
-                }
-            } catch {
-                print("Error removing world anchor: \(error)")
-            }
-        } else {
-            print("Error: World anchor not found for entity")
-        }
+      } else {
+        print("Error: World anchor not found for entity")
+      }
     }
+
+
 }
  
