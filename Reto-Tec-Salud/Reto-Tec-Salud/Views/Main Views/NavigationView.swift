@@ -33,17 +33,18 @@ struct NavigationView: View {
                         Text("Anatomía")
                     }
                     Spacer()
-                    Button(action: {selectedView = "Medic Chat" }) {
-                        Image(systemName: "ellipsis.message.fill")
-                        Text("Medi-Chat")
-                    }
+//                    Button(action: {selectedView = "Medic Chat" }) {
+//                        Image(systemName: "ellipsis.message.fill")
+//                        Text("Medi-Chat")
+//                    }
                 }
             }
         }
-//        .ornament(visibility: .visible,attachmentAnchor: .scene(.trailing)) {
-//            MultiturnChatView()
-//                .frame(width: 200)
-//        }
+        .ornament(attachmentAnchor: .scene(.trailing)) {
+            ChatBotOrnament()
+                .padding()
+        }
+        
     }
 }
 

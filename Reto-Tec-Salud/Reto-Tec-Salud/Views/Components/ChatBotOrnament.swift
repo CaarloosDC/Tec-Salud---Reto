@@ -12,7 +12,6 @@ struct ChatBotOrnament: View {
 
     var body: some View {
         HStack {
-            Spacer()
             VStack {
                 Toggle(isOn: $isBotVisible) {
                     Label("MedBot", systemImage: "bubble.circle")
@@ -23,14 +22,18 @@ struct ChatBotOrnament: View {
                 .labelStyle(.iconOnly)
                 .glassBackgroundEffect(in: .circle)
                 
-                if isBotVisible {
-                    MultiturnChatView()
-                        .padding()
-                        .glassBackgroundEffect(in: .rect(cornerRadius: 20))
-                        .transition(.move(edge: .trailing))
-                }
             }
             .padding(.trailing)
+            
+            if isBotVisible {
+                MultiturnChatView()
+                    .frame(width: 350, height: 500)
+                    .padding()
+                    .glassBackgroundEffect(in: .rect(cornerRadius: 20))
+                    .transition(.move(edge: .trailing))
+            }
+            
+            Spacer()
         }
     }
 }

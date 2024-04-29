@@ -36,11 +36,10 @@ struct StepDetailView: View {
                 Text(stepNo.description)
                     .multilineTextAlignment(.leading)
                     .padding()
+                    .textSelection(.enabled)
             }
             .padding()
         }
-        
-        
     }
 }
 

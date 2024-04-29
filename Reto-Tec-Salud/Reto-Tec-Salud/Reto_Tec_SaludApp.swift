@@ -26,6 +26,10 @@ struct Reto_Tec_SaludApp: App {
                 .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
                 .environment(TecMedMultiPeer())
+                .ornament(attachmentAnchor: .scene(.trailing)) {
+                    ChatBotOrnament()
+                        .padding(12)
+                }
         }
         
         // Surgery detail window for Scanner
