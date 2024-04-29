@@ -48,7 +48,8 @@ struct BodyPartView: View {
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .contentShape(Rectangle())
-                                .background(selectedProcedure == procedure ? Color.blue : Color(UIColor.secondarySystemBackground)) // Se utiliza secondarySystemBackground para el fondo transparente
+                                .background(selectedProcedure == procedure ? Color.blue : Color.white) // Se utiliza secondarySystemBackground para el fondo transparente
+                                .opacity(0.7)
                             }
                             .buttonStyle(PlainButtonStyle())
                             
@@ -58,6 +59,7 @@ struct BodyPartView: View {
                             }
                         }
                     }
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
             }
             .padding(.horizontal)

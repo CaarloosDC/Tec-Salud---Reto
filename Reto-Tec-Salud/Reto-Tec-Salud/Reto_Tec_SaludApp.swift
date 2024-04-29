@@ -56,6 +56,12 @@ struct Reto_Tec_SaludApp: App {
                 .environment(TecMedMultiPeer())
         }
     }
+    
+    // Entity
+    init() {
+        TrackingComponent.registerComponent()
+        TrackingSystem.registerSystem()
+    }
 }
 
 

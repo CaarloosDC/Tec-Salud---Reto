@@ -35,6 +35,7 @@ struct SurgeryDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading) // Extiender el ancho al máximo
                         .contentShape(Rectangle()) // Hace que todo el espacio del botón sea interactivo
                         .background(selectedBodyPart == bodyParts.bodyParts[index] ? Color.blue : Color.clear) // Cambiar fondo si está seleccionado
+                        .opacity(0.7)
                     }
                     .buttonStyle(PlainButtonStyle())
                     

@@ -17,9 +17,18 @@ struct SurgeonSymView: View {
     var body: some View {
         RealityView { content in
             // Content Entity
-            trackedEntity = model.trackedEntity
-            trackedEntity?.setPosition(multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>(0,0,0), relativeTo: model.pinPointEntity)
             content.add(model.setUpContentEntity())
+            
+            // Adding Arm entity
+            guard let entity = try? await Entity(named: "Arm", in: realityKitContentBundle) else {
+                fatalError("Unable to load Entity")
+            }
+            
+            content.add(entity)
+            self.trackedEntity = entity
+            self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>.zero, isTracked: false))
+            
+            // SetUp moving object
         }.task {
             // Run ARKit Session
             await model.runSession()
@@ -33,13 +42,11 @@ struct SurgeonSymView: View {
         }.task {
             // Process world processing and anchor placement
             await model.processWorldUpdates()
-        }.task {
-            await model.processObjectTrackingUpdates(objectPosition: multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>.zero, trackedEntity: trackedEntity)
         }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
                 // Pace a cube, change to pin point a world anchor instead
                 if (model.pinPointEntity == nil) {
-                    await model.placeCube()
+                    await model.placePin()
                 }
                 else {
                     await model.deletePinPoint()

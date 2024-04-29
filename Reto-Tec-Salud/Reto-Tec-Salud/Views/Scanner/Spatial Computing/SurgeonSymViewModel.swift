@@ -15,16 +15,13 @@ import RealityKitContent
 @MainActor
 class SurgeonSymViewModel: ObservableObject {
     @pinPoint var pinPointEntity: Entity?
-    var trackedEntity: Entity?
     
     private var worldAnchorMap: [Entity: WorldAnchor] = [:]
     
     private let session = ARKitSession()
     private let handTracking = HandTrackingProvider()
     private let sceneReconstruction = SceneReconstructionProvider()
-    
-    // Spacial recognition, needed for world anchor placement
-    private let worldTracking = WorldTrackingProvider()
+    let worldTracking = WorldTrackingProvider() // World Tracking provider, world anchors and device pose
     
     private var contentEntity = Entity()
     
@@ -90,7 +87,7 @@ class SurgeonSymViewModel: ObservableObject {
                 entity.collision = CollisionComponent(shapes: [shape], isStatic: true)
                 entity.physicsBody = PhysicsBodyComponent() // makes it possible to add physics to our model
                 entity.components.set(InputTargetComponent())
-                
+    
                 // Update mesh for scene reconstruction
                 meshEntities[update.anchor.id] = entity
                 
@@ -133,39 +130,34 @@ class SurgeonSymViewModel: ObservableObject {
     }
     
     // MARK: Entity placement
-    func placeCube() async {
+    func placePin() async {
         guard let rightFingerPosition = fingerEntities[.right]?.transform.translation else { return }
         
         let placementLocation = rightFingerPosition + SIMD3<Float>(0,-0.05,0)
         
         do {
-            let entity = try await Entity(named: "PinPoint", in: realityKitContentBundle)
-            let armEntity = try await Entity(named: "Skeleton", in: realityKitContentBundle)
+            // Creating an entity and assigning it a render
+            let pinPoint = try await Entity(named: "PinPoint", in: realityKitContentBundle) // Map pin render
             
-            entity.setPosition(placementLocation, relativeTo: nil)
-            armEntity.setPosition(placementLocation, relativeTo: nil)
+            pinPoint.setPosition(placementLocation, relativeTo: nil)
             
-            // Get complete transform of the entity (position, rotation, scale) set value to matrix for it top comply with simd_float4x4
-            let entityWorldTransform = entity.transform.matrix
+            // Get complete transform of the entity (position, rotation, scale) set value to matrix for it to comply with simd_float4x4
+            let entityWorldTransform = pinPoint.transform.matrix
             
             // Create world anchor
             let anchor = WorldAnchor(originFromAnchorTransform: entityWorldTransform)
-            pinPointEntity = entity
-            contentEntity.addChild(entity)
-            worldAnchorMap[entity] = anchor  // Add to map using entity ID
+            try await worldTracking.addAnchor(anchor)
             
-            entity.components.set(InputTargetComponent(allowedInputTypes: .indirect))
-            entity.components.set(GroundingShadowComponent(castsShadow: true))
+            pinPointEntity = pinPoint
+            contentEntity.addChild(pinPoint)
+            worldAnchorMap[pinPoint] = anchor  // Add to map using entity ID
             
-            armEntity.components.set(GroundingShadowComponent(castsShadow: true))
+            pinPoint.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+            pinPoint.components.set(GroundingShadowComponent(castsShadow: true))
             
-            let material = PhysicsMaterialResource.generate(friction: 0.8, restitution: 0.0)
-            
-            pinPointEntity = entity
-            trackedEntity = armEntity
+            pinPointEntity = pinPoint
             
             contentEntity.addChild(pinPointEntity!)
-            contentEntity.addChild(trackedEntity!)
         } catch {
             print("Error creating entity: \(error)")
         }
