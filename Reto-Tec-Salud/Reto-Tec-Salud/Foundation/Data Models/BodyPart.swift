@@ -25,5 +25,5 @@ struct Step: Identifiable, Codable, Hashable {
 }
 
 enum MLModelLabel: String, Codable, CaseIterable, Hashable {
-    case Arm, Ear, Eye, Knee
+    case Arm, Ear, Eye, Knee, Unknown
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct StepNavigationOrnament: View {
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
-    @Environment(VolumeViewModel.self) private var volumeData
     
     var procedure: Procedure?
     @Binding var currentStep: Int
@@ -22,7 +21,6 @@ struct StepNavigationOrnament: View {
                 if (currentStep > 0) {
                     currentStep -= 1
                     
-                    volumeData.volumeRotationAngle = Double.random(in: 1..<360)
                 }
             } label: {
                 Image(systemName: "arrowtriangle.left")
@@ -49,7 +47,6 @@ struct StepNavigationOrnament: View {
                 if let procedure = procedure, procedure.steps.count > currentStep + 1 {
                     currentStep += 1
                     
-                    volumeData.volumeRotationAngle = Double.random(in: 1..<360)
                 }
             } label: {
                 Image(systemName: "arrowtriangle.right")
@@ -67,8 +64,8 @@ struct StepNavigationOrnament: View {
 
 #Preview {
     StepNavigationOrnament(procedure: Procedure(id: 1, surgeryTechnicalName: "Appendectomy", description: "This is a surgical procedure to remove the appendix.", steps: [
-        Step(id: 1, description: "Make an incision in the lower right abdomen.", shortDescription: "Incision", imageName: "image1.png", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
-        Step(id: 2, description: "Locate and remove the appendix.", shortDescription: "Remove Appendix", imageName: "image2.png",videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
-        Step(id: 3, description: "Close the incision with stitches or staples.", shortDescription: "Close Incision", imageName: "image3.png", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+        Step(id: 1, description: "Make an incision in the lower right abdomen.", shortDescription: "Incision", imageName: "image1.png", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+        Step(id: 2, description: "Locate and remove the appendix.", shortDescription: "Remove Appendix", imageName: "image2.png", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+        Step(id: 3, description: "Close the incision with stitches or staples.", shortDescription: "Close Incision", imageName: "image3.png", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
     ]), currentStep: .constant(0))
 }

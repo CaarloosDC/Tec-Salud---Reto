@@ -30,7 +30,7 @@ struct MultiPeerView: View {
             }
             
             if isLoading {
-                Text("Cargando... Comienza a Escanear!")
+                Text("¡Comienza a escanear!")
                     .font(.extraLargeTitle)
                 ProgressView()
                     .scaleEffect(1.3)
@@ -41,7 +41,7 @@ struct MultiPeerView: View {
         }
         .onAppear {
             // Gotta add a .default case into bodypart enum
-            if (retrievedBodyPart?.medicalName == "Default value") {
+            if (retrievedBodyPart?.id == .Unknown) {
                 isLoading = true
             }
         }
@@ -49,8 +49,10 @@ struct MultiPeerView: View {
             if let label = newValue {
                 retrievedBodyPart = bodyPartsVM.findBodyPart(label: label.rawValue)
                 
-                if (isLoading) {
-                    isLoading.toggle()
+                if label == MLModelLabel.Unknown {
+                    isLoading = true
+                } else {
+                    isLoading = false
                 }
             }
         }

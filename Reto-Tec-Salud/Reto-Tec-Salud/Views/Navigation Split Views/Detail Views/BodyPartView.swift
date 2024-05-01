@@ -11,6 +11,7 @@ struct BodyPartView: View {
     // Second window functions
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     
     @Binding var bodyPart: BodyPart?
     @State  var selectedProcedure: Procedure? = nil
@@ -25,32 +26,43 @@ struct BodyPartView: View {
                 Text(bodyPart?.medicalName ?? "No data recieved")
                     .font(.largeTitle)
                     .bold()
-                    .padding()
+                    .padding(.bottom)
                 
                 Text("Procedimientos disponibles:")
                     .font(.subheadline)
-                    .padding()
+                    .padding(.bottom)
                 
-                
-                List(bodyPart?.doableProcedures ?? []) { procedure in
-                    Button(action: {
-                        selectedProcedure = procedure
-                        selected.sentProcedure = procedure
-                    }) {
-                        HStack {
-                            Text(procedure.surgeryTechnicalName)
-                                .padding()
-                            Spacer()
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(bodyPart?.doableProcedures ?? [], id: \.self) { procedure in
+                            Button(action: {
+                                selectedProcedure = procedure
+                                selected.sentProcedure = procedure
+                            }) {
+                                HStack {
+                                    Text(procedure.surgeryTechnicalName)
+                                        .font(.title3)
+                                        .minimumScaleFactor(0.5)
+                                        .padding()
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .contentShape(Rectangle())
+                                .background(selectedProcedure == procedure ? Color.blue : Color.gray) // Se utiliza secondarySystemBackground para el fondo transparente
+                                .opacity(0.7)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            // Se añade un divisor después de cada botón, excepto el último
+                            if bodyPart?.doableProcedures.last != procedure {
+                                Divider()
+                            }
                         }
-                        .background(selectedProcedure == procedure ? Color.blue : Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .frame(maxWidth: 200)
                     }
-                    .buttonStyle(.plain)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                .listStyle(InsetListStyle())
             }
-            .padding()
+            .padding(.horizontal)
             
             VStack {
                 ZStack {
@@ -71,7 +83,9 @@ struct BodyPartView: View {
                         switch contentType {
                         case .threedimentional:
                             openWindow(id: "SurgeryDetailContentWindow")
-                            openWindow(id: "BodyPartVolume")
+                            Task {
+                                await openImmersiveSpace(id: "ObjectTrackingImmersiveSpace")
+                            }
                             
                         case .bidimentional:
                             openWindow(id: "SecondWindow")
@@ -79,7 +93,7 @@ struct BodyPartView: View {
                         }
                     }) {
                         HStack(alignment: .center) {
-                            Text("Go to \(selectedProcedure?.surgeryTechnicalName ?? "Unknown Procedure")")
+                            Text("Estudiar \(selectedProcedure?.surgeryTechnicalName ?? "Procedimiento desconocido")")
                                 .foregroundColor(.white)
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -89,7 +103,7 @@ struct BodyPartView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
                     .buttonStyle(.plain)
-
+                    
                     Spacer()
                 } else {
                     Spacer()
@@ -101,7 +115,7 @@ struct BodyPartView: View {
         }
     }
 }
-    
+
 
 struct BodyPartView_Previews: PreviewProvider {
     static var previews: some View {
@@ -110,8 +124,9 @@ struct BodyPartView_Previews: PreviewProvider {
             surgeryTechnicalName: "Dummy Surgery",
             description: "This is a dummy procedure for testing purposes.",
             steps: [
-                Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
-                Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear", videoName:"https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
+                Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
             ]
         )])), contentType: .bidimentional)
     }

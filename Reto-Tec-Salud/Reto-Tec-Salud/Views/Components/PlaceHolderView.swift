@@ -13,7 +13,7 @@ struct PlaceHolderView: View {
     
     var body: some View {
         VStack {
-            Text("¡Bienvenidx a \(header)!")
+            Text("¡Bienvenido a \(header)!")
                 .font(.extraLargeTitle2)
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)

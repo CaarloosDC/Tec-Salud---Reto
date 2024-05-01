@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MultiturnChatView: View {
-    @State var textInput = ""
     @State var logoAnimating = false
     @State var timer: Timer?
     @State var chatService = ChatService()
+    @State var textInput: String = ""
     
     var body: some View {
         VStack {
@@ -30,6 +30,10 @@ struct MultiturnChatView: View {
                         // MARK: Chat message view
                         chatMessageView(chatMessage)
                     }
+                }
+                .onAppear {
+                    // Call inspectPasteBoard when the view appears
+                    inspectPasteBoard()
                 }
                 .onChange(of: chatService.messages) { _, _ in
                     guard let recentMessage = chatService.messages.last else { return }
@@ -89,6 +93,21 @@ struct MultiturnChatView: View {
         logoAnimating = false
         timer?.invalidate()
         timer = nil
+    }
+    
+    func inspectPasteBoard() {
+        if let clipboardString = UIPasteboard.general.string {
+            // Assign the clipboard string to your textInput variable
+            if clipboardString == "" {
+                self.textInput = ""
+            }
+            else {
+                self.textInput = "Simplify the following instructions: " + clipboardString
+            }
+        }
+        else {
+            print("No items in clipboard")
+        }
     }
 }
 

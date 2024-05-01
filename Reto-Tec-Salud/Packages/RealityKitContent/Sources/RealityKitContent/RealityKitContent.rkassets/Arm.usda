@@ -1,0 +1,123 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "Light" (
+        active = true
+        references = @arm.usdz@</Light>
+    )
+    {
+        quatf xformOp:orient = (0.5709475, 0.16907577, 0.27217138, 0.75588036)
+        float3 xformOp:scale = (1, 0.99999994, 1)
+        float3 xformOp:translate = (4.0762453, 1.005454, 5.903862)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Camera" (
+        active = true
+        references = @arm.usdz@</Camera>
+    )
+    {
+        quatf xformOp:orient = (0.78048265, 0.48353606, 0.20870362, 0.33687162)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (7.3588915, -6.925791, 4.958309)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Fasciae_g" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        references = @arm.usdz@</Fasciae_g>
+    )
+    {
+        rel material:binding = </Root/_materials/Fascia> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        quatf xformOp:orient = (0.70710665, 0.70710695, 0, 0)
+        float3 xformOp:scale = (8.901052, 8.901051, 8.901051)
+        float3 xformOp:translate = (5.803133, 0.027607977, 4.1052294)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Fasciae_of_upper_limb_g"
+        {
+            over "Brachial_fascia_l" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/_materials/Fascia> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+
+                over "Brachial_fascia" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Root/_materials/Fascia> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                }
+            }
+
+            over "Antebrachial_fascia_l" (
+                active = true
+            )
+            {
+                over "Extensor_retinaculum_of_wrist_l" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Root/_materials/Ligament_001> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+
+                    over "Extensor_retinaculum_of_wrist_002" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Root/_materials/Fascia> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                    }
+                }
+            }
+
+            over "Dorsal_fascia_of_hand_l" (
+                active = true
+            )
+            {
+            }
+
+            over "Palmar_aponeurosis_l"
+            {
+            }
+        }
+    }
+
+    def "_materials" (
+        active = true
+        references = @arm.usdz@</_materials>
+    )
+    {
+        over "Fascia"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+
+            over "Principled_BSDF"
+            {
+                color3f inputs:emissiveColor = (1, 0.10462164, 0) (
+                    colorSpace = "srgb_texture"
+                )
+            }
+        }
+    }
+}
+

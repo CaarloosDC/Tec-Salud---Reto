@@ -3,7 +3,8 @@
     "objectMetadataList" : [
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root"
+        "Root",
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -11,8 +12,7 @@
       },
       [
         "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
-        "Root",
-        "Sphere"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -39,17 +39,93 @@
 
     ]
   },
-  "26DBAE76-5DD8-47B6-A085-1B4ADA111097" : {
+  "6AF1A903-BFFD-4D2C-8A4C-0332781B3646" : {
     "objectMetadataList" : [
       [
-        "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
-        "Root",
-        "Material_1"
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root"
       ],
       {
         "isExpanded" : true,
         "isLocked" : false
       },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model",
+        "zbrush_concat_osgb_cleaner_gles",
+        "_sketchfab_data_processing_6eab71859ab04438983aa54e0338d794_preprocess_SubTool_7_6894909_OBJ"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model",
+        "zbrush_concat_osgb_cleaner_gles"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model",
+        "zbrush_concat_osgb_cleaner_gles",
+        "_sketchfab_data_processing_6eab71859ab04438983aa54e0338d794_preprocess_SubTool_14_16775501_OBJ"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "9B995F11-841B-45F7-888A-806B86637C9D" : {
+    "objectMetadataList" : [
+
+    ]
+  },
+  "26DBAE76-5DD8-47B6-A085-1B4ADA111097" : {
+    "objectMetadataList" : [
       [
         "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
         "Root"
@@ -66,12 +142,126 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
+        "Root",
+        "Material_1"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "27F7168F-BF04-4F0B-A91F-91F337DD41B1" : {
+    "objectMetadataList" : [
+      [
+        "27F7168F-BF04-4F0B-A91F-91F337DD41B1",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
   "34C460AE-CA1B-4348-BD05-621ACBDFFE97" : {
     "objectMetadataList" : [
 
+    ]
+  },
+  "85DC64B4-5928-4BF2-8593-8F664C5F7C46" : {
+    "objectMetadataList" : [
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Antebrachial_fascia_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Brachial_fascia_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Antebrachial_fascia_l",
+        "Extensor_retinaculum_of_wrist_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "arm"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Palmar_aponeurosis_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
     ]
   },
   "440DE5B4-E4E4-459B-AABF-9ACE96319272" : {
