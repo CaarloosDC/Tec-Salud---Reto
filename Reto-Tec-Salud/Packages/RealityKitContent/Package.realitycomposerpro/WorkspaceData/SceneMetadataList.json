@@ -43,10 +43,7 @@
     "objectMetadataList" : [
       [
         "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
-        "Root",
-        "muscle",
-        "Meshes",
-        "Sketchfab_model"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -69,9 +66,7 @@
         "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
         "Root",
         "muscle",
-        "Meshes",
-        "Sketchfab_model",
-        "zbrush_concat_osgb_cleaner_gles"
+        "Meshes"
       ],
       {
         "isExpanded" : true,
@@ -88,7 +83,22 @@
       },
       [
         "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
-        "Root"
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
+        "Root",
+        "muscle",
+        "Meshes",
+        "Sketchfab_model",
+        "zbrush_concat_osgb_cleaner_gles"
       ],
       {
         "isExpanded" : true,
@@ -102,16 +112,6 @@
         "Sketchfab_model",
         "zbrush_concat_osgb_cleaner_gles",
         "_sketchfab_data_processing_6eab71859ab04438983aa54e0338d794_preprocess_SubTool_14_16775501_OBJ"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "6AF1A903-BFFD-4D2C-8A4C-0332781B3646",
-        "Root",
-        "muscle",
-        "Meshes"
       ],
       {
         "isExpanded" : true,
@@ -177,43 +177,7 @@
         "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
         "Root",
         "Fasciae_g",
-        "Fasciae_of_upper_limb_g",
-        "Palmar_aponeurosis_l"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
-        "arm"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
-        "Root",
-        "_materials"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
-        "Root",
-        "Fasciae_g",
         "Fasciae_of_upper_limb_g"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
-        "Root"
       ],
       {
         "isExpanded" : true,
@@ -233,19 +197,7 @@
       [
         "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
         "Root",
-        "Fasciae_g",
-        "Fasciae_of_upper_limb_g",
-        "Antebrachial_fascia_l",
-        "Extensor_retinaculum_of_wrist_l"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
-        "Root",
-        "Fasciae_g"
+        "_materials"
       ],
       {
         "isExpanded" : true,
@@ -257,6 +209,54 @@
         "Fasciae_g",
         "Fasciae_of_upper_limb_g",
         "Brachial_fascia_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Antebrachial_fascia_l",
+        "Extensor_retinaculum_of_wrist_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "arm"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g",
+        "Fasciae_of_upper_limb_g",
+        "Palmar_aponeurosis_l"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
+        "Fasciae_g"
       ],
       {
         "isExpanded" : true,

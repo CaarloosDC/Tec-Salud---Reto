@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0646402BDFFFA100539ED0 /* SurgeryImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06463F2BDFFFA100539ED0 /* SurgeryImmersiveView.swift */; };
 		3C1FAC4D2BAC90D600275D13 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1FAC4C2BAC90D600275D13 /* GoogleGenerativeAI */; };
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C06463F2BDFFFA100539ED0 /* SurgeryImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryImmersiveView.swift; sourceTree = "<group>"; };
 		3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		3C4379412BA4274F00C01C1C /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		3C4379432BA42ED400C01C1C /* StepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetailView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C06463E2BDFFF3A00539ED0 /* Surgery  */ = {
+			isa = PBXGroup;
+			children = (
+				3C06463F2BDFFFA100539ED0 /* SurgeryImmersiveView.swift */,
+			);
+			path = "Surgery ";
+			sourceTree = "<group>";
+		};
 		3C43793F2BA419AB00C01C1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +379,7 @@
 		D7CA2B3D2B91BAF0003CB892 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C06463E2BDFFF3A00539ED0 /* Surgery  */,
 				3CEB14AA2BC8E65800767B8A /* Main Views */,
 				3CEB14A92BC8E62B00767B8A /* Scanner */,
 				3CADB8A32BA459AE002F1710 /* Anatomy */,
@@ -519,6 +530,7 @@
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				D7D85B6B2BD8531500C719D9 /* VideoPlayerView.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
+				3C0646402BDFFFA100539ED0 /* SurgeryImmersiveView.swift in Sources */,
 				3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */,
 				D73694422BA954A5007A38EE /* NavigationView.swift in Sources */,
 				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,

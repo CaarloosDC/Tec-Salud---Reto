@@ -85,19 +85,19 @@ class SurgeonSymViewModel: ObservableObject {
                 entity.transform = Transform(matrix: update.anchor.originFromAnchorTransform)
                 // Collision is essential
                 entity.collision = CollisionComponent(shapes: [shape], isStatic: true)
-                entity.physicsBody = PhysicsBodyComponent() // makes it possible to add physics to our model
+                entity.physicsBody = PhysicsBodyComponent() // makes it possible to add3 physics to our model
                 entity.components.set(InputTargetComponent())
-    
+                
                 // Update mesh for scene reconstruction
                 meshEntities[update.anchor.id] = entity
                 
                 contentEntity.addChild(entity)
-            
+                
             case .updated:
                 guard let entity = meshEntities[update.anchor.id] else { fatalError("...")}
                 entity.transform = Transform(matrix: update.anchor.originFromAnchorTransform)
                 entity.collision?.shapes = [shape]
-            
+                
             case .removed:
                 meshEntities[update.anchor.id]?.removeFromParent()
                 meshEntities.removeValue(forKey: update.anchor.id)
@@ -162,31 +162,32 @@ class SurgeonSymViewModel: ObservableObject {
             print("Error creating entity: \(error)")
         }
     }
-
+    
     
     func deletePinPoint() async {
-      guard let entity = pinPointEntity else {
-        print("No entity to delete")
-        return
-      }
-      
-      // Remove entity from scene
-      entity.removeFromParent()
-      pinPointEntity = nil
-      
-      // Remove world anchor using the map (force unwrap)
-      if let anchorToRemove = worldAnchorMap[entity] {
-        do {
-          try await worldTracking.removeAnchor(anchorToRemove)
-          worldAnchorMap.removeValue(forKey: entity)
-        } catch {
-          print("Error removing world anchor: \(error)")
+        guard let entity = pinPointEntity else {
+            print("No entity to delete")
+            return
         }
-      } else {
-        print("Error: World anchor not found for entity")
-      }
+        
+        // Remove entity from scene
+        entity.removeFromParent()
+        pinPointEntity = nil
+        
+        // Remove world anchor using the map (force unwrap)
+        if let anchorToRemove = worldAnchorMap[entity] {
+            do {
+                print("Delete triggered")
+                try await worldTracking.removeAnchor(anchorToRemove)
+                worldAnchorMap.removeValue(forKey: entity)
+            } catch {
+                print("Error removing world anchor: \(error)")
+            }
+        } else {
+            print("Error: World anchor not found for entity")
+        }
     }
-
-
+    
+    
 }
- 
+

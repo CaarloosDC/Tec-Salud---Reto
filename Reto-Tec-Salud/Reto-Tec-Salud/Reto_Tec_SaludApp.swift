@@ -59,6 +59,11 @@ struct Reto_Tec_SaludApp: App {
             SurgeonSymView()
                 .environment(TecMedMultiPeer())
         }
+        
+        ImmersiveSpace(id: "SurgeryImmersiveSpace") {
+            SurgeryImmersiveView()
+        }
+        
     }
     
     // Entity

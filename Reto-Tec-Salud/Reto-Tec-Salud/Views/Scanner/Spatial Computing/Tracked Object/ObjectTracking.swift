@@ -13,18 +13,21 @@ import SwiftUI
 import Combine
 
 // Will track the coordinates sent by iOS devices
-struct TrackingComponent: Component {
-    @State var referenceEntity: Entity? // Tracked entity
-    @State var worldTrackingProvider: WorldTrackingProvider? // To retrieve device position data
+@Observable
+class TrackingComponent: Component {
+    var referenceEntity: Entity? // Tracked entity
+    var worldTrackingProvider: WorldTrackingProvider? // To retrieve device position data
     
-    @State var currenCoordinates: SIMD3<Float>
-    @State var isTracked: Bool // Does pinpoint currently exist?
+    var currenCoordinates: SIMD3<Float>
+    var isTracked: Bool // Does pinpoint currently exist?
     
     init(referenceEntity: Entity? = nil, worldTrackingProvider: WorldTrackingProvider? = nil, currenCoordinates: SIMD3<Float>, isTracked: Bool) {
         self.referenceEntity = referenceEntity
         self.worldTrackingProvider = worldTrackingProvider
         self.currenCoordinates = currenCoordinates
         self.isTracked = isTracked
+        
+        print("Current coordinates \(currenCoordinates) ")
     }
 }
 
@@ -37,7 +40,7 @@ struct TrackingSystem: System {
         
         // PinPoint is considered as point B
         let inversePointB = pinPointTransform.inverse
-        let pointCInGlobal = inversePointB * SIMD4<Float>(recievedCoordinates.x, recievedCoordinates.y, recievedCoordinates.z, 1)
+        let pointCInGlobal =  SIMD4<Float>(recievedCoordinates.x, recievedCoordinates.y, recievedCoordinates.z, 1) * inversePointB
         let pointCInGlobal3D = SIMD3<Float>(pointCInGlobal.x, pointCInGlobal.y, pointCInGlobal.z)
         
         // Convert SIMD4 to simd_float4x4
@@ -56,17 +59,18 @@ struct TrackingSystem: System {
                     component.isTracked = false
                 }
                 else {
+                    print("Updating object position...")
                     let currentVProTransform = component.worldTrackingProvider?.queryDeviceAnchor(atTimestamp: CACurrentMediaTime())?.originFromAnchorTransform
-                    
+                    print("Coordinates:\(component.currenCoordinates) ")
                     let pinPointTransform = component.referenceEntity?.transform.matrix
                     
                     // Change scaned object transform
                     entity.transform.translation = triangulate(context: context, pinPointTransform: pinPointTransform ?? matrix_identity_float4x4, visionProTransform: currentVProTransform ?? matrix_identity_float4x4, recievedCoordinates: component.currenCoordinates)
                     
+                    
                 }
+                
             }
         }
     }
-    
-    
 }
