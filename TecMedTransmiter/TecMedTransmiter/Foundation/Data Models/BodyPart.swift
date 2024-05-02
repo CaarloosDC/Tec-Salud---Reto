@@ -21,5 +21,5 @@ struct BodyPart: Identifiable, Decodable, Equatable {
 }
 
 enum MLModelLabel: String, Decodable, CaseIterable, Hashable, Equatable {
-    case Arm, Ear, Eye, Knee, Default
+    case Arm, Ear, Eye, Knee, Unknown
 }

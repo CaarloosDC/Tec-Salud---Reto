@@ -8,6 +8,10 @@
 		<string>_TecMed-ML-Comm._udp</string>
 		<string>_http._tcp.</string>
 	</array>
+	<key>NSHandsTrackingUsageDescription</key>
+	<string>Hand Tracking</string>
+	<key>NSWorldSensingUsageDescription</key>
+	<string>word tracking</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationPreferredDefaultSceneSessionRole</key>

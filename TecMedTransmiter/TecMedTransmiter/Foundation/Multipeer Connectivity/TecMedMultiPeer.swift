@@ -36,6 +36,25 @@ class TecMedMultiPeer: NSObject {
         }
     }
     
+    // Set object info
+    func sendObjectInfo(objectInfo: ObjectInfo) {
+        log.info("Sending object info to \(self.mcSession.connectedPeers.count) peers")
+
+        if !mcSession.connectedPeers.isEmpty {
+            do {
+                // Convert object information to Data
+                let encoder = JSONEncoder()
+                let data = try encoder.encode(objectInfo)
+
+                // Send data to connected peers
+                try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
+            } catch {
+                log.error("Error sending object info: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    
     override init() {
         mcSession = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
         serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: serviceType)

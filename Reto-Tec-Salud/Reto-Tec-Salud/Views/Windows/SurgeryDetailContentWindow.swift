@@ -9,10 +9,20 @@ import SwiftUI
 
 struct SurgeryDetailContentWindow: View {
     @Environment(ProcedureViewModel.self) private var selectedProcedure
+    @Environment(\.dismissImmersiveSpace) private var closeImmersiveSpace
+    
     @State private var currentStep = 0
     
     var body: some View {
         VStack {
+            Button {
+                Task {
+                    await closeImmersiveSpace()
+                }
+            } label: {
+                Text("Close Immersive Space")
+            }
+
             if let procedure = selectedProcedure.sentProcedure, procedure.steps.indices.contains(currentStep) {
                 ScrollView {
                     Text(procedure.steps[currentStep].shortDescription)
