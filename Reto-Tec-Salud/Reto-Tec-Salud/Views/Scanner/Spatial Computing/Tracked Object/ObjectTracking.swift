@@ -32,6 +32,8 @@ class TrackingComponent: Component {
 }
 
 struct TrackingSystem: System {
+    @Environment(TecMedMultiPeer.self) var multiPeersession
+    
     static let entityQuery = EntityQuery(where: .has(TrackingComponent.self))
     public init(scene: RealityKit.Scene) { }
     
@@ -65,7 +67,7 @@ struct TrackingSystem: System {
                     let pinPointTransform = component.referenceEntity?.transform.matrix
                     
                     // Change scaned object transform
-                    entity.transform.translation = triangulate(context: context, pinPointTransform: pinPointTransform ?? matrix_identity_float4x4, visionProTransform: currentVProTransform ?? matrix_identity_float4x4, recievedCoordinates: component.currenCoordinates)
+                    entity.transform.translation = triangulate(context: context, pinPointTransform: pinPointTransform ?? matrix_identity_float4x4, visionProTransform: currentVProTransform ?? matrix_identity_float4x4, recievedCoordinates: multiPeersession.currentObjectData?.coordinates ?? SIMD3<Float>.zero)
                     
                     
                 }

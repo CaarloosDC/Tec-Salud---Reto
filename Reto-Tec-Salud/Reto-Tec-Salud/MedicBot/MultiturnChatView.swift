@@ -31,10 +31,6 @@ struct MultiturnChatView: View {
                         chatMessageView(chatMessage)
                     }
                 }
-                .onAppear {
-                    // Call inspectPasteBoard when the view appears
-                    inspectPasteBoard()
-                }
                 .onChange(of: chatService.messages) { _, _ in
                     guard let recentMessage = chatService.messages.last else { return }
                     DispatchQueue.main.async {

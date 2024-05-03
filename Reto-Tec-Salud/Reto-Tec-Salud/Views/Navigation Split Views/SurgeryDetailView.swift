@@ -16,6 +16,10 @@ struct SurgeryDetailView: View {
     
     var body: some View {
         SplitView(mainContent: mainContent, detailContent: BodyPartView(bodyPart: $selectedBodyPart, contentType: .bidimentional), placeHolder: PlaceHolderView(header: "cirugia virtual", fillerText: "Selecciona una parte del cuerpo para comenzar"), selectedItem: $selectedBodyPart)
+            .ornament(attachmentAnchor: .scene(.trailing)) {
+                ChatBotOrnament()
+                    .padding()
+            }
     }
     
     var mainContent: some View {
