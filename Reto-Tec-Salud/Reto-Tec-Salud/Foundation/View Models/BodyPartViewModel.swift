@@ -12,17 +12,17 @@ final class BodyPartViewModel {
     var bodyParts: [BodyPart] = []
     
     init() {
-        self.bodyParts = load("bodyparts.json")
-        /*
+//        self.bodyParts = load("bodyparts.json")
+        
         Task {
             do {
                 self.bodyParts = try await self.getBodyParts()
             } catch {
                 print("Error fetching body parts: \(error)")
-                // Handle the error as needed
+//                 Handle the error as needed
             }
         }
-        */
+        
     }
     
     func load<T: Decodable>(_ filename: String) -> T {
@@ -52,7 +52,7 @@ final class BodyPartViewModel {
     
     // MARK:
     func getBodyParts() async throws -> [BodyPart] {
-        let endPoint = "http://127.0.0.1:8000/getall"
+        let endPoint = "https://medvision.tec.st/getall"
         
         guard let url = URL(string: endPoint) else {
             throw APIError.invalidURL
