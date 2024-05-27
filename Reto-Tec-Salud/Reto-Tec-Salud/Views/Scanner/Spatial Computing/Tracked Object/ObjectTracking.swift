@@ -54,7 +54,7 @@ struct TrackingSystem: System {
     
     func update(context: SceneUpdateContext) {
         for entity in context.entities(matching: Self.entityQuery, updatingSystemWhen: .rendering) {
-            if var component: TrackingComponent = entity.components[TrackingComponent.self] {
+            if let component: TrackingComponent = entity.components[TrackingComponent.self] {
                 if component.referenceEntity == nil {
                     component.isTracked = false
                 }

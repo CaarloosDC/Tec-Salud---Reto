@@ -35,15 +35,18 @@ def Xform "Root"
     def "Fasciae_g" (
         active = true
         prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (1.5707959, 1.5707963, 0)
+        }
         references = @arm.usdz@</Fasciae_g>
     )
     {
         rel material:binding = </Root/_materials/Fascia> (
             bindMaterialAs = "strongerThanDescendants"
         )
-        quatf xformOp:orient = (0.70710665, 0.70710695, 0, 0)
-        float3 xformOp:scale = (8.901052, 8.901051, 8.901051)
-        float3 xformOp:translate = (5.803133, 0.027607977, 4.1052294)
+        quatf xformOp:orient = (-0.5, -0.5, -0.5, 0.5)
+        float3 xformOp:scale = (1, 0.99999976, 0.99999976)
+        float3 xformOp:translate = (0.008795917, 0, -0.11692513)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         over "Fasciae_of_upper_limb_g"
