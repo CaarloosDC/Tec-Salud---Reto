@@ -197,7 +197,7 @@ class SurgeonSymViewModel: ObservableObject {
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             DispatchQueue.main.async {
                 if let currentCoordinates = self.multiPeerSession.currentObjectData?.coordinates {
-                    self.trackedEntity.wrappedValue?.components.set(TrackingComponent(referenceEntity: self.pinPointEntity, worldTrackingProvider: self.worldTracking, currenCoordinates: currentCoordinates, isTracked: true))
+                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: self.pinPointEntity, worldTrackingProvider: self.worldTracking, currenCoordinates: currentCoordinates, isTracked: true))
                 }
             }
         }
