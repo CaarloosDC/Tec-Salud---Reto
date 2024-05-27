@@ -31,10 +31,14 @@ struct SurgeonSymView: View {
                 self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
             }
             
+            model.trackedEntity = trackedEntity
+            
             // SetUp moving object
         }.task {
             // Run ARKit Session
             await model.runSession()
+            
+            model.updateTrackEntity()
         }
         .task {
             // Process Hand Updates
