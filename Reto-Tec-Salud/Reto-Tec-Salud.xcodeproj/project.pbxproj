@@ -31,7 +31,6 @@
 		3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */; };
 		3CADB8E92BA47AC4002F1710 /* SkeletonModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8E82BA47AC3002F1710 /* SkeletonModelView.swift */; };
 		3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */; };
-		3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */; };
 		3CCA12CE2BA2ED5E00B1D538 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */; };
 		3CCA12CF2BA2ED5E00B1D538 /* bodyparts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */; };
 		3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */; };
@@ -42,6 +41,7 @@
 		3CEB14B02BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AF2BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift */; };
 		3CEB14B22BC91BFE00767B8A /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B12BC91BFE00767B8A /* VolumeView.swift */; };
 		3CEB14B72BC9255700767B8A /* VolumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */; };
+		3CEEBAFE2C0731B60061F287 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEEBAFD2C0731B60061F287 /* MediaViewModel.swift */; };
 		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
 		D71986AF2BAA71EB00C5FF2C /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */; };
 		D71986B02BAA71EB00C5FF2C /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */; };
@@ -97,7 +97,6 @@
 		3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedDeviceView.swift; sourceTree = "<group>"; };
 		3CADB8E82BA47AC3002F1710 /* SkeletonModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonModelView.swift; sourceTree = "<group>"; };
 		3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartView.swift; sourceTree = "<group>"; };
-		3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryStepByStepView.swift; sourceTree = "<group>"; };
 		3CCA12CC2BA2ED5E00B1D538 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
 		3CCA12CD2BA2ED5E00B1D538 /* bodyparts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyparts.json; sourceTree = "<group>"; };
 		3CCA12D12BA2EECA00B1D538 /* TecMedMultipeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecMedMultipeer.swift; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		3CEB14AF2BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedSurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
 		3CEB14B12BC91BFE00767B8A /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModel.swift; sourceTree = "<group>"; };
+		3CEEBAFD2C0731B60061F287 /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		D71986A72BAA71EB00C5FF2C /* ChatBubbleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		D71986A82BAA71EB00C5FF2C /* MultiturnChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiturnChatView.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 			children = (
 				3C4379452BA433B100C01C1C /* Detail Views */,
 				D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */,
-				3CC89C2F2BA3977B0055B1C6 /* SurgeryStepByStepView.swift */,
 				3C4379412BA4274F00C01C1C /* SplitView.swift */,
 				D73694432BA954C3007A38EE /* ChatView.swift */,
 			);
@@ -299,6 +298,7 @@
 				3CCA12D42BA2EF9500B1D538 /* BodyPartViewModel.swift */,
 				3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */,
 				3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */,
+				3CEEBAFD2C0731B60061F287 /* MediaViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -544,6 +544,7 @@
 				D73694442BA954C3007A38EE /* ChatView.swift in Sources */,
 				D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */,
 				3CEB14AE2BC8ECEE00767B8A /* TestView.swift in Sources */,
+				3CEEBAFE2C0731B60061F287 /* MediaViewModel.swift in Sources */,
 				D7CA2B432B91C24A003CB892 /* ProcedimentStudyView.swift in Sources */,
 				3CEB14B72BC9255700767B8A /* VolumeViewModel.swift in Sources */,
 				D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */,
@@ -569,7 +570,6 @@
 				3CA247882BDF3B100069939B /* ObjectTracking.swift in Sources */,
 				3CCA12D52BA2EF9500B1D538 /* BodyPartViewModel.swift in Sources */,
 				3C842E6E2BDAE8DC0087F163 /* ModelEntityExtension.swift in Sources */,
-				3CC89C302BA3977B0055B1C6 /* SurgeryStepByStepView.swift in Sources */,
 				3CADB8AD2BA46DCF002F1710 /* DetectedDeviceView.swift in Sources */,
 				D71986B22BAA71EB00C5FF2C /* ChatBubble.swift in Sources */,
 				D71986B12BAA71EB00C5FF2C /* APIKey.swift in Sources */,

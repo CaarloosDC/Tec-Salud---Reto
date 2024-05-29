@@ -11,6 +11,7 @@ import SwiftUI
 struct Reto_Tec_SaludApp: App {
     @State var selectedProcedure = ProcedureViewModel(sentProcedure: nil)
     @State var volumeData = VolumeViewModel(volumeRotationAngle: 0, sentRenderName: nil)
+    @State var stepVideo = MediaViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -25,8 +26,7 @@ struct Reto_Tec_SaludApp: App {
             // will probably be used to store video data 
             SecondWindow()
                 .background(.white.opacity(0.5))
-                .environment(selectedProcedure)
-                .environment(TecMedMultiPeer())
+                .environment(stepVideo)
                 .ornament(attachmentAnchor: .scene(.trailing)) {
                     ChatBotOrnament()
                         .padding(12)
@@ -45,6 +45,7 @@ struct Reto_Tec_SaludApp: App {
         WindowGroup(id: "BodyPartVolume") {
             VolumeView()
                 .environment(selectedProcedure)
+                .environment(stepVideo)
         }
         .windowStyle(.volumetric)
         .defaultSize(width: 1.5, height: 0.6, depth: 0.5, in: .meters)
