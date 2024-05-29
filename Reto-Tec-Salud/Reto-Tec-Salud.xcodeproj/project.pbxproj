@@ -49,7 +49,6 @@
 		D71986B22BAA71EB00C5FF2C /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */; };
 		D71986B42BAA71EB00C5FF2C /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */; };
 		D73694422BA954A5007A38EE /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694412BA954A5007A38EE /* NavigationView.swift */; };
-		D73694442BA954C3007A38EE /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73694432BA954C3007A38EE /* ChatView.swift */; };
 		D7BBD00E2B91568800F3F1C8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = D7BBD00D2B91568800F3F1C8 /* RealityKitContent */; };
 		D7BBD0102B91568800F3F1C8 /* Reto_Tec_SaludApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD00F2B91568800F3F1C8 /* Reto_Tec_SaludApp.swift */; };
 		D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD0112B91568800F3F1C8 /* ContentView.swift */; };
@@ -115,7 +114,6 @@
 		D71986AA2BAA71EB00C5FF2C /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		D71986AC2BAA71EB00C5FF2C /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 		D73694412BA954A5007A38EE /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		D73694432BA954C3007A38EE /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		D7B0CF672BAAC1E600C60587 /* generative-ai-swift-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "generative-ai-swift-main"; path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Downloads/generative-ai-swift-main"; sourceTree = "<group>"; };
 		D7BBD0082B91568800F3F1C8 /* Reto-Tec-Salud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reto-Tec-Salud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BBD00C2B91568800F3F1C8 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
@@ -168,7 +166,7 @@
 				3C64697D2C071F5C000CBDAD /* Containers */,
 				3CADB8E82BA47AC3002F1710 /* SkeletonModelView.swift */,
 				3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */,
-				3C8C3DAC2BD9666100D46B40 /* ChatBotOrnament.swift */,
+				3C4379412BA4274F00C01C1C /* SplitView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,9 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				3C4379452BA433B100C01C1C /* Detail Views */,
-				D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */,
-				3C4379412BA4274F00C01C1C /* SplitView.swift */,
-				D73694432BA954C3007A38EE /* ChatView.swift */,
 			);
 			path = "Navigation Split Views";
 			sourceTree = "<group>";
@@ -187,6 +182,7 @@
 		3C4379452BA433B100C01C1C /* Detail Views */ = {
 			isa = PBXGroup;
 			children = (
+				D7CA2B4A2B91CFE2003CB892 /* SurgeryDetailView.swift */,
 				3CC89C2D2BA391B00055B1C6 /* BodyPartView.swift */,
 				3C4379432BA42ED400C01C1C /* StepDetailView.swift */,
 				D7D85B6A2BD8531500C719D9 /* VideoPlayerView.swift */,
@@ -208,6 +204,7 @@
 			children = (
 				3CAD223D2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift */,
 				3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */,
+				3C8C3DAC2BD9666100D46B40 /* ChatBotOrnament.swift */,
 			);
 			name = Ornaments;
 			sourceTree = "<group>";
@@ -537,7 +534,6 @@
 				3CADB8A62BA46772002F1710 /* MultiPeerView.swift in Sources */,
 				3CEB14AC2BC8E84F00767B8A /* StepNavigationOrnament.swift in Sources */,
 				D7CA2B4B2B91CFE2003CB892 /* SurgeryDetailView.swift in Sources */,
-				D73694442BA954C3007A38EE /* ChatView.swift in Sources */,
 				D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */,
 				3CEB14AE2BC8ECEE00767B8A /* TestView.swift in Sources */,
 				3CEEBAFE2C0731B60061F287 /* MediaViewModel.swift in Sources */,

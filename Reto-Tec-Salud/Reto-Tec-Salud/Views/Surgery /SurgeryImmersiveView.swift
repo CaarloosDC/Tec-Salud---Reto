@@ -17,7 +17,7 @@ struct SurgeryImmersiveView: View {
 
     var body: some View {
         RealityView { content, attachments in
-            if let bodyPart = try? await Entity(named: "Arm", in: realityKitContentBundle) {
+            if let bodyPart = try? await Entity(named: "Eye", in: realityKitContentBundle) {
                 
                 SurgeryImmersiveView.bodyPartEntity = bodyPart
                 print("Body part position: \(bodyPart.position)")
