@@ -38,7 +38,7 @@ struct SurgeonSymView: View {
             // Run ARKit Session
             await model.runSession()
             
-            model.updateTrackEntity()
+            model.updateTrackEntity(currentObjectData: multiPeersession.currentObjectData)
         }
         .task {
             // Process Hand Updates

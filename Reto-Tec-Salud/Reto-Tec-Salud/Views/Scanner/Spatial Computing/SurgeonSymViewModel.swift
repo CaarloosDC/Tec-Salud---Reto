@@ -15,7 +15,6 @@ import RealityKitContent
 @MainActor
 class SurgeonSymViewModel: ObservableObject {
     @pinPoint var pinPointEntity: Entity?
-    @Environment(TecMedMultiPeer.self) private var multiPeerSession
     
     // Tracked Enitity
     /// Entity atribute ment to be configured inside SurgeonSymView
@@ -193,10 +192,10 @@ class SurgeonSymViewModel: ObservableObject {
         }
     }
     
-    func updateTrackEntity() {
+    func updateTrackEntity(currentObjectData: ObjectInfo?) {
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             DispatchQueue.main.async {
-                if let currentCoordinates = self.multiPeerSession.currentObjectData?.coordinates {
+                if let currentCoordinates = currentObjectData?.coordinates {
                     self.trackedEntity?.components.set(TrackingComponent(referenceEntity: self.pinPointEntity, worldTrackingProvider: self.worldTracking, currenCoordinates: currentCoordinates, isTracked: true))
                 }
             }
