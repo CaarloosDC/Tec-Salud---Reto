@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "skinArm" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (1.308997, -1.396264, -3.432495e-7)
+        }
+        prepend references = @Renders/skinArm.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.6077439, 0.46633834, -0.50995773, 0.3913043)
+        float3 xformOp:scale = (0.004, 0.004, 0.004)
+        float3 xformOp:translate = (0.00010419241, 8.381903e-9, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+

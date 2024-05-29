@@ -8,12 +8,10 @@
 import Foundation
 
 @Observable
-final class VolumeViewModel {
-    var volumeRotationAngle: Double
-    var sentRenderName: String?
+class VolumeViewModel: ObservableObject {
+    var sentRenderName: String
     
-    init(volumeRotationAngle: Double, sentRenderName: String? = nil) {
-        self.volumeRotationAngle = volumeRotationAngle
-        self.sentRenderName = sentRenderName
+    init() {
+        sentRenderName = "Arm"
     }
 }

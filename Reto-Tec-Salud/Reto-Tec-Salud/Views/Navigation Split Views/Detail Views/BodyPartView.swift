@@ -78,7 +78,7 @@ struct BodyPartView: View {
                 if selectedProcedure != nil {
                     Button(action: {
                         selected.sentProcedure = selectedProcedure
-                        volumeData.sentRenderName = bodyPart?.renderName
+                        volumeData.sentRenderName = bodyPart?.renderName ?? "Arm"
                         
                         switch contentType {
                         case .Scanned:

@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Reto_Tec_SaludApp: App {
     @State var selectedProcedure = ProcedureViewModel(sentProcedure: nil)
-    @State var volumeData = VolumeViewModel(volumeRotationAngle: 0, sentRenderName: nil)
+    @State var volumeData = VolumeViewModel()
     @State var stepVideo = MediaViewModel()
 
     var body: some Scene {
@@ -46,9 +46,10 @@ struct Reto_Tec_SaludApp: App {
             VolumeView()
                 .environment(selectedProcedure)
                 .environment(stepVideo)
+                .environment(volumeData)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 1.5, height: 0.6, depth: 0.5, in: .meters)
+        .defaultSize(width: 1.5, height: 0.6, depth: 0.6, in: .meters)
         
         // Immersive space for the skeleton model
         ImmersiveSpace(id: "skeletonImmersiveView") {
@@ -65,6 +66,7 @@ struct Reto_Tec_SaludApp: App {
         
         ImmersiveSpace(id: "SurgeryImmersiveSpace") {
             SurgeryImmersiveView()
+                .environmentObject(volumeData)
         }
         
     }
