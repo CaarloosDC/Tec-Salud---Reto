@@ -56,10 +56,10 @@ struct ContainerView: View {
                 }
             }
             .padding()
-        
+    
             Spacer()
         }
-        .background(containerColor)
+        .background(containerColor.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }

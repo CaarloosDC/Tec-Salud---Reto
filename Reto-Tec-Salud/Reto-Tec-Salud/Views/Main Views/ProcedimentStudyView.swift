@@ -27,6 +27,8 @@ struct ProcedimentStudyView: View {
                                 .font(.title)
                         }
                         .padding()
+                        .background(.white.opacity(0.3)) // Set your desired background color here
+                        .clipShape(RoundedRectangle(cornerRadius: 20)) // Ensure the background has the same corner radius
                     }
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
@@ -47,6 +49,8 @@ struct ProcedimentStudyView: View {
                                 .font(.title)
                         }
                         .padding()
+                        .background(.white.opacity(0.3)) // Set your desired background color here
+                        .clipShape(RoundedRectangle(cornerRadius: 20)) // Ensure the background has the same corner radius
                     }
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.roundedRectangle(radius: 20))

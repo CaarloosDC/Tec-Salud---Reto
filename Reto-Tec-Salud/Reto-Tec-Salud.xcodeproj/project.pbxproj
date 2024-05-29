@@ -55,7 +55,6 @@
 		D7BBD0122B91568800F3F1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBD0112B91568800F3F1C8 /* ContentView.swift */; };
 		D7BBD0142B91568A00F3F1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BBD0132B91568A00F3F1C8 /* Assets.xcassets */; };
 		D7BBD0172B91568A00F3F1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BBD0162B91568A00F3F1C8 /* Preview Assets.xcassets */; };
-		D7CA2B412B91BBFC003CB892 /* OpcionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */; };
 		D7CA2B432B91C24A003CB892 /* ProcedimentStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */; };
 		D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */; };
 		D7CA2B492B91C619003CB892 /* AnatomyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */; };
@@ -125,7 +124,6 @@
 		D7BBD0132B91568A00F3F1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7BBD0162B91568A00F3F1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7BBD0182B91568A00F3F1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCardView.swift; sourceTree = "<group>"; };
 		D7CA2B422B91C24A003CB892 /* ProcedimentStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedimentStudyView.swift; sourceTree = "<group>"; };
 		D7CA2B462B91C5D6003CB892 /* AnatomyStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyStudyView.swift; sourceTree = "<group>"; };
 		D7CA2B482B91C619003CB892 /* AnatomyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyDetailView.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				3C64697E2C071FA7000CBDAD /* ContainerView.swift */,
-				D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */,
 				3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */,
 			);
 			path = Containers;
@@ -538,7 +535,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CADB8A62BA46772002F1710 /* MultiPeerView.swift in Sources */,
-				D7CA2B412B91BBFC003CB892 /* OpcionCardView.swift in Sources */,
 				3CEB14AC2BC8E84F00767B8A /* StepNavigationOrnament.swift in Sources */,
 				D7CA2B4B2B91CFE2003CB892 /* SurgeryDetailView.swift in Sources */,
 				D73694442BA954C3007A38EE /* ChatView.swift in Sources */,
