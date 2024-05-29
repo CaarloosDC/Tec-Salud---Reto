@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SurgeryDetailContentWindow: View {
+struct ScannedSurgeryDetailContentWindow: View {
     @Environment(ProcedureViewModel.self) private var selectedProcedure
     @Environment(\.dismissImmersiveSpace) private var closeImmersiveSpace
     
@@ -63,5 +63,5 @@ struct SurgeryDetailContentWindow: View {
 }
 
 #Preview {
-    SurgeryDetailContentWindow()
+    ScannedSurgeryDetailContentWindow()
 }

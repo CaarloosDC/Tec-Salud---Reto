@@ -11,7 +11,7 @@ import SwiftUI
 struct Reto_Tec_SaludApp: App {
     @State var selectedProcedure = ProcedureViewModel(sentProcedure: nil)
     @State var volumeData = VolumeViewModel(volumeRotationAngle: 0, sentRenderName: nil)
-    // Temporary
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -22,6 +22,7 @@ struct Reto_Tec_SaludApp: App {
         }
         
         WindowGroup (id: "SecondWindow") {
+            // will probably be used to store video data 
             SecondWindow()
                 .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
@@ -34,19 +35,19 @@ struct Reto_Tec_SaludApp: App {
         
         // Surgery detail window for Scanner
         WindowGroup (id: "SurgeryDetailContentWindow") {
-            SurgeryDetailContentWindow()
+            ScannedSurgeryDetailContentWindow()
                 .background(.white.opacity(0.5))
                 .environment(selectedProcedure)
         }
         .defaultSize(CGSize(width: 500, height: 600))
         
-        // Volumetric view for render vizualization (temporary, will eventually switch to an immersive space)
+        // Volumetric view for render vizualization in step by step surgery
         WindowGroup(id: "BodyPartVolume") {
             VolumeView()
-                .environment(volumeData)
+                .environment(selectedProcedure)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 0.6, height: 0.6, depth: 0.3, in: .meters)
+        .defaultSize(width: 1.5, height: 0.6, depth: 0.5, in: .meters)
         
         // Immersive space for the skeleton model
         ImmersiveSpace(id: "skeletonImmersiveView") {
@@ -55,6 +56,7 @@ struct Reto_Tec_SaludApp: App {
         .immersionStyle(selection: .constant(.full), in: .full)
         .immersiveContentBrightness(.bright)
         
+        // Immersive Space for Object Tracking view (multipeer connectivity)
         ImmersiveSpace(id: "ObjectTrackingImmersiveSpace") {
             SurgeonSymView()
                 .environment(TecMedMultiPeer())

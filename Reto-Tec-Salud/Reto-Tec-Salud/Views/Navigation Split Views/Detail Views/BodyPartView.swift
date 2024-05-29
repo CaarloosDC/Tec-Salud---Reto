@@ -18,7 +18,7 @@ struct BodyPartView: View {
     @Environment(ProcedureViewModel.self) private var selected
     @Environment(VolumeViewModel.self) private var volumeData
     
-    var contentType: ContentType
+    var contentType: SurgeryType
     
     var body: some View {
         HStack(alignment: .center) {
@@ -81,14 +81,14 @@ struct BodyPartView: View {
                         volumeData.sentRenderName = bodyPart?.renderName
                         
                         switch contentType {
-                        case .threedimentional:
+                        case .Scanned:
                             openWindow(id: "SurgeryDetailContentWindow")
                             Task {
                                 await openImmersiveSpace(id: "ObjectTrackingImmersiveSpace")
                             }
                             
-                        case .bidimentional:
-                            openWindow(id: "SecondWindow")
+                        case .StepByStep:
+                            openWindow(id: "BodyPartVolume")
                             
                         }
                     }) {
@@ -127,11 +127,11 @@ struct BodyPartView_Previews: PreviewProvider {
                 Step(id: 1, description: "Step 1", shortDescription: "empty", imageName: "arm", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
                 Step(id: 2, description: "Step 2", shortDescription: "empty", imageName: "ear", videoName: "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
             ]
-        )])), contentType: .bidimentional)
+        )])), contentType: .StepByStep)
     }
 }
 
 // MARK: If the selected view is the scanner view, set to threedimentional, if a normal procedure, select bidimentional
-enum ContentType {
-    case threedimentional, bidimentional
+enum SurgeryType {
+    case Scanned, StepByStep
 }

@@ -12,6 +12,8 @@
 		3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */; };
 		3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379412BA4274F00C01C1C /* SplitView.swift */; };
 		3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4379432BA42ED400C01C1C /* StepDetailView.swift */; };
+		3C64697C2C070D54000CBDAD /* SurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64697B2C070D54000CBDAD /* SurgeryDetailContentWindow.swift */; };
+		3C64697F2C071FA7000CBDAD /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64697E2C071FA7000CBDAD /* ContainerView.swift */; };
 		3C7A47472BD8E13B0006473A /* leg.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A47432BD8E1380006473A /* leg.usdz */; };
 		3C7A47482BD8E13B0006473A /* muscular-system.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A47442BD8E1390006473A /* muscular-system.usdz */; };
 		3C7A47492BD8E13B0006473A /* nervous-and-sense-organs.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A47452BD8E13B0006473A /* nervous-and-sense-organs.usdz */; };
@@ -22,6 +24,7 @@
 		3C842E712BDAE8DC0087F163 /* PinPointPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C842E6D2BDAE8DC0087F163 /* PinPointPropertyWrapper.swift */; };
 		3C8C3DAD2BD9666100D46B40 /* ChatBotOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C3DAC2BD9666100D46B40 /* ChatBotOrnament.swift */; };
 		3CA247882BDF3B100069939B /* ObjectTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA247872BDF3B100069939B /* ObjectTracking.swift */; };
+		3CAD223E2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD223D2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift */; };
 		3CADB89B2BA44F52002F1710 /* SecondWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB89A2BA44F52002F1710 /* SecondWindow.swift */; };
 		3CADB89F2BA45137002F1710 /* ProcedureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */; };
 		3CADB8A62BA46772002F1710 /* MultiPeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CADB8A52BA46772002F1710 /* MultiPeerView.swift */; };
@@ -36,7 +39,7 @@
 		3CD6B91D2BDD722B00CDE5A1 /* Reto_Tec_SaludTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD6B91C2BDD722B00CDE5A1 /* Reto_Tec_SaludTests.swift */; };
 		3CEB14AC2BC8E84F00767B8A /* StepNavigationOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */; };
 		3CEB14AE2BC8ECEE00767B8A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AD2BC8ECEE00767B8A /* TestView.swift */; };
-		3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */; };
+		3CEB14B02BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14AF2BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift */; };
 		3CEB14B22BC91BFE00767B8A /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B12BC91BFE00767B8A /* VolumeView.swift */; };
 		3CEB14B72BC9255700767B8A /* VolumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */; };
 		D71986AD2BAA71EB00C5FF2C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71986A52BAA71EB00C5FF2C /* ChatService.swift */; };
@@ -75,6 +78,8 @@
 		3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		3C4379412BA4274F00C01C1C /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		3C4379432BA42ED400C01C1C /* StepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepDetailView.swift; sourceTree = "<group>"; };
+		3C64697B2C070D54000CBDAD /* SurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
+		3C64697E2C071FA7000CBDAD /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		3C7A47432BD8E1380006473A /* leg.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = leg.usdz; sourceTree = "<group>"; };
 		3C7A47442BD8E1390006473A /* muscular-system.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "muscular-system.usdz"; sourceTree = "<group>"; };
 		3C7A47452BD8E13B0006473A /* nervous-and-sense-organs.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "nervous-and-sense-organs.usdz"; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		3C842E6D2BDAE8DC0087F163 /* PinPointPropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPointPropertyWrapper.swift; sourceTree = "<group>"; };
 		3C8C3DAC2BD9666100D46B40 /* ChatBotOrnament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotOrnament.swift; sourceTree = "<group>"; };
 		3CA247872BDF3B100069939B /* ObjectTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTracking.swift; sourceTree = "<group>"; };
+		3CAD223D2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedSurgeryOrnament.swift; sourceTree = "<group>"; };
 		3CADB89A2BA44F52002F1710 /* SecondWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindow.swift; sourceTree = "<group>"; };
 		3CADB89E2BA45137002F1710 /* ProcedureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureViewModel.swift; sourceTree = "<group>"; };
 		3CADB8A52BA46772002F1710 /* MultiPeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerView.swift; sourceTree = "<group>"; };
@@ -100,7 +106,7 @@
 		3CD6B91C2BDD722B00CDE5A1 /* Reto_Tec_SaludTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reto_Tec_SaludTests.swift; sourceTree = "<group>"; };
 		3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepNavigationOrnament.swift; sourceTree = "<group>"; };
 		3CEB14AD2BC8ECEE00767B8A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
+		3CEB14AF2BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedSurgeryDetailContentWindow.swift; sourceTree = "<group>"; };
 		3CEB14B12BC91BFE00767B8A /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
 		3CEB14B62BC9255700767B8A /* VolumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModel.swift; sourceTree = "<group>"; };
 		D71986A52BAA71EB00C5FF2C /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				3C06463F2BDFFFA100539ED0 /* SurgeryImmersiveView.swift */,
+				3CEB14B12BC91BFE00767B8A /* VolumeView.swift */,
+				3C64697B2C070D54000CBDAD /* SurgeryDetailContentWindow.swift */,
 			);
 			path = "Surgery ";
 			sourceTree = "<group>";
@@ -158,8 +166,8 @@
 		3C43793F2BA419AB00C01C1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */,
-				D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */,
+				3C6469812C072B14000CBDAD /* Ornaments */,
+				3C64697D2C071F5C000CBDAD /* Containers */,
 				3CADB8E82BA47AC3002F1710 /* SkeletonModelView.swift */,
 				3C43793D2BA409A900C01C1C /* PlaceHolderView.swift */,
 				3C8C3DAC2BD9666100D46B40 /* ChatBotOrnament.swift */,
@@ -187,6 +195,25 @@
 				D7D85B6A2BD8531500C719D9 /* VideoPlayerView.swift */,
 			);
 			path = "Detail Views";
+			sourceTree = "<group>";
+		};
+		3C64697D2C071F5C000CBDAD /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				3C64697E2C071FA7000CBDAD /* ContainerView.swift */,
+				D7CA2B402B91BBFC003CB892 /* OpcionCardView.swift */,
+				3CADB8AC2BA46DCF002F1710 /* DetectedDeviceView.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		3C6469812C072B14000CBDAD /* Ornaments */ = {
+			isa = PBXGroup;
+			children = (
+				3CAD223D2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift */,
+				3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */,
+			);
+			name = Ornaments;
 			sourceTree = "<group>";
 		};
 		3C7A47422BD8E1200006473A /* 3D Assets */ = {
@@ -225,7 +252,7 @@
 			children = (
 				D7BBD0112B91568800F3F1C8 /* ContentView.swift */,
 				3CADB89A2BA44F52002F1710 /* SecondWindow.swift */,
-				3CEB14AF2BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift */,
+				3CEB14AF2BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift */,
 			);
 			path = Windows;
 			sourceTree = "<group>";
@@ -289,8 +316,6 @@
 			children = (
 				3C842E722BDAE8F30087F163 /* Spatial Computing */,
 				3CADB8A52BA46772002F1710 /* MultiPeerView.swift */,
-				3CEB14AB2BC8E84E00767B8A /* StepNavigationOrnament.swift */,
-				3CEB14B12BC91BFE00767B8A /* VolumeView.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -527,11 +552,14 @@
 				3C4379422BA4274F00C01C1C /* SplitView.swift in Sources */,
 				3C8C3DAD2BD9666100D46B40 /* ChatBotOrnament.swift in Sources */,
 				3CC89C2E2BA391B00055B1C6 /* BodyPartView.swift in Sources */,
+				3CAD223E2C050C4200E1FF11 /* SimulatedSurgeryOrnament.swift in Sources */,
 				D7CA2B472B91C5D6003CB892 /* AnatomyStudyView.swift in Sources */,
 				D7D85B6B2BD8531500C719D9 /* VideoPlayerView.swift in Sources */,
+				3C64697F2C071FA7000CBDAD /* ContainerView.swift in Sources */,
+				3C64697C2C070D54000CBDAD /* SurgeryDetailContentWindow.swift in Sources */,
 				3C4379442BA42ED400C01C1C /* StepDetailView.swift in Sources */,
 				3C0646402BDFFFA100539ED0 /* SurgeryImmersiveView.swift in Sources */,
-				3CEB14B02BC8F1EC00767B8A /* SurgeryDetailContentWindow.swift in Sources */,
+				3CEB14B02BC8F1EC00767B8A /* ScannedSurgeryDetailContentWindow.swift in Sources */,
 				D73694422BA954A5007A38EE /* NavigationView.swift in Sources */,
 				3CCA12D22BA2EECA00B1D538 /* TecMedMultipeer.swift in Sources */,
 				3C43793E2BA409A900C01C1C /* PlaceHolderView.swift in Sources */,
