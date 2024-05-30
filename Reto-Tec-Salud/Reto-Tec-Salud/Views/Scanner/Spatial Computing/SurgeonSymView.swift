@@ -45,21 +45,15 @@ struct SurgeonSymView: View {
         }.task {
             // Process world processing and anchor placement
             await model.processWorldUpdates()
-        }
-        .task{
-            if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
-                self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
-            }
-        }
-        .gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
+        }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
+                if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
+                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
+                }
+                
                 // Pace a cube, change to pin point a world anchor instead
                 if (model.pinPointEntity == nil) {
                     await model.placePin()
-                }
-                
-                if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
-                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
                 }
                 else {
                     print("Pinpoint already present in space")
