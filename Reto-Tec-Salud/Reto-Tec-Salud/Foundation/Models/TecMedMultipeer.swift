@@ -71,15 +71,15 @@ extension TecMedMultiPeer: MCSessionDelegate {
                 
 //                // Handle received label and object info
 //                // For example:
-//                print("==================================================")
-//                print("Recieved object coordinates: (x: \(receivedData.coordinates.x), y: \(receivedData.coordinates.y), z: \(receivedData.coordinates.z))")
-//                print("Received distance from camera to object: \(receivedData.distance)")
-//                print("==================================================")
-//                
-//                print("==================================================")
-//                print("Current object coordinates: (x: \(currentObjectData?.coordinates.x ?? 0.0), y: \(currentObjectData?.coordinates.y ?? 0.0), z: \(currentObjectData?.coordinates.z ?? 0.0))")
-//                print("Current distance from camera to object: \(currentObjectData?.distance ?? 0)")
-//                print("==================================================")
+                print("==================================================")
+                print("Recieved object coordinates: (x: \(receivedData.coordinates.x), y: \(receivedData.coordinates.y), z: (receivedData.coordinates.z))")
+                print("Received distance from camera to object: \(receivedData.distance)")
+                print("==================================================")
+                
+                print("==================================================")
+                print("Current object coordinates: (x: \(currentObjectData?.coordinates.x ?? 0.0), y: \(currentObjectData?.coordinates.y ?? 0.0), z: (currentObjectData?.coordinates.z ?? 0.0))")
+                print("Current distance from camera to object: \(currentObjectData?.distance ?? 0)")
+                print("==================================================")
             } catch {
                 log.error("Error decoding received data: \(error.localizedDescription)")
             }

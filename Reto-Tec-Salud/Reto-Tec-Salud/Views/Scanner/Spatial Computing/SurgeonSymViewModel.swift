@@ -19,6 +19,7 @@ class SurgeonSymViewModel: ObservableObject {
     // Tracked Enitity
     /// Entity atribute ment to be configured inside SurgeonSymView
     var trackedEntity: Entity?
+    private var actualCoordinates = SIMD3<Float>(0,0,0)
     
     private var worldAnchorMap: [Entity: WorldAnchor] = [:]
     
@@ -193,10 +194,15 @@ class SurgeonSymViewModel: ObservableObject {
     }
     
     func updateTrackEntity(currentObjectData: ObjectInfo?) {
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            DispatchQueue.main.async {
-                if let currentCoordinates = currentObjectData?.coordinates {
-                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: self.pinPointEntity, worldTrackingProvider: self.worldTracking, currenCoordinates: currentCoordinates, isTracked: true))
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+            print("Reached here")
+            var multiPeer = TecMedMultiPeer()
+            if multiPeer.currentObjectData?.coordinates != self.actualCoordinates {
+                self.actualCoordinates = currentObjectData?.coordinates ?? SIMD3<Float>(0,0,0)
+                DispatchQueue.main.async {
+                    if let currentCoordinates = currentObjectData?.coordinates {
+                        self.trackedEntity?.components.set(TrackingComponent(referenceEntity: self.pinPointEntity, worldTrackingProvider: self.worldTracking, currenCoordinates: currentCoordinates, isTracked: true))
+                    }
                 }
             }
         }
