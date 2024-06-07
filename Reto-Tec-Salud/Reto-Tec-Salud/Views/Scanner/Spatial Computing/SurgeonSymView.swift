@@ -59,6 +59,10 @@ struct SurgeonSymView: View {
         }
         .gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
+                if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
+                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
+                }
+                
                 // Pace a cube, change to pin point a world anchor instead
                 if (model.pinPointEntity == nil) {
                     await model.placePin()

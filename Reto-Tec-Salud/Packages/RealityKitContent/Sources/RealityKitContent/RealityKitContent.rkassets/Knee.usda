@@ -1,0 +1,20 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = ""
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def "Speed_Sculpt_Leg" (
+    active = true
+    prepend references = @Renders/Speed_Sculpt_Leg.usdz@
+)
+{
+    float3 xformOp:scale = (0.002, 0.002, 0.002)
+    float3 xformOp:translate = (0, 0.17136556, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+}
+

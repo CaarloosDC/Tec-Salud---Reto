@@ -250,6 +250,15 @@
       [
         "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
         "Root",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "85DC64B4-5928-4BF2-8593-8F664C5F7C46",
+        "Root",
         "Fasciae_g",
         "Fasciae_of_upper_limb_g",
         "Antebrachial_fascia_l"

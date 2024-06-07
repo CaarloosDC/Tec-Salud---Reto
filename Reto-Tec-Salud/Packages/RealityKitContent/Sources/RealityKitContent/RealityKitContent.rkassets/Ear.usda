@@ -10,13 +10,12 @@
 
 def Xform "Root"
 {
-    def "Location_Pin" (
+    def "ear_can_hear_you" (
         active = true
-        prepend references = @Renders/Location_Pin.usdz@
+        prepend references = @Renders/ear_can_hear_you.usdz@
     )
     {
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:scale = (0.003, 0.003, 0.003)
         float3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }

@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct SecondWindow: View {
-    @Environment(ProcedureViewModel.self) private var selectedProcedure
+    @Environment(MediaViewModel.self) private var stepVideo
     
     var body: some View {
         VStack {
-            SurgeryStepByStepView(surgicalProcedure: selectedProcedure.sentProcedure ?? Procedure(id: 1, surgeryTechnicalName: "String", description: "String", steps: []))
-        }
-        .onAppear {
-            print(selectedProcedure.sentProcedure?.surgeryTechnicalName ?? "Be afraid")
+            VideoPlayerView(videoID: stepVideo.stepVideo)
+                .padding()
         }
     }
 }
