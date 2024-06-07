@@ -1,10 +1,13 @@
 import Foundation
 import MultipeerConnectivity
 import os
+import Combine
 
 /// A class that handles the Multipeer Connectivity functionality for TecMedTransmiter.
 @Observable
 class TecMedMultiPeer: NSObject {
+    let multiPeerQueue = DispatchQueue(label: "DC.Reto-Tec-Salud.multipeerQueue")
+    
     private let serviceType = "TecMed-ML-Comm"
     private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
@@ -46,7 +49,7 @@ extension TecMedMultiPeer: MCNearbyServiceAdvertiserDelegate {
 extension TecMedMultiPeer: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         log.info("peer \(peerID) didChangeState: \(state.rawValue)")
-        DispatchQueue.main.async {
+        multiPeerQueue.async {
             self.connectedPeers = session.connectedPeers
         }
     }
@@ -56,7 +59,7 @@ extension TecMedMultiPeer: MCSessionDelegate {
         if let string = String(data: data, encoding: .utf8), let label = MLModelLabel(rawValue: string) {
             // Handle received string as label
             log.info("didReceive ML Model Label \(string)")
-            DispatchQueue.main.async {
+            multiPeerQueue.async {
                 self.currentLabel = label
             }
         } else {
