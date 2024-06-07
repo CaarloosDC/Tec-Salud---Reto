@@ -25,7 +25,8 @@ struct SurgeonSymView: View {
             }
             
             self.trackedEntity = entity
-            content.add(trackedEntity ?? entity)
+            self.model.trackedEntity = trackedEntity
+            content.add(model.trackedEntity ?? entity)
             
             if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
                 self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
@@ -35,6 +36,9 @@ struct SurgeonSymView: View {
         }.task {
             // Run ARKit Session
             await model.runSession()
+            
+            print("Called here")
+            model.updateTrackEntity(currentObjectData: multiPeersession.currentObjectData)
         }
         .task {
             // Process Hand Updates
@@ -47,7 +51,9 @@ struct SurgeonSymView: View {
             await model.processWorldUpdates()
         }
         .task{
-            if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
+            if let currentCoordinates =
+                multiPeersession.currentObjectData?.coordinates {
+                print("Called here 2")
                 self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
             }
         }
@@ -56,10 +62,6 @@ struct SurgeonSymView: View {
                 // Pace a cube, change to pin point a world anchor instead
                 if (model.pinPointEntity == nil) {
                     await model.placePin()
-                }
-                
-                if let currentCoordinates = multiPeersession.currentObjectData?.coordinates {
-                    self.trackedEntity?.components.set(TrackingComponent(referenceEntity: model.pinPointEntity, worldTrackingProvider: model.worldTracking, currenCoordinates: currentCoordinates, isTracked: false))
                 }
                 else {
                     print("Pinpoint already present in space")
