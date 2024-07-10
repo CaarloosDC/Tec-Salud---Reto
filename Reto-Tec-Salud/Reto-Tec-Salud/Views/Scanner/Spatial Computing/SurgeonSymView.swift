@@ -20,7 +20,7 @@ struct SurgeonSymView: View {
             content.add(model.setUpContentEntity())
             
             // Adding Arm entity
-            guard let entity = try? await Entity(named: "Arm", in: realityKitContentBundle) else {
+            guard let entity = try? await Entity(named: "Arm2", in: realityKitContentBundle) else {
                 fatalError("Unable to load Entity")
             }
             
